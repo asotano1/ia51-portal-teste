@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notícias IA 51+ — Tecnologia e dinheiro sem complicação</title>
+<meta name="description" content="Notícias de inteligência artificial, dinheiro e tecnologia explicadas em português claro para quem tem 50 anos ou mais. Sem jargão, sem complicação.">
+
+<!-- ══════════════════════════════════════════════════════════════════
+     FASE DE TESTES — APAGUE AS 2 LINHAS ABAIXO PARA ENTRAR NO GOOGLE
+     Enquanto elas existirem, o Google NÃO coloca o site na busca.
+     É proposital: evita que este protótipo dispute lugar com o
+     site definitivo depois. Apagar = liberar a indexação.
+     ══════════════════════════════════════════════════════════════════ -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<!-- ═══════════════ FIM DO BLOQUEIO DE FASE DE TESTES ═══════════════ -->
+
+<link rel="canonical" href="https://ia51mais.com/">
+<meta name="author" content="Notícias IA 51+">
+<meta name="theme-color" content="#faf7f1">
+
+<!-- como o link aparece ao ser compartilhado no WhatsApp e redes -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Notícias IA 51+">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://ia51mais.com/">
+<meta property="og:title" content="Notícias IA 51+ — Tecnologia e dinheiro sem complicação">
+<meta property="og:description" content="Notícias de inteligência artificial, dinheiro e tecnologia explicadas em português claro para quem tem 50 anos ou mais.">
+<!-- TODO no lançamento: criar capa 1200x630 e descomentar as 2 linhas.
+     Imagem inexistente quebra a prévia do link, por isso está desligada.
+<meta property="og:image" content="https://ia51mais.com/capa-social.png">
+<meta name="twitter:card" content="summary_large_image">
+-->
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23faf7f1'/%3E%3Ctext x='32' y='45' font-family='Palatino,Georgia,serif' font-size='30' fill='%23a8321e' text-anchor='middle'%3E51%2B%3C/text%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Notícias IA 51+",
+  "alternateName":"Portal Notícias IA 51+",
+  "url":"https://ia51mais.com/",
+  "inLanguage":"pt-BR",
+  "description":"Notícias de inteligência artificial, dinheiro e tecnologia explicadas em português claro para quem tem 50 anos ou mais.",
+  "publisher":{
+    "@type":"Organization",
+    "name":"Notícias IA 51+",
+    "url":"https://ia51mais.com/"
+  },
+  "audience":{
+    "@type":"PeopleAudience",
+    "suggestedMinAge":50
+  }
+}
+</script>
+<style>
+/* ============================================================
+   PORTAL NOTÍCIAS IA 51+  —  protótipo estático
+   Direção visual: jornal impresso / editorial de papel quente.
+   Tudo embutido: sem internet, sem servidor, sem framework.
+   Fontes: só as que já existem no Windows/Mac (funciona offline).
+   ============================================================ */
+
+:root{
+  --papel:      #faf7f1;
+  --papel-alt:  #f2ece1;
+  --tinta:      #16110d;
+  --tinta-2:    #453a30;
+  --tinta-3:    #6b5c4d;
+  --regua:      #d9cebc;
+  --regua-forte:#16110d;
+  --realce:     #a8321e;
+
+  /* uma cor por editoria */
+  --c-fin:  #1c6b4a;  --c-fin-2:  #2f9d6e;
+  --c-fer:  #8f4d14;  --c-fer-2:  #c9822f;
+  --c-dia:  #1c4a78;  --c-dia-2:  #3d7fb8;
+  --c-sau:  #8e2b45;  --c-sau-2:  #c4566f;
+
+  --serif: "Palatino Linotype","Book Antiqua",Palatino,"Iowan Old Style","Hoefler Text",Georgia,serif;
+  --sans:  Verdana,Tahoma,"DejaVu Sans","Segoe UI",sans-serif;
+
+  --sombra:    0 1px 2px rgba(22,17,13,.06), 0 8px 24px -12px rgba(22,17,13,.28);
+  --sombra-up: 0 2px 6px rgba(22,17,13,.10), 0 22px 48px -18px rgba(22,17,13,.42);
+
+  --toque: 52px;              /* alvo mínimo de toque */
+  --lim: 1180px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth }
+
+body{
+  margin:0;
+  background:
+    radial-gradient(1100px 620px at 78% -8%, #fffdf8 0%, rgba(255,253,248,0) 60%),
+    radial-gradient(900px 520px at 6% 102%, #f0e9dc 0%, rgba(240,233,220,0) 58%),
+    var(--papel);
+  color:var(--tinta);
+  font-family:var(--sans);
+  font-size:18px;
+  line-height:1.75;
+  min-height:100vh;
+}
+
+/* grão de papel — puramente decorativo */
+body::before{
+  content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.env{position:relative;z-index:2;max-width:var(--lim);margin:0 auto;padding:0 22px}
+
+/* ---------- pular para o conteúdo (teclado) ---------- */
+.pular{
+  position:absolute;left:-9999px;top:0;background:var(--tinta);color:var(--papel);
+  padding:14px 20px;z-index:200;border-radius:0 0 8px 0;font-weight:bold;
+}
+.pular:focus{left:0}
+
+/* =================== CABEÇALHO =================== */
+.topo{
+  border-bottom:3px solid var(--regua-forte);
+  background:linear-gradient(180deg,rgba(255,253,248,.92),rgba(250,247,241,.72));
+  backdrop-filter:blur(8px);
+  position:sticky;top:0;z-index:60;
+}
+
+.faixa-data{
+  border-bottom:1px solid var(--regua);
+  font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--tinta-3);
+}
+.faixa-data .env{display:flex;justify-content:space-between;align-items:center;gap:14px;padding-top:1px;padding-bottom:1px;flex-wrap:wrap}
+.faixa-data strong{color:var(--tinta-2);font-weight:bold}
+
+.masthead{ padding:2px 22px 1px; text-align:center }
+
+.marca{
+  font-family:var(--serif);
+  font-size:clamp(15px,2.6vw,20px);
+  line-height:1;
+  margin:0;
+  letter-spacing:-.02em;
+  font-weight:normal;
+  cursor:pointer;
+  background:none;border:0;color:var(--tinta);
+  display:inline-block;padding:0 8px;
+}
+.marca .mais{color:var(--realce);font-style:italic}
+.marca:hover{color:var(--realce)}
+.marca:hover .mais{color:var(--tinta)}
+.marca{transition:color .35s ease}
+.marca .mais{transition:color .35s ease}
+
+.subtitulo{
+  margin:0;font-size:10px;color:var(--tinta-3);
+  letter-spacing:.05em;
+}
+
+/* -------- linha de editorias + busca -------- */
+.barra{
+  border-top:1px solid var(--regua);
+  background:rgba(242,236,225,.55);
+}
+.barra .env{
+  display:flex;align-items:center;gap:14px;
+  padding-top:4px;padding-bottom:4px;flex-wrap:wrap;
+}
+
+.editorias{display:flex;align-items:center;gap:10px;flex-wrap:wrap;position:relative}
+
+.ed{
+  font-family:var(--sans);font-size:16px;font-weight:bold;
+  min-height:var(--toque);padding:0 20px;
+  display:inline-flex;align-items:center;
+  background:transparent;border:2px solid transparent;border-radius:999px;
+  color:var(--tinta-2);cursor:pointer;
+  transition:background .25s ease,color .25s ease,border-color .25s ease,transform .25s ease;
+}
+.ed:hover{background:#fff;border-color:var(--regua);transform:translateY(-2px)}
+.ed[aria-current="true"]{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
+.ed .ponto{width:11px;height:11px;border-radius:50%;margin-right:10px;flex:none}
+
+/* botão "Mais" + gaveta */
+.gaveta-wrap{position:relative}
+.gaveta{
+  position:absolute;top:calc(100% + 10px);left:0;min-width:262px;
+  background:#fff;border:2px solid var(--tinta);border-radius:14px;
+  box-shadow:var(--sombra-up);padding:8px;z-index:70;
+  opacity:0;transform:translateY(-10px) scale(.97);pointer-events:none;
+  transition:opacity .22s ease,transform .22s ease;
+}
+.gaveta.aberta{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+.gaveta .ed{width:100%;justify-content:flex-start;border-radius:9px}
+.gaveta .ed:hover{background:var(--papel-alt);border-color:transparent;transform:none}
+
+.seta{margin-left:10px;transition:transform .28s ease;font-size:13px}
+.gaveta-wrap.aberta .seta{transform:rotate(180deg)}
+
+/* -------- busca -------- */
+.busca{margin-left:auto;position:relative;flex:1 1 300px;max-width:420px}
+.busca input{
+  width:100%;min-height:var(--toque);
+  padding:0 52px 0 20px;
+  font-family:var(--sans);font-size:17px;color:var(--tinta);
+  background:#fff;border:2px solid var(--regua);border-radius:999px;
+  transition:border-color .25s ease,box-shadow .25s ease;
+}
+.busca input::placeholder{color:#9c8d7c}
+.busca input:focus{outline:none;border-color:var(--tinta);box-shadow:0 0 0 4px rgba(168,50,30,.16)}
+.busca .lupa{
+  position:absolute;right:19px;top:50%;transform:translateY(-50%);
+  font-size:19px;color:var(--tinta-3);pointer-events:none;
+}
+.limpar{
+  position:absolute;right:8px;top:50%;transform:translateY(-50%);
+  width:38px;height:38px;border-radius:50%;border:0;background:var(--papel-alt);
+  color:var(--tinta);font-size:18px;cursor:pointer;display:none;
+  align-items:center;justify-content:center;line-height:1;
+}
+.limpar.on{display:flex}
+.limpar:hover{background:var(--tinta);color:var(--papel)}
+
+/* =================== CONTEÚDO =================== */
+main{padding:10px 0 90px}
+
+.cabeca-secao{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:18px;
+  border-bottom:2px solid var(--regua-forte);padding-bottom:8px;margin-bottom:18px;flex-wrap:wrap;
+}
+.cabeca-secao h2{
+  font-family:var(--serif);font-weight:normal;
+  font-size:clamp(20px,3.4vw,30px);line-height:1.15;margin:0;letter-spacing:-.015em;
+}
+.cabeca-secao .conta{font-size:14px;color:var(--tinta-3);letter-spacing:.07em;text-transform:uppercase}
+
+.voltar{
+  min-height:var(--toque);padding:0 22px;margin-bottom:22px;
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--sans);font-size:16px;font-weight:bold;
+  background:#fff;color:var(--tinta);border:2px solid var(--tinta);border-radius:999px;cursor:pointer;
+  transition:background .25s ease,color .25s ease,transform .25s ease;
+}
+.voltar:hover{background:var(--tinta);color:var(--papel);transform:translateX(-4px)}
+
+/* ---------- GRADE DE 6 CARTÕES ----------
+   Computador: 3 colunas x 2 linhas · Celular: 1 coluna empilhada  */
+.grade{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:34px 30px;
+}
+
+.cartao{
+  display:flex;flex-direction:column;text-align:left;
+  background:#fffdf9;border:1px solid var(--regua);border-radius:16px;
+  overflow:hidden;cursor:pointer;padding:0;
+  font-family:var(--sans);color:var(--tinta);
+  box-shadow:var(--sombra);
+  transition:transform .32s cubic-bezier(.22,.9,.3,1), box-shadow .32s ease, border-color .32s ease;
+  opacity:0;transform:translateY(22px);
+  animation:entra .62s cubic-bezier(.22,.9,.3,1) forwards;
+}
+@keyframes entra{to{opacity:1;transform:translateY(0)}}
+.cartao:hover,.cartao:focus-visible{
+  transform:translateY(-8px);box-shadow:var(--sombra-up);border-color:var(--tinta);outline:none;
+}
+.cartao:focus-visible{box-shadow:var(--sombra-up),0 0 0 4px rgba(168,50,30,.28)}
+
+.foto{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--papel-alt);flex:none}
+.foto svg,.foto img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .55s cubic-bezier(.22,.9,.3,1)}
+.cartao:hover .foto svg,.cartao:hover .foto img{transform:scale(1.07)}
+
+.selo{
+  position:absolute;left:14px;top:14px;
+  font-size:12px;font-weight:bold;letter-spacing:.09em;text-transform:uppercase;
+  color:#fff;padding:7px 14px;border-radius:999px;
+  backdrop-filter:blur(3px);box-shadow:0 2px 10px rgba(0,0,0,.24);
+}
+
+.corpo-cartao{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
+.data-cartao{font-size:13px;color:var(--tinta-3);letter-spacing:.09em;text-transform:uppercase;margin-bottom:9px}
+.cartao h3{
+  font-family:var(--serif);font-weight:normal;
+  font-size:24px;line-height:1.26;margin:0 0 12px;letter-spacing:-.01em;
+}
+.cartao p{margin:0;font-size:16px;line-height:1.65;color:var(--tinta-2);flex:1}
+.ler{
+  margin-top:18px;font-size:15px;font-weight:bold;display:inline-flex;align-items:center;gap:9px;
+}
+.ler .fl{transition:transform .3s ease}
+.cartao:hover .ler .fl{transform:translateX(6px)}
+
+/* ---------- LISTA DA EDITORIA / RESULTADOS ---------- */
+.lista{list-style:none;margin:0;padding:0;border-top:1px solid var(--regua)}
+.lista li{
+  opacity:0;transform:translateY(14px);
+  animation:entra .5s cubic-bezier(.22,.9,.3,1) forwards;
+}
+.linha{
+  width:100%;text-align:left;background:transparent;border:0;
+  border-bottom:1px solid var(--regua);
+  padding:22px 62px 22px 20px;position:relative;cursor:pointer;
+  font-family:var(--sans);color:var(--tinta);
+  min-height:var(--toque);
+  transition:background .26s ease,padding-left .26s ease;
+}
+.linha:hover,.linha:focus-visible{background:#fffdf9;padding-left:30px;outline:none}
+.linha:focus-visible{box-shadow:inset 4px 0 0 var(--realce)}
+.linha::after{
+  content:"›";position:absolute;right:24px;top:50%;transform:translateY(-50%);
+  font-size:30px;color:var(--regua);transition:color .26s ease,transform .26s ease;
+}
+.linha:hover::after{color:var(--realce);transform:translateY(-50%) translateX(5px)}
+.linha .cab{display:flex;align-items:center;gap:12px;margin-bottom:7px;flex-wrap:wrap}
+.tag{
+  font-size:11px;font-weight:bold;letter-spacing:.1em;text-transform:uppercase;
+  color:#fff;padding:4px 11px;border-radius:999px;
+}
+.linha .dt{font-size:13px;color:var(--tinta-3);letter-spacing:.08em}
+.linha h3{font-family:var(--serif);font-weight:normal;font-size:22px;line-height:1.3;margin:0 0 6px}
+.linha p{margin:0;font-size:16px;color:var(--tinta-2);line-height:1.6}
+
+.vazio{
+  text-align:center;padding:70px 24px;border:2px dashed var(--regua);border-radius:16px;
+  background:#fffdf9;
+}
+.vazio .ic{font-size:52px;display:block;margin-bottom:16px}
+.vazio h3{font-family:var(--serif);font-weight:normal;font-size:26px;margin:0 0 10px}
+.vazio p{margin:0 auto;max-width:460px;color:var(--tinta-2)}
+
+.aviso-magra{
+  background:#fff8e8;border:1px solid #e6cf9a;border-left:6px solid var(--c-fer-2);
+  border-radius:10px;padding:16px 20px;margin-bottom:26px;font-size:16px;color:var(--tinta-2);
+}
+
+/* =================== JANELA DO ARTIGO =================== */
+.fundo{
+  position:fixed;inset:0;z-index:100;
+  background:rgba(22,17,13,.62);backdrop-filter:blur(5px);
+  display:flex;align-items:flex-start;justify-content:center;
+  padding:34px 20px;overflow-y:auto;
+  opacity:0;pointer-events:none;transition:opacity .3s ease;
+}
+.fundo.aberta{opacity:1;pointer-events:auto}
+
+.janela{
+  background:var(--papel);width:100%;max-width:760px;border-radius:18px;
+  box-shadow:0 40px 90px -24px rgba(0,0,0,.6);
+  position:relative;margin:auto;overflow:hidden;
+  transform:translateY(26px) scale(.965);opacity:0;
+  transition:transform .38s cubic-bezier(.22,.9,.3,1),opacity .3s ease;
+}
+.fundo.aberta .janela{transform:translateY(0) scale(1);opacity:1}
+
+.fechar{
+  position:absolute;right:16px;top:16px;z-index:5;
+  width:var(--toque);height:var(--toque);border-radius:50%;
+  background:var(--papel);border:2px solid var(--tinta);color:var(--tinta);
+  font-size:26px;line-height:1;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 3px 12px rgba(0,0,0,.24);
+  transition:background .24s ease,color .24s ease,transform .24s ease;
+}
+.fechar:hover{background:var(--realce);border-color:var(--realce);color:#fff;transform:rotate(90deg)}
+.fechar:focus-visible{outline:4px solid rgba(168,50,30,.45);outline-offset:2px}
+
+.janela .capa{aspect-ratio:16/7;overflow:hidden;background:var(--papel-alt)}
+.janela .capa svg,.janela .capa img{width:100%;height:100%;display:block;object-fit:cover}
+
+.artigo{padding:32px 42px 44px}
+.artigo .meta{display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+.artigo h2{
+  font-family:var(--serif);font-weight:normal;
+  font-size:clamp(28px,4.6vw,42px);line-height:1.17;margin:0 0 18px;letter-spacing:-.018em;
+}
+.linha-fina{
+  font-size:19px;line-height:1.6;color:var(--tinta-2);font-style:italic;
+  border-left:4px solid var(--regua);padding-left:18px;margin:0 0 26px;
+}
+.artigo .txt p{font-size:19px;line-height:1.8;margin:0 0 20px;color:var(--tinta)}
+.artigo .txt p:first-letter{}
+.rodape-art{
+  margin-top:32px;padding-top:22px;border-top:2px solid var(--regua-forte);
+  display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+}
+.endereco{
+  font-size:13px;color:var(--tinta-3);word-break:break-all;
+  background:var(--papel-alt);padding:10px 14px;border-radius:8px;flex:1 1 260px;
+}
+.endereco b{color:var(--tinta-2)}
+.btn-fechar-baixo{
+  min-height:var(--toque);padding:0 28px;
+  font-family:var(--sans);font-size:17px;font-weight:bold;
+  background:var(--tinta);color:var(--papel);border:2px solid var(--tinta);border-radius:999px;cursor:pointer;
+  transition:background .25s ease,color .25s ease,transform .25s ease;
+}
+.btn-fechar-baixo:hover{background:var(--realce);border-color:var(--realce);transform:translateY(-2px)}
+
+/* ---------- Cadastro (Quero receber mais notícias) ---------- */
+.btn-receber{
+  min-height:var(--toque);padding:0 24px;margin-top:26px;
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--sans);font-size:17px;font-weight:bold;
+  background:#fff;color:var(--tinta);border:2px solid var(--tinta);border-radius:999px;cursor:pointer;
+  transition:background .25s ease,color .25s ease,transform .25s ease;
+}
+.btn-receber:hover{background:var(--tinta);color:var(--papel);transform:translateY(-2px)}
+
+.cadastro{padding:36px 38px 40px}
+.cadastro h2{font-family:var(--serif);font-weight:normal;font-size:26px;margin:0 0 10px;line-height:1.25}
+.cadastro .sub{font-size:17px;color:var(--tinta-2);margin:0 0 24px}
+
+.form-cadastro{display:flex;flex-direction:column;gap:14px}
+.form-cadastro input{
+  width:100%;min-height:var(--toque);padding:0 18px;
+  font-family:var(--sans);font-size:18px;color:var(--tinta);
+  background:#fff;border:2px solid var(--regua);border-radius:12px;
+  transition:border-color .25s ease,box-shadow .25s ease;
+}
+.form-cadastro input::placeholder{color:#9c8d7c}
+.form-cadastro input:focus{outline:none;border-color:var(--tinta);box-shadow:0 0 0 4px rgba(168,50,30,.16)}
+
+.msg-telegram{
+  display:none;font-size:15px;line-height:1.6;color:var(--tinta-2);
+  background:var(--papel-alt);border:1px solid var(--regua);border-left:5px solid var(--realce);
+  border-radius:0 10px 10px 0;padding:14px 18px;margin-top:10px;
+}
+.msg-telegram.mostrar{display:block}
+.msg-telegram a{color:var(--realce);font-weight:bold;text-decoration:none}
+.msg-telegram a:hover{text-decoration:underline}
+
+.botao-cadastro{
+  min-height:var(--toque);padding:0 28px;margin-top:6px;
+  font-family:var(--sans);font-size:18px;font-weight:bold;
+  background:var(--tinta);color:var(--papel);border:2px solid var(--tinta);border-radius:999px;cursor:pointer;
+  transition:background .25s ease,transform .25s ease;
+}
+.botao-cadastro:hover{background:var(--realce);border-color:var(--realce);transform:translateY(-2px)}
+.botao-cadastro:disabled{opacity:.6;cursor:default;transform:none}
+.nota-cadastro{font-size:14px;color:var(--tinta-3);text-align:center;margin:4px 0 0}
+
+@media (max-width:640px){
+  .cadastro{padding:26px 22px 32px}
+}
+
+/* =================== RODAPÉ =================== */
+.rodape{
+  border-top:3px solid var(--regua-forte);
+  background:var(--papel-alt);padding:40px 0 54px;margin-top:40px;
+  position:relative;z-index:2;
+}
+.rodape .env{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;align-items:center}
+.rodape p{margin:0;font-size:15px;color:var(--tinta-3);line-height:1.7}
+.rodape .nome{font-family:var(--serif);font-size:24px;color:var(--tinta)}
+
+/* =================== CELULAR =================== */
+@media (max-width:900px){
+  .grade{grid-template-columns:repeat(2,1fr);gap:28px 22px}
+}
+@media (max-width:640px){
+  body{font-size:17px}
+  .env{padding:0 16px}
+  .masthead{padding:2px 16px 1px}
+  .subtitulo{font-size:9.5px}
+  .faixa-data{font-size:11px}
+  .barra .env{gap:10px}
+  /* menu em grade de 2 colunas: tudo visível, nada quebrando em 4 linhas */
+  .editorias{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .ed{font-size:15px;padding:0 12px;justify-content:center;text-align:center;line-height:1.2}
+  .ed .ponto{margin-right:7px}
+  .busca{margin-left:0;max-width:none;flex:1 1 100%;order:-1}
+  .gaveta-wrap{grid-column:1 / -1}
+  .gaveta-wrap > #btnMais{width:100%}
+  .gaveta{left:0;right:0;min-width:0;width:100%}
+
+  /* 1 coluna empilhada */
+  .grade{grid-template-columns:1fr;gap:26px}
+  .cartao h3{font-size:22px}
+
+  main{padding:30px 0 60px}
+  .fundo{padding:0}
+  .janela{border-radius:0;min-height:100vh;max-width:none}
+  .artigo{padding:26px 20px 40px}
+  .artigo .txt p{font-size:18px}
+  .linha-fina{font-size:18px}
+  .fechar{position:fixed;right:14px;top:14px;width:56px;height:56px}
+  .linha{padding:20px 46px 20px 14px}
+  .linha:hover{padding-left:20px}
+  .linha::after{right:14px}
+}
+
+/* quem prefere menos movimento */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  .cartao{opacity:1;transform:none}
+  .lista li{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<a class="pular" href="#conteudo">Pular para as notícias</a>
+
+<header class="topo">
+  <div class="faixa-data">
+    <div class="env">
+      <span>Sábado, <strong>25 de julho de 2026</strong></span>
+      <span>Protótipo &middot; Edição de teste</span>
+    </div>
+  </div>
+
+  <div class="masthead">
+    <button class="marca" id="marca" aria-label="Voltar para a página inicial">Notícias IA <span class="mais">51+</span></button>
+    <p class="subtitulo">Tecnologia e dinheiro explicados sem complicação</p>
+  </div>
+
+  <nav class="barra" aria-label="Assuntos e busca">
+    <div class="env">
+      <div class="editorias" id="editorias"></div>
+      <div class="busca">
+        <label for="campoBusca" class="pular">Buscar notícia</label>
+        <input type="search" id="campoBusca" placeholder="Buscar notícia..." autocomplete="off">
+        <span class="lupa" aria-hidden="true">&#128269;</span>
+        <button class="limpar" id="limpar" aria-label="Limpar a busca">&times;</button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="conteudo">
+  <div class="env" id="palco"></div>
+</main>
+
+<footer class="rodape">
+  <div class="env">
+    <div>
+      <div class="nome">Notícias IA 51+</div>
+      <p>Protótipo para testar a experiência de uso. Ainda não é o site final.</p>
+    </div>
+    <p>Conteúdo real das edições de 4, 10, 17 e 24 de julho de 2026.</p>
+  </div>
+</footer>
+
+<!-- janela do artigo -->
+<div class="fundo" id="fundo" role="dialog" aria-modal="true" aria-labelledby="tituloArtigo">
+  <article class="janela" id="janela">
+    <button class="fechar" id="fechar" aria-label="Fechar a notícia">&times;</button>
+    <div id="conteudoArtigo"></div>
+  </article>
+</div>
+
+<!-- janela de cadastro (Quero receber mais notícias) -->
+<div class="fundo" id="fundoCadastro" role="dialog" aria-modal="true" aria-labelledby="tituloCadastro">
+  <article class="janela" id="janelaCadastro" style="max-width:520px">
+    <button class="fechar" id="fecharCadastro" aria-label="Fechar cadastro">&times;</button>
+    <div class="cadastro">
+      <h2 id="tituloCadastro">Cadastre-se para receber notícias</h2>
+      <p class="sub">Escolha como prefere receber — WhatsApp, e-mail ou Telegram.</p>
+      <div class="form-cadastro">
+        <label for="campoZap" class="pular">WhatsApp</label>
+        <input type="tel" id="campoZap" placeholder="WhatsApp (ex: 11999998888)" autocomplete="tel">
+        <label for="campoEmail" class="pular">E-mail</label>
+        <input type="email" id="campoEmail" placeholder="E-mail" autocomplete="email">
+        <div>
+          <label for="campoTelegram" class="pular">Telegram (opcional)</label>
+          <input type="text" id="campoTelegram" placeholder="Telegram (@usuario) — opcional" autocomplete="off">
+          <div class="msg-telegram" id="msgTelegram">
+            Você ainda não tem o Telegram?<br>
+            É gratuito e as notícias chegam mais rápido que por e-mail.<br>
+            <a href="https://telegram.org/dl" target="_blank" rel="noopener noreferrer">Baixar o Telegram agora</a>
+            — depois volte aqui e coloque seu @usuario.
+          </div>
+        </div>
+        <button class="botao-cadastro" id="btnEnviarCadastro">Quero receber ✓</button>
+        <p class="nota-cadastro">Sem spam. Você pode cancelar quando quiser.</p>
+      </div>
+    </div>
+  </article>
+</div>
+
+<script>
+/* ============================================================
+   1) EDITORIAS
+   3 aparecem no menu · o resto fica no botão "Mais"
+   ============================================================ */
+const EDITORIAS = [
+  { id:"ia-e-financas",       nome:"IA e Finanças",        cor:"#1c6b4a", cor2:"#2f9d6e" },
+  { id:"ia-no-dia-a-dia",     nome:"IA no Dia a Dia",      cor:"#1c4a78", cor2:"#3d7fb8" },
+  { id:"ferramentas-para-50", nome:"Ferramentas para 50+", cor:"#8f4d14", cor2:"#c9822f" },
+  { id:"ia-e-saude",          nome:"IA e Saúde",           cor:"#8e2b45", cor2:"#c4566f" },
+  { id:"ia-e-relacoes",       nome:"IA e Relações",        cor:"#4a3d78", cor2:"#7d6bb0" }
+];
+const VISIVEIS = 3;
+const ED = Object.fromEntries(EDITORIAS.map(e => [e.id, e]));
+
+/* endereço definitivo do site — usado nos metadados e no rodapé do artigo */
+const SITE = "https://ia51mais.com";
+
+/* ---- metadados de cada tela ----
+   Mantém título, descrição, canonical e Open Graph coerentes com o que
+   está na tela. No WordPress isso passa a ser trabalho do Rank Math;
+   aqui fica registrado exatamente qual deve ser o formato de cada um. */
+function metaTag(sel, attr, valor){
+  const el = document.head.querySelector(sel);
+  if(el) el.setAttribute(attr, valor);
+}
+function aplicarMeta({titulo, descricao, url}){
+  document.title = titulo;
+  metaTag('meta[name="description"]', "content", descricao);
+  metaTag('link[rel="canonical"]', "href", url);
+  metaTag('meta[property="og:title"]', "content", titulo);
+  metaTag('meta[property="og:description"]', "content", descricao);
+  metaTag('meta[property="og:url"]', "content", url);
+}
+
+/* dados estruturados da notícia aberta (formato que o Google lê).
+   Demonstra a forma que o WordPress terá de gerar em cada artigo. */
+function dadosDaNoticia(n){
+  const antigo = document.getElementById("ldNoticia");
+  if(antigo) antigo.remove();
+  if(!n) return;
+  const s = document.createElement("script");
+  s.type = "application/ld+json";
+  s.id = "ldNoticia";
+  s.textContent = JSON.stringify({
+    "@context":"https://schema.org",
+    "@type":"NewsArticle",
+    "headline": n.titulo,
+    "description": n.resumo,
+    "datePublished": n.data,
+    "dateModified": n.data,
+    "inLanguage":"pt-BR",
+    "articleSection": ED[n.cat].nome,
+    "mainEntityOfPage":{"@type":"WebPage","@id":`${SITE}/${n.cat}/${n.slug}/`},
+    "publisher":{"@type":"Organization","name":"Notícias IA 51+","url":SITE+"/"},
+    "author":{"@type":"Organization","name":"Notícias IA 51+"}
+  });
+  document.head.appendChild(s);
+}
+
+/* ============================================================
+   2) NOTÍCIAS — conteúdo real das notas curadas
+      (edições de 04, 10, 17 e 24 de julho de 2026)
+   ============================================================ */
+const NOTICIAS = [
+
+/* ---------- 25 de julho (reforço IA e Saúde) ---------- */
+{ slug:"videos-falsos-de-medicos-feitos-por-ia-colocam-idosos-em-risco",
+  cat:"ia-e-saude", data:"2026-07-25",
+  titulo:"Vídeos falsos de médicos feitos por inteligência artificial colocam idosos em risco",
+  resumo:"Golpistas usam inteligência artificial para criar vídeos com o rosto e a voz de médicos conhecidos, vendendo curas milagrosas que não existem.",
+  corpo:[
+    "Tem circulado vídeo de médico famoso recomendando remédio milagroso ou pedindo para parar um tratamento? Desconfie. Uma técnica chamada deepfake usa inteligência artificial para colocar o rosto e a voz de uma pessoa real dizendo coisas que ela nunca disse.",
+    "Golpistas têm usado essa técnica com médicos conhecidos e apresentadores de TV para vender suplementos e convencer as pessoas a abandonar tratamentos receitados por médico de verdade. Quem tem mais de uma doença ou toma vários remédios é alvo mais fácil, porque confia na imagem de autoridade do vídeo.",
+    "Um sinal de alerta simples: nenhum médico sério recomenda parar um tratamento ou trocar remédio por vídeo na internet. Se um vídeo pedir isso, o caminho seguro é sempre conversar antes com seu próprio médico, e nunca comprar nada por causa de um vídeo assim."
+  ],
+  fonte:{ nome:"TVT News", url:"https://tvtnews.com.br/videos-medicos-falsos-ia-alerta-saude-idosos/" }},
+
+{ slug:"relogios-com-ia-passam-a-vigiar-a-saude-de-quem-e-50-mais",
+  cat:"ia-e-saude", data:"2026-07-25",
+  titulo:"Relógios e pulseiras com inteligência artificial passam a vigiar sinais de saúde de quem é 50+",
+  resumo:"Aparelhos de pulso com inteligência artificial já conseguem acompanhar batimento do coração, oxigênio no sangue e sono, avisando cedo quando algo foge do normal.",
+  corpo:[
+    "Relógios e pulseiras inteligentes deram um salto: além de contar passos, agora usam inteligência artificial para acompanhar o batimento do coração, o nível de oxigênio no sangue, as fases do sono e até a temperatura da pele, em tempo real e sem precisar de internet o tempo todo.",
+    "Na prática, o aparelho aprende o que é normal para o seu corpo e avisa quando algo foge do padrão — por exemplo, um batimento cardíaco irregular. Empresas do setor de equipamentos médicos já colocam esse tipo de tecnologia em relógios de uso diário, não só em aparelho de hospital.",
+    "O aviso do aparelho é só isso: um aviso. Ele não substitui consulta médica nem faz diagnóstico. Serve para chamar atenção mais cedo para algo que vale a pena levar ao médico — o resto da conversa continua sendo com ele."
+  ],
+  fonte:{ nome:"AllSeniors — AI Home Health Care Guide", url:"https://allseniors.org/articles/how-ai-powered-home-health-services-are-transforming-senior-care-in-2026/" }},
+
+/* ---------- 25 de julho (variadas) ---------- */
+{ slug:"inflacao-prevista-cai-para-5-15-por-cento-e-dolar-recua-a-5-09",
+  cat:"ia-e-financas", data:"2026-07-25",
+  titulo:"Previsão de inflação cai para 5,15% e dólar recua a R$ 5,09",
+  resumo:"Boletim Focus reduziu pela terceira semana seguida a previsão de inflação para 2026, reforçando aposta de novo corte de juros em agosto.",
+  corpo:[
+    "O Banco Central divulgou o Boletim Focus — a pesquisa semanal que reúne a previsão de vários economistas — mostrando queda pela terceira semana seguida na expectativa de inflação para 2026: de 5,16% para 5,15%.",
+    "O dólar acompanhou o movimento e recuou para R$ 5,09, enquanto a bolsa de valores (Ibovespa) abriu a semana perto dos 174 mil pontos.",
+    "Quando a previsão de inflação cai, cresce a aposta de que o Banco Central corte a Selic — a taxa básica de juros do país — na reunião de agosto. Um corte assim tende a reduzir aos poucos o rendimento da renda fixa."
+  ],
+  fonte:{ nome:"Agência Brasil", url:"https://agenciabrasil.ebc.com.br/economia/noticia/2026-07/ibovespa-volta-aos-174-mil-pontos-com-aposta-na-selic-e-dolar-cai" }},
+
+{ slug:"whatsapp-ganha-inteligencia-artificial-que-reescreve-mensagens",
+  cat:"ia-no-dia-a-dia", data:"2026-07-25",
+  titulo:"WhatsApp ganha inteligência artificial que reescreve mensagens e edita fotos",
+  resumo:"Nova atualização do aplicativo usa inteligência artificial para ajustar o tom do texto e transformar fotos em vídeo dentro do Status.",
+  corpo:[
+    "O WhatsApp lançou em julho uma atualização que traz inteligência artificial dentro do próprio aplicativo de mensagens — a mesma tecnologia dos assistentes conhecidos, só que aplicada a escrever e editar sem sair do WhatsApp.",
+    "Um dos recursos reescreve uma mensagem digitada, deixando o texto mais formal, mais claro ou mais elaborado. Outro transforma uma foto comum em um pequeno vídeo dentro do Status, com efeitos e música.",
+    "Nada disso é obrigatório usar — os recursos aparecem como opção extra ao lado da caixa de digitar ou de enviar foto. Quem preferir não mexer neles, o WhatsApp continua funcionando exatamente como sempre funcionou."
+  ],
+  fonte:{ nome:"Israel Novaes", url:"https://israelnovaes.com.br/whatsapp-atualizacao-o-que-mudou-no-app-em-julho-de-2026/" }},
+
+{ slug:"neto-digital-assistente-de-ia-tira-duvidas-de-tecnologia-de-idosos",
+  cat:"ferramentas-para-50", data:"2026-07-25",
+  titulo:"Assistente de inteligência artificial criado por ex-aluno do Senac tira dúvidas de idosos sobre tecnologia",
+  resumo:"Neto Digital é uma plataforma gratuita com um assistente de inteligência artificial dedicado a explicar tecnologia para o público idoso, sem termo difícil.",
+  corpo:[
+    "Um técnico em informática formado pelo Senac Tech criou o Neto Digital, uma plataforma com um assistente de inteligência artificial pensado só para responder dúvida de quem não cresceu usando computador ou celular.",
+    "Diferente de um assistente genérico, o Neto Digital foi pensado para explicar tecnologia devagar e em linguagem do dia a dia — de \"como mando foto pelo WhatsApp\" até \"o que é aplicativo de banco\".",
+    "A ideia nasceu da experiência do próprio criador ajudando parentes mais velhos durante a pandemia, e virou uma ferramenta gratuita para qualquer pessoa com a mesma dúvida."
+  ],
+  fonte:{ nome:"SEGS", url:"https://www.segs.com.br/saude/448861-plataforma-que-ajuda-idosos-a-usar-novas-tecnologias-e-desenvolvida-por-ex-aluno-do-senac-tech" }},
+
+{ slug:"celulares-ficam-mais-intuitivos-com-inteligencia-artificial-em-2026",
+  cat:"ferramentas-para-50", data:"2026-07-25",
+  titulo:"Celulares ficam mais intuitivos com inteligência artificial em 2026",
+  resumo:"Fabricantes de celular estão usando inteligência artificial para simplificar menus, atalhos e comandos por voz — pensando em quem tem menos prática com tecnologia.",
+  corpo:[
+    "Em 2026, fabricantes de celular como a Samsung têm investido em deixar os aparelhos mais intuitivos, usando inteligência artificial para simplificar tarefas que antes exigiam vários toques na tela.",
+    "Entre as novidades: comandos por voz mais naturais, atalhos que aprendem o que a pessoa mais usa e sugestões na tela para tarefas comuns, como ligar para um contato ou tirar uma foto.",
+    "Essas mudanças pensam justamente em quem tem menos prática com celular — a ideia é que o aparelho se adapte à pessoa, e não o contrário."
+  ],
+  fonte:{ nome:"Samsung Newsroom Brasil", url:"https://news.samsung.com/br/audio-celulares-ficam-mais-intuitivos-em-2026" }},
+
+/* ---------- 25 de julho (IA e Relações — categoria nova) ---------- */
+{ slug:"avosidade-a-relacao-com-os-netos-ajuda-no-envelhecimento-saudavel",
+  cat:"ia-e-relacoes", data:"2026-07-25",
+  titulo:"Relação com os netos ajuda a envelhecer com mais saúde, mostra reportagem",
+  resumo:"Especialistas explicam o conceito de \"avosidade\": o convívio frequente com os netos estimula a memória, a disposição e reduz a sensação de solidão na terceira idade.",
+  corpo:[
+    "Uma reportagem recente trouxe o conceito de \"avosidade\" — o nome dado à importância da relação entre avós e netos para quem está envelhecendo. Não é só carinho: esse convívio frequente faz bem de verdade para a saúde da pessoa mais velha.",
+    "O contato regular com os netos estimula funções como memória e linguagem, e ajuda a manter a motivação para continuar ativo, se movimentar e manter a vida social — tudo isso reduz a sensação de solidão e de \"inutilidade\" que costuma aparecer depois da aposentadoria.",
+    "A troca vale para os dois lados: enquanto o avô ou avó incorpora novos hábitos e atualiza sua visão de mundo, o neto ganha apoio emocional e acesso a histórias e conhecimento da família. Na prática, o conselho é simples: manter contato frequente, mesmo à distância — uma chamada de vídeo semanal já ajuda, e nem precisa ser todo dia."
+  ],
+  fonte:{ nome:"O Povo", url:"https://mais.opovo.com.br/reportagens-especiais/2026/07/25/avosidade-a-importancia-da-relacao-com-os-netos-para-o-envelhecimento-saudavel.html" }},
+
+{ slug:"companheiros-virtuais-de-ia-ajudam-a-combater-a-solidao-de-idosos",
+  cat:"ia-e-relacoes", data:"2026-07-25",
+  titulo:"Companheiros virtuais de inteligência artificial ajudam a combater a solidão de idosos, mas têm limite",
+  resumo:"Assistentes e robôs de companhia usam inteligência artificial para conversar, lembrar remédio e sugerir jogos — mas especialistas alertam que não substituem contato humano de verdade.",
+  corpo:[
+    "Assistentes de voz e robôs de companhia com inteligência artificial vêm sendo usados como aliados contra a solidão na terceira idade. Eles conversam, contam piada, lembram horário de remédio e de compromisso, e sugerem joguinhos que ajudam a manter a mente ativa.",
+    "Existem também os chamados \"pets robôs\": bichinhos de mentira que reagem a carinho e toque, pensados como alternativa para quem mora sozinho e sente falta de companhia. A ideia por trás de tudo isso é criar uma ponte de comunicação e estímulo social nos momentos de solidão.",
+    "O alerta dos especialistas: conversar com uma inteligência artificial pode até dar a sensação de companhia, mas ela não consegue ter uma conversa profunda sobre sentimentos, nem contar sobre a própria vida. Ou seja, é uma ferramenta de apoio — o contato humano de verdade, com família, amigos e comunidade, continua sendo insubstituível."
+  ],
+  fonte:{ nome:"Brazil Health", url:"https://www.brazilhealth.com/br/geriatria/companheiros-virtuais-como-a-inteligencia-artificial-ajuda-a-combater-a-solidao-entre-idosos" }},
+
+/* ---------- 24 de julho ---------- */
+{ slug:"youtube-apaga-4-7-bilhoes-de-visualizacoes-de-videos-feitos-por-ia",
+  cat:"ia-no-dia-a-dia", data:"2026-07-24",
+  titulo:"YouTube apaga 4,7 bilhões de visualizações de vídeos feitos por inteligência artificial",
+  resumo:"A plataforma derrubou 16 canais que estavam entre os 100 maiores de inteligência artificial e removeu bilhões de visualizações de uma vez.",
+  corpo:[
+    "O YouTube declarou guerra ao que chama de conteúdo descartável feito por inteligência artificial. Na semana passada, a plataforma removeu 4,7 bilhões de visualizações e derrubou 16 canais que estavam no Top 100 de inteligência artificial do site.",
+    "É a maior limpeza já feita pela plataforma nesse tipo de conteúdo. Os canais atingidos publicavam vídeos produzidos quase inteiramente por máquinas, em grande volume e com pouca revisão humana.",
+    "Para quem assiste, a mudança tende a ser positiva: menos vídeos repetidos e genéricos aparecendo na página inicial. Para quem produz, o recado é que usar inteligência artificial não é proibido — o que a plataforma passou a punir é a produção em massa sem cuidado nenhum."
+  ]},
+
+{ slug:"juros-em-14-25-por-cento-mantem-a-renda-fixa-na-frente-da-bolsa",
+  cat:"ia-e-financas", data:"2026-07-24",
+  titulo:"Juros em 14,25% ao ano mantêm a renda fixa na frente da bolsa",
+  resumo:"Com a taxa básica parada em patamar alto, aplicações de renda fixa seguem rendendo mais que a bolsa de valores.",
+  corpo:[
+    "A Selic, que é a taxa básica de juros do país, segue em 14,25% ao ano. Enquanto ela ficar nesse nível, as aplicações de renda fixa continuam sendo a opção mais atrativa em comparação com a bolsa de valores.",
+    "Renda fixa é o tipo de investimento em que você sabe mais ou menos quanto vai receber: Tesouro Direto, CDB de banco, poupança. Bolsa de valores é o oposto — o valor sobe e desce todo dia.",
+    "O ponto de atenção é o outro lado da mesma moeda: juro alto por muito tempo castiga quem está endividado. Quem tem dívida no cartão de crédito ou no cheque especial paga essa conta todo mês."
+  ]},
+
+{ slug:"google-lanca-tres-versoes-do-gemini-e-segura-a-mais-potente",
+  cat:"ferramentas-para-50", data:"2026-07-24",
+  titulo:"Google lança três versões do Gemini, mas segura a mais potente",
+  resumo:"Foram anunciados o Gemini 3.6 Flash, o 3.5 Flash-Lite e o 3.5 Flash Cyber — a versão mais avançada ficou de fora.",
+  corpo:[
+    "O Google colocou no ar três novas versões do seu assistente Gemini: o 3.6 Flash, o 3.5 Flash-Lite e o 3.5 Flash Cyber. A versão mais potente que a empresa tem em mãos não foi liberada.",
+    "As versões chamadas Flash são as mais rápidas e baratas da família. Na prática, são as que costumam chegar primeiro ao usuário comum, dentro dos aplicativos do próprio Google.",
+    "Para quem usa o assistente no dia a dia, a diferença mais sentida costuma ser a velocidade da resposta, não a capacidade de raciocínio."
+  ]},
+
+{ slug:"kimi-k3-e-o-maior-modelo-aberto-do-mundo",
+  cat:"ia-no-dia-a-dia", data:"2026-07-24",
+  titulo:"Empresa chinesa lança o maior sistema de inteligência artificial aberto do mundo",
+  resumo:"A Moonshot AI apresentou o Kimi K3, com 2,8 trilhões de parâmetros e capacidade de ler o equivalente a um livro inteiro de uma vez.",
+  corpo:[
+    "A empresa chinesa Moonshot AI lançou o Kimi K3, que passa a ser o maior sistema de inteligência artificial aberto do mundo, com 2,8 trilhões de parâmetros.",
+    "Sistema aberto quer dizer que qualquer pessoa ou empresa pode baixar e usar sem pedir permissão ao dono. É o contrário do que fazem o ChatGPT e o Gemini, que só funcionam pelo site ou aplicativo da empresa.",
+    "O Kimi K3 também trabalha com uma janela de contexto de 1 milhão de tokens — em português claro, ele consegue ler e considerar o equivalente a um livro inteiro de uma vez só, sem esquecer o começo."
+  ]},
+
+{ slug:"dolar-recua-para-perto-de-5-reais-e-10-centavos",
+  cat:"ia-e-financas", data:"2026-07-24",
+  titulo:"Dólar recua para perto de R$ 5,10 com alívio na inflação",
+  resumo:"A moeda americana caiu para a faixa de R$ 5,09 a R$ 5,10, refletindo dados de inflação mais fracos que o esperado.",
+  corpo:[
+    "O dólar recuou para perto de R$ 5,09 a R$ 5,10 nesta semana. O movimento acompanha o alívio nos dados de inflação, que vieram mais fracos do que o mercado esperava.",
+    "O Boletim Focus, que reúne as previsões dos bancos, reduziu a projeção de inflação de 2026 de 5,16% para 5,15% — uma queda pequena, e ainda bem acima da meta oficial.",
+    "Dólar mais barato tende a segurar o preço de produtos importados e a baratear viagens ao exterior."
+  ]},
+
+{ slug:"o-que-vence-agora-nao-e-a-melhor-inteligencia-artificial-e-a-mais-barata",
+  cat:"ia-no-dia-a-dia", data:"2026-07-24",
+  titulo:"O que vence agora não é a melhor inteligência artificial, é a mais barata",
+  resumo:"O mercado está deixando de perguntar qual sistema é o mais inteligente e passando a perguntar qual entrega mais pelo preço.",
+  corpo:[
+    "Durante anos a disputa entre as empresas de inteligência artificial foi sobre quem tinha o sistema mais capaz. Isso está mudando.",
+    "O mercado migrou da lógica de que o melhor modelo vence para a lógica de que o melhor custo-benefício vence. Preço e velocidade passaram a pesar tanto quanto o desempenho puro.",
+    "Para o usuário comum, é uma boa notícia: significa que ferramentas boas tendem a ficar mais baratas e mais rápidas, em vez de mais caras."
+  ]},
+
+{ slug:"bolsa-oscila-perto-dos-178-mil-pontos-com-aposta-em-corte-de-juros",
+  cat:"ia-e-financas", data:"2026-07-24",
+  titulo:"Bolsa oscila perto dos 178 mil pontos com aposta em corte de juros",
+  resumo:"O Ibovespa se manteve entre 174 e 178 mil pontos, sustentado pela expectativa de que os juros caiam na reunião de agosto.",
+  corpo:[
+    "O Ibovespa, principal índice da bolsa brasileira, ficou oscilando entre 174 mil e 178 mil pontos na semana. A alta veio da aposta de que o Banco Central vai cortar os juros na reunião do Copom de agosto.",
+    "O gatilho foi o índice de inflação mais fraco que o esperado. Inflação menor abre espaço para juros menores.",
+    "Vale lembrar o que está por trás: a bolsa comemora um dado que, na origem, é sinal de economia desacelerando."
+  ]},
+
+{ slug:"bitcoin-anda-de-lado-entre-64-e-66-mil-dolares",
+  cat:"ia-e-financas", data:"2026-07-24",
+  titulo:"Bitcoin anda de lado entre US$ 64 mil e US$ 66 mil",
+  resumo:"A moeda digital passou a semana sem tendência definida, em consolidação na faixa dos 64 a 66 mil dólares.",
+  corpo:[
+    "O Bitcoin passou a semana em consolidação lateral, na faixa de US$ 64 mil a US$ 66 mil. Consolidação lateral é o jeito do mercado dizer que o preço ficou andando de lado, sem subir nem cair de forma clara.",
+    "Não houve tendência definida no período. Depois de semanas de oscilação forte, o movimento parado costuma indicar que compradores e vendedores estão em equilíbrio."
+  ]},
+
+{ slug:"governo-mantem-previsao-de-crescimento-de-2-3-por-cento-para-2026",
+  cat:"ia-e-financas", data:"2026-07-24",
+  titulo:"Governo mantém previsão de crescimento de 2,3% para 2026",
+  resumo:"O Boletim Macrofiscal da Fazenda confirmou a estimativa de crescimento da economia brasileira neste ano.",
+  corpo:[
+    "O Boletim Macrofiscal do Ministério da Fazenda manteve em 2,3% a previsão de crescimento do PIB brasileiro em 2026. O PIB é a soma de tudo o que o país produz.",
+    "Manter a previsão significa que, na visão do governo, nada de muito diferente aconteceu para melhor ou para pior nos últimos meses."
+  ]},
+
+{ slug:"previsao-de-inflacao-para-2027-sobe-e-sinaliza-juro-alto-por-mais-tempo",
+  cat:"ia-e-financas", data:"2026-07-24",
+  titulo:"Previsão de inflação para 2027 sobe e sinaliza juro alto por mais tempo",
+  resumo:"Mesmo com 2026 moderando, a projeção para o ano seguinte subiu — sinal de que o Banco Central não deve afrouxar tão cedo.",
+  corpo:[
+    "A projeção de inflação para 2027 subiu no Boletim Focus, mesmo com os números de 2026 dando sinais de moderação.",
+    "É um sinal relevante: indica que o Copom, o comitê que define os juros, não deve tirar o pé do freio tão cedo. Ou seja, juro alto por mais tempo.",
+    "Esse cenário penaliza quem está endividado e favorece quem tem dinheiro guardado em renda fixa."
+  ]},
+
+/* ---------- 17 de julho ---------- */
+{ slug:"dolar-cai-a-5-07-menor-valor-desde-junho",
+  cat:"ia-e-financas", data:"2026-07-17",
+  titulo:"Dólar cai a R$ 5,07, menor valor desde junho",
+  resumo:"A moeda americana chegou ao menor patamar desde 15 de junho e acumula queda de 7,56% no ano frente ao real.",
+  corpo:[
+    "O dólar caiu a R$ 5,07, o menor patamar desde 15 de junho. No ano, a moeda americana acumula queda de 7,56% frente ao real.",
+    "O que derrubou a moeda foi o dado de inflação dos Estados Unidos, chamado de CPI, que veio mais fraco do que o esperado.",
+    "Para o bolso do brasileiro, dólar fraco é boa notícia em duas frentes: segura o preço de produtos importados e barateia viagens internacionais."
+  ]},
+
+{ slug:"bolsa-chega-perto-dos-178-mil-pontos-apos-inflacao-americana-fraca",
+  cat:"ia-e-financas", data:"2026-07-17",
+  titulo:"Bolsa chega perto dos 178 mil pontos após inflação americana fraca",
+  resumo:"Na terça-feira, 14 de julho, o Ibovespa fechou a 176.641 pontos, alta de 0,51% no dia.",
+  corpo:[
+    "O Ibovespa chegou perto dos 178 mil pontos ao longo da semana. Na terça-feira, 14 de julho, fechou a 176.641 pontos, alta de 0,51%.",
+    "O impulso veio dos dados de inflação dos Estados Unidos, que vieram abaixo do esperado.",
+    "A semana também foi marcada pela divulgação dos balanços dos grandes bancos americanos — JPMorgan, Bank of America e Citigroup."
+  ]},
+
+{ slug:"juros-mantidos-em-14-25-com-aposta-de-corte-em-agosto",
+  cat:"ia-e-financas", data:"2026-07-17",
+  titulo:"Juros mantidos em 14,25% com aposta de corte em agosto",
+  resumo:"A Selic ficou parada, mas a inflação americana mais fraca reforçou a expectativa de um corte de 0,25 ponto na reunião de 4 e 5 de agosto.",
+  corpo:[
+    "A Selic foi mantida em 14,25% ao ano. Mas o dado de inflação dos Estados Unidos, abaixo do esperado, reforçou as apostas de um corte de 0,25 ponto percentual na próxima reunião do Copom, marcada para 4 e 5 de agosto.",
+    "Ponto percentual é diferente de porcentagem: cortar 0,25 ponto significa que a taxa passaria de 14,25% para 14% ao ano."
+  ]},
+
+{ slug:"bitcoin-fica-entre-62-mil-e-63-mil-dolares-na-semana",
+  cat:"ia-e-financas", data:"2026-07-17",
+  titulo:"Bitcoin fica entre US$ 62 mil e US$ 63 mil na semana",
+  resumo:"A moeda digital subiu 2,58% na semana e analistas lembram que o terceiro trimestre costuma trazer ganhos de cerca de 6%.",
+  corpo:[
+    "O Bitcoin negociou entre US$ 62.300 e US$ 62.800 ao longo da semana, com alta de 2,58% no período. Foi um movimento lateral, depois da recuperação das semanas anteriores.",
+    "Analistas apontam que o terceiro trimestre do ano historicamente traz ganhos de cerca de 6% para a moeda. Vale lembrar que comportamento passado não garante repetição."
+  ]},
+
+{ slug:"tres-inteligencias-artificiais-de-ponta-lancadas-em-menos-de-48-horas",
+  cat:"ia-no-dia-a-dia", data:"2026-07-17",
+  titulo:"Três inteligências artificiais de ponta foram lançadas em menos de 48 horas",
+  resumo:"Grok 4.5, GPT-5.6 e Meta Muse Spark 1.1 saíram quase juntos — a corrida entre as empresas está acelerando.",
+  corpo:[
+    "Foi uma semana histórica: três sistemas de inteligência artificial de ponta foram lançados em menos de 48 horas.",
+    "O Grok 4.5, da empresa xAI, chegou em 8 de julho com destaque para programação e menor consumo de recursos. O GPT-5.6, da OpenAI, ficou disponível ao público geral em 9 de julho. E o Meta Muse Spark 1.1 estreou no mesmo dia.",
+    "A tendência é clara: a corrida entre as empresas de inteligência artificial está se intensificando, com lançamentos cada vez mais próximos uns dos outros."
+  ]},
+
+{ slug:"meta-lanca-seu-primeiro-criador-de-imagens-por-inteligencia-artificial",
+  cat:"ferramentas-para-50", data:"2026-07-17",
+  titulo:"Meta lança seu primeiro criador de imagens por inteligência artificial",
+  resumo:"O Meta Muse Image cria e edita imagens a partir de uma descrição escrita em linguagem comum.",
+  corpo:[
+    "A Meta, dona do Facebook, do Instagram e do WhatsApp, lançou o Muse Image, seu primeiro sistema de geração de imagens.",
+    "A ferramenta cria e edita imagens por linguagem natural. Isso quer dizer que você escreve o que quer ver com suas próprias palavras — como se estivesse pedindo a um desenhista — e a imagem aparece.",
+    "É a entrada da Meta em um campo onde já atuam outras empresas há alguns anos."
+  ]},
+
+{ slug:"google-video-remix-edita-videos-curtos-dentro-do-google-fotos",
+  cat:"ferramentas-para-50", data:"2026-07-17",
+  titulo:"Google passa a editar vídeos curtos dentro do Google Fotos",
+  resumo:"O Video Remix ajusta iluminação, fundo e efeitos de clipes de 10 segundos usando o assistente Gemini.",
+  corpo:[
+    "O Google liberou o Video Remix para assinantes dos planos AI Plus, Pro e Ultra. A ferramenta funciona dentro do Google Fotos, aplicativo que muita gente já usa para guardar fotos do celular.",
+    "Ela edita clipes de até 10 segundos, ajustando iluminação, fundo e efeitos. Tudo isso é feito pelo assistente Gemini, sem precisar aprender um programa de edição.",
+    "É o tipo de recurso que aproxima a edição de vídeo de quem nunca editou nada na vida."
+  ]},
+
+{ slug:"meta-muse-spark-controla-o-computador-sozinho",
+  cat:"ia-no-dia-a-dia", data:"2026-07-17",
+  titulo:"Novo sistema da Meta consegue usar o computador sozinho",
+  resumo:"O Muse Spark 1.1 foi feito para agentes autônomos e uso de computador, com capacidade de ler o equivalente a um livro inteiro.",
+  corpo:[
+    "O Meta Muse Spark 1.1 estreou com foco em agentes autônomos e uso de computador. Agente autônomo é um programa que executa tarefas do começo ao fim sem alguém acompanhando cada passo.",
+    "Uso de computador significa que o sistema consegue mexer no computador como uma pessoa mexeria: abrir programas, clicar, preencher campos.",
+    "O sistema trabalha com janela de contexto de 1 milhão de tokens — consegue considerar o equivalente a um livro inteiro de informação de uma vez."
+  ]},
+
+{ slug:"grok-4-5-chega-com-foco-em-programacao-e-menor-consumo",
+  cat:"ia-no-dia-a-dia", data:"2026-07-17",
+  titulo:"Grok 4.5 chega com foco em programação e menor consumo",
+  resumo:"O sistema da xAI foi lançado em 8 de julho com destaque para código e uso mais econômico de recursos.",
+  corpo:[
+    "A xAI, empresa ligada à SpaceX, lançou o Grok 4.5 em 8 de julho.",
+    "Os destaques apontados foram o desempenho em programação e o menor uso de tokens. Token é a unidade que as empresas usam para cobrar pelo uso — gastar menos token significa custo menor para quem usa a ferramenta com frequência."
+  ]},
+
+{ slug:"inflacao-deve-dar-uma-acelerada-em-julho-por-conta-de-luz-e-passagem-aerea",
+  cat:"ia-e-financas", data:"2026-07-17",
+  titulo:"Inflação deve dar uma acelerada em julho por causa de luz e passagem aérea",
+  resumo:"Habitação e transportes devem pressionar o índice do mês, depois de um junho com alta de apenas 0,16%.",
+  corpo:[
+    "O IPCA de junho, que é o índice oficial de inflação, ficou em 0,16%. No acumulado de 12 meses está em 4,64% e, no ano de 2026, em 3,36%.",
+    "Para julho, a expectativa é de uma leve reaceleração. As pressões vêm de dois grupos: Habitação, com condomínio e energia elétrica, e Transportes, com passagens aéreas.",
+    "Do lado positivo, a projeção do Boletim Focus para a inflação de 2026 caiu de 5,33% para 5,30%, ajudada pela queda do petróleo e pelo alívio no Oriente Médio."
+  ]},
+
+{ slug:"tesouro-ipca-e-cdb-seguem-como-opcao-solida-com-juro-alto",
+  cat:"ia-e-financas", data:"2026-07-17",
+  titulo:"Tesouro IPCA+ e CDB seguem como opção sólida com juro alto",
+  resumo:"Com a Selic ainda elevada, títulos que acompanham a inflação continuam entre as escolhas mais seguras para pessoa física.",
+  corpo:[
+    "Com a Selic ainda em patamar elevado, o Tesouro IPCA+ e os CDBs atrelados ao CDI continuam sendo opções sólidas para quem investe.",
+    "O Tesouro IPCA+ é um título do governo que paga a inflação do período mais uma taxa fixa por cima. Na prática, protege o poder de compra do seu dinheiro.",
+    "O CDB é um empréstimo que você faz ao banco e recebe de volta com juros. Atrelado ao CDI significa que ele acompanha de perto a taxa básica."
+  ]},
+
+/* ---------- 10 de julho ---------- */
+{ slug:"banco-central-corta-os-juros-de-14-5-para-14-25",
+  cat:"ia-e-financas", data:"2026-07-10",
+  titulo:"Banco Central corta os juros de 14,50% para 14,25%",
+  resumo:"O Copom reduziu a taxa básica e o mercado já projeta novo corte de 0,25 ponto em agosto.",
+  corpo:[
+    "O Copom, comitê do Banco Central que define os juros, cortou a Selic de 14,50% para 14,25% ao ano.",
+    "O mercado já precifica um novo corte de 0,25 ponto percentual na reunião de agosto. Precificar é o jargão para dizer que os investidores já estão agindo como se o corte fosse acontecer.",
+    "Selic em queda mantém a renda fixa atrativa, mas pressiona o retorno de quem deixa o dinheiro parado acompanhando apenas o CDI."
+  ]},
+
+{ slug:"chatgpt-work-monta-planilha-apresentacao-e-site-sozinho",
+  cat:"ferramentas-para-50", data:"2026-07-10",
+  titulo:"Novo ChatGPT monta planilha, apresentação e site sozinho",
+  resumo:"O ChatGPT Work é um assistente para tarefas longas: cria planilhas, apresentações, sites e documentos do começo ao fim.",
+  corpo:[
+    "A OpenAI lançou o ChatGPT Work, um assistente feito para tarefas longas em vez de perguntas rápidas.",
+    "Ele cria planilhas, apresentações, sites e documentos de forma autônoma — ou seja, você descreve o que precisa e ele executa o trabalho inteiro, sem pedir instrução a cada passo.",
+    "É uma mudança de uso importante: sai o modelo de pergunta e resposta, entra o modelo de pedir um trabalho pronto."
+  ]},
+
+{ slug:"gpt-5-6-vira-o-chatgpt-padrao-e-tem-tres-versoes",
+  cat:"ferramentas-para-50", data:"2026-07-10",
+  titulo:"GPT-5.6 vira o ChatGPT padrão e chega em três versões",
+  resumo:"Lançado em 9 de julho, o novo sistema da OpenAI tem as versões Sol, Terra e Luna, com preços diferentes entre si.",
+  corpo:[
+    "O GPT-5.6 foi lançado em 9 de julho e passou a ser o modelo padrão do ChatGPT. A família tem três versões: Sol, Terra e Luna.",
+    "O sistema é mais capaz em programação, biologia e segurança digital do que a geração anterior.",
+    "Os preços variam bastante entre as versões: Luna custa 1 dólar por milhão de tokens de entrada e 6 de saída; Terra, 2,50 e 15; Sol, a mais potente, 5 e 30. Para quem usa pelo aplicativo comum, isso não muda nada — só afeta quem programa usando o sistema."
+  ]},
+
+{ slug:"claude-sonnet-5-se-destaca-em-fidelidade-de-voz",
+  cat:"ferramentas-para-50", data:"2026-07-10",
+  titulo:"Claude Sonnet 5 se destaca em fidelidade de voz e instruções complexas",
+  resumo:"Lançado em 30 de junho, o sistema chama atenção por manter o tom de escrita pedido e seguir ordens detalhadas.",
+  corpo:[
+    "O Claude Sonnet 5, lançado em 30 de junho, se destaca por dois pontos: fidelidade de voz e capacidade de seguir instruções complexas.",
+    "Fidelidade de voz significa que ele mantém o jeito de escrever que você pediu, sem escorregar para um tom genérico ao longo do texto.",
+    "O sistema trabalha com 1 milhão de tokens de contexto e custa 2 dólares por milhão de tokens de entrada e 10 de saída."
+  ]},
+
+{ slug:"claude-fable-5-retoma-a-lideranca-em-programacao",
+  cat:"ia-no-dia-a-dia", data:"2026-07-10",
+  titulo:"Claude Fable 5 retoma a liderança em programação",
+  resumo:"O sistema alcançou 80,3% no teste SWE-Bench Pro depois que os Estados Unidos derrubaram a restrição de exportação.",
+  corpo:[
+    "O Claude Fable 5 voltou à liderança em programação, com 80,3% de acerto no SWE-Bench Pro, um dos testes mais respeitados da área.",
+    "A retomada aconteceu depois que os Estados Unidos levantaram a restrição de exportação que limitava o acesso ao sistema.",
+    "Vale a ressalva: testes de referência medem tarefas controladas e nem sempre refletem o uso do dia a dia."
+  ]},
+
+{ slug:"meta-e-xai-lancam-modelos-na-mesma-semana",
+  cat:"ia-no-dia-a-dia", data:"2026-07-10",
+  titulo:"Meta e xAI lançam novos sistemas na mesma semana",
+  resumo:"Foi uma semana histórica, com vários lançamentos de peso acontecendo praticamente ao mesmo tempo.",
+  corpo:[
+    "Meta e xAI lançaram novos sistemas de inteligência artificial na mesma semana em que a OpenAI liberou o GPT-5.6.",
+    "Foi uma semana histórica pela quantidade de lançamentos simultâneos de empresas grandes.",
+    "Quando várias empresas lançam ao mesmo tempo, costuma ser sinal de que todas estavam esperando a primeira dar o passo."
+  ]},
+
+{ slug:"nvidia-cria-sistema-que-escreve-mais-de-duas-vezes-mais-rapido",
+  cat:"ia-no-dia-a-dia", data:"2026-07-10",
+  titulo:"NVIDIA cria sistema que escreve mais de duas vezes mais rápido",
+  resumo:"O Nemotron-Labs-TwoTower gera texto em paralelo com 2,42 vezes mais velocidade, mantendo 98,7% da qualidade.",
+  corpo:[
+    "A NVIDIA apresentou o Nemotron-Labs-TwoTower, um sistema aberto que gera texto em paralelo.",
+    "O ganho é de 2,42 vezes mais velocidade, mantendo 98,7% da qualidade original. Em outras palavras: mais que o dobro da velocidade, perdendo pouco mais de 1% de qualidade.",
+    "Velocidade importa mais do que parece — é ela que determina se um assistente responde na hora ou deixa você esperando."
+  ]},
+
+{ slug:"gpt-5-6-e-mais-capaz-em-biologia-e-seguranca",
+  cat:"ia-e-saude", data:"2026-07-10",
+  titulo:"Nova geração do ChatGPT fica mais capaz em biologia",
+  resumo:"O GPT-5.6 avançou em três frentes: programação, biologia e segurança digital — a área da saúde é uma das mais afetadas.",
+  corpo:[
+    "O GPT-5.6, lançado pela OpenAI em 9 de julho, chegou mais capaz em três frentes específicas: codificação, biologia e cibersegurança.",
+    "O avanço em biologia é o que mais interessa a quem acompanha saúde. Sistemas melhores nessa área ajudam pesquisadores a analisar dados de estudos, entender proteínas e acelerar etapas de pesquisa.",
+    "É importante separar as coisas: um sistema ser bom em biologia não significa que ele deva ser usado para diagnóstico ou para decidir tratamento. Isso continua sendo trabalho de médico."
+  ]},
+
+{ slug:"tokenizacao-de-ativos-no-brasil-capta-quase-9-milhoes-em-julho",
+  cat:"ia-e-financas", data:"2026-07-10",
+  titulo:"Tokenização de ativos no Brasil capta quase R$ 9 milhões em julho",
+  resumo:"O setor de ativos digitais segue crescendo no país, com captação relevante logo no começo do mês.",
+  corpo:[
+    "A tokenização de ativos no Brasil captou quase R$ 9 milhões em julho, sinal de crescimento do setor de ativos digitais no país.",
+    "Tokenizar um ativo é transformar algo do mundo real — um imóvel, um contrato, uma safra — em pedacinhos digitais que podem ser comprados e vendidos pela internet.",
+    "É um mercado novo no Brasil e ainda pequeno perto dos investimentos tradicionais."
+  ]},
+
+{ slug:"bitcoin-sobe-e-volta-aos-64-mil-dolares",
+  cat:"ia-e-financas", data:"2026-07-10",
+  titulo:"Bitcoin sobe 2% e volta aos US$ 64 mil",
+  resumo:"A moeda digital tenta se recuperar após uma queda de 20% no período anterior — o equivalente a R$ 331.570.",
+  corpo:[
+    "O Bitcoin subiu cerca de 2% e voltou a negociar em torno de US$ 64 mil, o equivalente a R$ 331.570.",
+    "O movimento é uma tentativa de recuperação depois de uma queda de 20% no período anterior.",
+    "Oscilações desse tamanho são comuns nesse mercado — o que explica por que ele não é indicado para reserva de emergência."
+  ]},
+
+{ slug:"inflacao-de-junho-fica-em-0-16-por-cento",
+  cat:"ia-e-financas", data:"2026-07-10",
+  titulo:"Inflação de junho fica em 0,16% e desacelera",
+  resumo:"O acumulado de 12 meses caiu para 4,64% e a previsão para o ano recuou de 5,33% para 5,30%.",
+  corpo:[
+    "O IPCA de junho ficou em 0,16%, com o acumulado de 12 meses em 4,64%. A inflação está desacelerando.",
+    "A expectativa do Boletim Focus para 2026 caiu de 5,33% para 5,30%. A queda do petróleo, ligada à possibilidade de fim do conflito no Oriente Médio, ajuda no processo.",
+    "Dólar mais fraco também reduz a pressão de inflação vinda de produtos importados."
+  ]},
+
+{ slug:"bolsa-fecha-a-semana-no-maior-patamar-desde-junho",
+  cat:"ia-e-financas", data:"2026-07-10",
+  titulo:"Bolsa fecha a semana no maior patamar desde junho",
+  resumo:"O Ibovespa encerrou a 174.070 pontos, com alta de 0,74% na sexta-feira e acúmulo de 8,03% no ano.",
+  corpo:[
+    "O Ibovespa encerrou a semana positivo, a 174.070 pontos. Foram 0,74% de alta na sexta-feira e 0,45% no acumulado da semana.",
+    "É o maior fechamento desde junho. No ano, o índice acumula alta de 8,03%.",
+    "No mesmo período, o dólar recuou para a faixa de R$ 5,13 a R$ 5,16, acumulando queda de 5,83% frente ao real em 2026."
+  ]},
+
+{ slug:"tesouro-direto-segue-como-protecao-para-pessoa-fisica",
+  cat:"ia-e-financas", data:"2026-07-10",
+  titulo:"Tesouro Direto segue como proteção para quem investe pouco",
+  resumo:"Títulos ligados à inflação e à Selic continuam entre as opções mais relevantes para o investidor pessoa física.",
+  corpo:[
+    "O Tesouro Direto indexado ao IPCA e à Selic continua como proteção relevante para pessoa física — ou seja, para quem investe o próprio dinheiro, sem ser empresa.",
+    "Indexado ao IPCA quer dizer que o título acompanha a inflação. Indexado à Selic quer dizer que acompanha a taxa básica de juros.",
+    "A vantagem do Tesouro Direto é o valor de entrada baixo: dá para começar com pouco dinheiro."
+  ]},
+
+/* ---------- 4 de julho ---------- */
+{ slug:"claude-science-conecta-pesquisadores-a-mais-de-60-bases-cientificas",
+  cat:"ia-e-saude", data:"2026-07-04",
+  titulo:"Nova ferramenta conecta pesquisadores de saúde a mais de 60 bases científicas",
+  resumo:"O Claude Science é um espaço de trabalho para quem pesquisa biologia e química, com acesso direto a bases de dados científicas.",
+  corpo:[
+    "A Anthropic lançou o Claude Science, um espaço de trabalho voltado para pesquisadores de biologia e química.",
+    "A ferramenta se conecta a mais de 60 bases científicas. Na prática, isso significa que o pesquisador consegue consultar estudos e dados de várias fontes sem sair do mesmo lugar.",
+    "O impacto para a saúde é indireto, mas real: quanto mais rápido pesquisadores conseguem cruzar informação, mais rápido tende a andar o desenvolvimento de tratamentos e medicamentos."
+  ]},
+
+{ slug:"anthropic-volta-a-liberar-acesso-apos-fim-do-bloqueio-americano",
+  cat:"ia-no-dia-a-dia", data:"2026-07-04",
+  titulo:"Empresa volta a liberar acesso após fim do bloqueio americano",
+  resumo:"O acesso ao Fable 5 e ao Mythos 5 foi restaurado em 1º de julho, depois que a restrição de exportação dos EUA terminou em 30 de junho.",
+  corpo:[
+    "A Anthropic voltou a liberar o acesso aos sistemas Fable 5 e Mythos 5. O bloqueio de exportação imposto pelos Estados Unidos foi encerrado em 30 de junho, e o acesso foi restaurado a partir de 1º de julho.",
+    "Restrição de exportação é uma regra do governo americano que impede que certas tecnologias sejam vendidas ou disponibilizadas fora do país.",
+    "Episódios assim mostram como decisões de governo afetam diretamente quais ferramentas ficam disponíveis para você."
+  ]},
+
+{ slug:"agentes-autonomos-comecam-a-assumir-trabalho-de-verdade",
+  cat:"ia-no-dia-a-dia", data:"2026-07-04",
+  titulo:"Programas que trabalham sozinhos começam a assumir tarefas de verdade",
+  resumo:"A tendência dominante deixou de ser experimento: agentes autônomos já estão dentro de fluxos reais de trabalho.",
+  corpo:[
+    "A tendência dominante no setor passou a ser a dos agentes autônomos assumindo fluxos reais de trabalho. Menos experimento, mais produção.",
+    "Agente autônomo é um programa que recebe um objetivo e executa todos os passos sozinho, sem alguém dizendo o que fazer a cada etapa.",
+    "A diferença em relação aos últimos anos é que isso saiu das demonstrações e entrou no trabalho do dia a dia de empresas."
+  ]},
+
+{ slug:"google-lanca-assistente-pessoal-e-oculos-inteligentes",
+  cat:"ferramentas-para-50", data:"2026-07-04",
+  titulo:"Google lança assistente pessoal e óculos inteligentes",
+  resumo:"Foram apresentados o Gemini 3.5 Flash, o agente pessoal Gemini Spark e óculos inteligentes feitos com Samsung e Qualcomm.",
+  corpo:[
+    "O Google apresentou três novidades: o Gemini 3.5 Flash, o agente pessoal Gemini Spark e óculos inteligentes desenvolvidos em parceria com Samsung e Qualcomm.",
+    "O Gemini Spark é um assistente pessoal — a proposta é que ele cuide de tarefas suas ao longo do dia, e não apenas responda perguntas.",
+    "Os óculos inteligentes são a aposta da empresa em colocar o assistente no campo de visão do usuário, sem precisar pegar o celular."
+  ]},
+
+{ slug:"openai-anuncia-familia-gpt-5-6-com-acesso-restrito",
+  cat:"ferramentas-para-50", data:"2026-07-04",
+  titulo:"OpenAI anuncia o GPT-5.6 com acesso restrito a 20 parceiros",
+  resumo:"A família Sol, Terra e Luna foi anunciada antes da liberação geral; a versão Sol supera a concorrência em programação.",
+  corpo:[
+    "A OpenAI anunciou a família GPT-5.6, formada pelas versões Sol, Terra e Luna. No anúncio, o acesso ainda estava restrito a cerca de 20 parceiros.",
+    "A versão Sol, a mais potente, supera o Mythos 5 em testes de programação.",
+    "O lançamento para o público geral aconteceria poucos dias depois, em 9 de julho."
+  ]},
+
+{ slug:"renda-fixa-atrativa-com-juros-em-13-5-por-cento",
+  cat:"ia-e-financas", data:"2026-07-04",
+  titulo:"Renda fixa segue atrativa e casas recomendam mistura de títulos",
+  resumo:"Com os juros elevados, a recomendação para julho é combinar títulos públicos com crédito privado.",
+  corpo:[
+    "A renda fixa segue atrativa com a Selic em patamar elevado. Para julho, a XP recomendou uma combinação de títulos públicos com crédito privado.",
+    "Título público é dinheiro emprestado ao governo — o Tesouro Direto é o exemplo mais conhecido. Crédito privado é dinheiro emprestado a empresas, que costuma pagar mais e ter risco maior.",
+    "A ideia de misturar os dois é equilibrar segurança e retorno em vez de apostar tudo em um lado só."
+  ]},
+
+{ slug:"fundo-imobiliario-de-galpoes-eleva-dividendos-ao-maior-nivel-em-um-ano",
+  cat:"ia-e-financas", data:"2026-07-04",
+  titulo:"Fundo imobiliário de galpões eleva pagamentos ao maior nível em um ano",
+  resumo:"O BRCO11 aumentou os dividendos e trouxe os fundos de galpões logísticos de volta ao radar dos investidores.",
+  corpo:[
+    "O fundo imobiliário BRCO11 elevou seus dividendos ao maior nível em um ano. Com isso, os fundos de galpões logísticos voltaram ao radar dos investidores.",
+    "Fundo imobiliário é uma forma de investir em imóveis sem comprar um imóvel: você compra cotas e recebe uma parte dos aluguéis todo mês.",
+    "Galpão logístico é o tipo de imóvel usado por empresas de entrega e comércio eletrônico para armazenar produtos."
+  ]},
+
+{ slug:"brasileiros-diversificam-mais-os-investimentos",
+  cat:"ia-e-financas", data:"2026-07-04",
+  titulo:"Brasileiros estão diversificando mais os investimentos",
+  resumo:"As fintechs seguem crescendo e os investimentos sustentáveis ganham espaço na carteira do investidor comum.",
+  corpo:[
+    "Os brasileiros estão diversificando mais seus investimentos. As fintechs — empresas de tecnologia que oferecem serviços financeiros — seguem crescendo, e os investimentos sustentáveis estão em alta.",
+    "Diversificar é o nome técnico para não colocar todo o dinheiro em um lugar só.",
+    "Com a inflação sob controle, perto de 4%, sobra mais espaço para planejamento de longo prazo."
+  ]},
+
+{ slug:"producao-industrial-mais-fraca-reforca-aposta-em-corte-de-juros",
+  cat:"ia-e-financas", data:"2026-07-04",
+  titulo:"Produção industrial mais fraca reforça aposta em corte de juros",
+  resumo:"O dado ruim de maio animou a bolsa: economia desacelerando aumenta a chance de o Banco Central baixar os juros.",
+  corpo:[
+    "A produção industrial mais fraca em maio reforçou as apostas de corte de juros — e a bolsa reagiu bem ao dado.",
+    "A lógica é a seguinte: quando a economia desacelera, a inflação tende a ceder, e o Banco Central ganha espaço para baixar os juros. Juros menores costumam favorecer a bolsa.",
+    "Na época, o mercado apostava em corte de 0,25 ponto em agosto, com a projeção para o fim do ano em 13,50%."
+  ]},
+
+{ slug:"bolsa-tem-maior-fechamento-desde-junho-com-dolar-em-queda",
+  cat:"ia-e-financas", data:"2026-07-04",
+  titulo:"Bolsa tem maior fechamento desde junho e dólar cai a R$ 5,16",
+  resumo:"O Ibovespa fechou a 174.070 pontos e o real se fortaleceu com o apetite dos investidores por países emergentes.",
+  corpo:[
+    "O Ibovespa fechou a semana em alta, aos 174.070 pontos — alta de 0,45% na semana e de 8,03% no ano. Foi o maior fechamento desde junho.",
+    "O dólar caiu para R$ 5,168, acumulando queda de 5,83% no ano. O real se fortaleceu com o apetite dos investidores por países emergentes.",
+    "Emergente é como o mercado chama países em desenvolvimento, como o Brasil. Quando os investidores estrangeiros ficam mais dispostos a arriscar, esses países recebem mais dinheiro."
+  ]}
+];
+
+/* ============================================================
+   3) FERRAMENTAS
+   ============================================================ */
+const MESES = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+const MESES_LONGO = ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
+
+function dataCurta(iso){
+  const [a,m,d] = iso.split("-").map(Number);
+  return d + " " + MESES[m-1] + " " + a;
+}
+function dataLonga(iso){
+  const [a,m,d] = iso.split("-").map(Number);
+  return d + " de " + MESES_LONGO[m-1] + " de " + a;
+}
+function esc(s){
+  return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+}
+const MARCAS = new RegExp("[\u0300-\u036f]","g");
+function semAcento(s){
+  return s.normalize("NFD").replace(MARCAS,"").toLowerCase();
+}
+function digito(txt){
+  let h = 0;
+  for(let i=0;i<txt.length;i++){ h = (h*31 + txt.charCodeAt(i)) >>> 0; }
+  return h;
+}
+
+/* ---- imagem do artigo: foto real por editoria ----
+   Uma foto de banco gratuito (Pexels, licença livre, sem atribuição
+   obrigatória) por editoria, reaproveitada em todas as notícias dela.
+   Se a foto falhar ao carregar (ex: sem internet), cai de volta no
+   padrão geométrico em SVG — por isso o site nunca fica com buraco. */
+const FOTO_EDITORIA = {
+  "ia-e-financas":       "https://images.pexels.com/photos/6975184/pexels-photo-6975184.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "ia-no-dia-a-dia":     "https://images.pexels.com/photos/7331674/pexels-photo-7331674.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "ferramentas-para-50": "https://images.pexels.com/photos/6248437/pexels-photo-6248437.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "ia-e-saude":          "https://images.pexels.com/photos/8376236/pexels-photo-8376236.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "ia-e-relacoes":       "https://images.pexels.com/photos/8769743/pexels-photo-8769743.jpeg?auto=compress&cs=tinysrgb&w=1200"
+};
+/* Regra a partir de 25/07: toda "captação de notícias" nova busca 6 fotos
+   diferentes, uma por notícia, relacionadas ao assunto específico dela —
+   nunca reaproveitando a mesma foto entre notícias da mesma leva.
+   FOTO_EDITORIA acima é só o reserva de categoria para as notícias antigas
+   do protótipo que ainda não passaram por essa curadoria (pendente). */
+const FOTO_NOTICIA = {
+  "gpt-5-6-e-mais-capaz-em-biologia-e-seguranca":
+    "https://images.pexels.com/photos/8442110/pexels-photo-8442110.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "claude-science-conecta-pesquisadores-a-mais-de-60-bases-cientificas":
+    "https://images.pexels.com/photos/9574543/pexels-photo-9574543.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "videos-falsos-de-medicos-feitos-por-ia-colocam-idosos-em-risco":
+    "https://images.pexels.com/photos/8413300/pexels-photo-8413300.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "relogios-com-ia-passam-a-vigiar-a-saude-de-quem-e-50-mais":
+    "https://images.pexels.com/photos/19961771/pexels-photo-19961771.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "avosidade-a-relacao-com-os-netos-ajuda-no-envelhecimento-saudavel":
+    "https://images.pexels.com/photos/8317710/pexels-photo-8317710.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "companheiros-virtuais-de-ia-ajudam-a-combater-a-solidao-de-idosos":
+    "https://images.pexels.com/photos/6874442/pexels-photo-6874442.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "inflacao-prevista-cai-para-5-15-por-cento-e-dolar-recua-a-5-09":
+    "https://images.pexels.com/photos/5971247/pexels-photo-5971247.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "whatsapp-ganha-inteligencia-artificial-que-reescreve-mensagens":
+    "https://images.pexels.com/photos/7544864/pexels-photo-7544864.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "neto-digital-assistente-de-ia-tira-duvidas-de-tecnologia-de-idosos":
+    "https://images.pexels.com/photos/3823542/pexels-photo-3823542.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "celulares-ficam-mais-intuitivos-com-inteligencia-artificial-em-2026":
+    "https://images.pexels.com/photos/7545050/pexels-photo-7545050.jpeg?auto=compress&cs=tinysrgb&w=1200"
+};
+
+function imagemFallbackSVG(n, alto){
+  const e = ED[n.cat];
+  const h = digito(n.slug);
+  const v = h % 4;
+  const id = "g" + h.toString(36);
+  let arte = "";
+
+  if(v === 0){                                    // arcos concêntricos
+    for(let i=6;i>=1;i--){
+      arte += `<circle cx="86" cy="${alto?70:104}" r="${i*34}" fill="none" stroke="#fff" stroke-opacity="${0.05+i*0.022}" stroke-width="9"/>`;
+    }
+  } else if(v === 1){                             // barras diagonais
+    for(let i=0;i<11;i++){
+      arte += `<rect x="${-70+i*46}" y="-40" width="19" height="360" fill="#fff" fill-opacity="${0.045+(i%4)*0.028}" transform="rotate(18 200 100)"/>`;
+    }
+  } else if(v === 2){                             // malha de pontos
+    for(let y=0;y<7;y++) for(let x=0;x<15;x++){
+      arte += `<circle cx="${22+x*29}" cy="${18+y*29}" r="${((x+y+h)%3)+2.4}" fill="#fff" fill-opacity="${0.10+((x*y+h)%5)*0.035}"/>`;
+    }
+  } else {                                        // quadrados encaixados
+    for(let i=5;i>=1;i--){
+      const t = i*36;
+      arte += `<rect x="${210-t/2}" y="${(alto?60:90)-t/2}" width="${t}" height="${t}" fill="none" stroke="#fff" stroke-opacity="${0.06+i*0.03}" stroke-width="7" transform="rotate(${12+i*7} 210 ${alto?60:90})"/>`;
+    }
+  }
+
+  const vb = alto ? "0 0 420 180" : "0 0 420 236";
+  return `<svg viewBox="${vb}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração da editoria ${esc(e.nome)}">
+    <defs>
+      <linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="${e.cor2}"/>
+        <stop offset="1" stop-color="${e.cor}"/>
+      </linearGradient>
+    </defs>
+    <rect width="420" height="240" fill="url(#${id})"/>
+    ${arte}
+  </svg>`;
+}
+
+/* Se a <img> falhar (ex: sem internet no momento), troca pelo SVG geométrico
+   no lugar — nunca fica com espaço em branco. */
+window.trocarPorFallback = function(imgEl){
+  const slug = imgEl.dataset.slug, cat = imgEl.dataset.cat, alto = imgEl.dataset.alto === "1";
+  imgEl.outerHTML = imagemFallbackSVG({ slug, cat }, alto);
+};
+
+function imagem(n, alto){
+  const e = ED[n.cat];
+  const url = FOTO_NOTICIA[n.slug] || FOTO_EDITORIA[n.cat];
+  if(!url) return imagemFallbackSVG(n, alto);
+
+  return `<img src="${esc(url)}" alt="Foto ilustrativa da editoria ${esc(e.nome)}" loading="lazy"
+    data-slug="${esc(n.slug)}" data-cat="${esc(n.cat)}" data-alto="${alto?1:0}"
+    onerror="trocarPorFallback(this)">`;
+}
+
+/* ============================================================
+   4) MENU DE EDITORIAS  (3 visíveis + botão "Mais")
+   ============================================================ */
+let gavetaAberta = false;
+
+function montarMenu(){
+  const alvo = document.getElementById("editorias");
+  const frente = EDITORIAS.slice(0, VISIVEIS);
+  const fundo  = EDITORIAS.slice(VISIVEIS);
+
+  let html = `<button class="ed" data-ir="#/" data-inicio="1">Início</button>`;
+  frente.forEach(e => {
+    html += `<button class="ed" data-ir="#/assunto/${e.id}" data-cat="${e.id}">
+      <span class="ponto" style="background:${e.cor}"></span>${esc(e.nome)}</button>`;
+  });
+
+  if(fundo.length){
+    html += `<span class="gaveta-wrap" id="gavetaWrap">
+      <button class="ed" id="btnMais" aria-expanded="false" aria-haspopup="true">Mais<span class="seta">&#9660;</span></button>
+      <div class="gaveta" id="gaveta">` +
+      fundo.map(e => `<button class="ed" data-ir="#/assunto/${e.id}" data-cat="${e.id}">
+        <span class="ponto" style="background:${e.cor}"></span>${esc(e.nome)}</button>`).join("") +
+      `</div></span>`;
+  }
+  alvo.innerHTML = html;
+
+  alvo.querySelectorAll("[data-ir]").forEach(b => {
+    b.addEventListener("click", () => { fecharGaveta(); location.hash = b.dataset.ir; });
+  });
+
+  const btn = document.getElementById("btnMais");
+  if(btn){
+    btn.addEventListener("click", ev => {
+      ev.stopPropagation();
+      gavetaAberta ? fecharGaveta() : abrirGaveta();
+    });
+  }
+}
+function abrirGaveta(){
+  gavetaAberta = true;
+  document.getElementById("gaveta").classList.add("aberta");
+  document.getElementById("gavetaWrap").classList.add("aberta");
+  document.getElementById("btnMais").setAttribute("aria-expanded","true");
+}
+function fecharGaveta(){
+  if(!gavetaAberta) return;
+  gavetaAberta = false;
+  document.getElementById("gaveta").classList.remove("aberta");
+  document.getElementById("gavetaWrap").classList.remove("aberta");
+  document.getElementById("btnMais").setAttribute("aria-expanded","false");
+}
+document.addEventListener("click", fecharGaveta);
+
+function marcarMenu(cat){
+  document.querySelectorAll(".ed[data-ir]").forEach(b => {
+    const ativo = (cat && b.dataset.cat === cat) || (!cat && b.dataset.inicio);
+    b.setAttribute("aria-current", ativo ? "true" : "false");
+  });
+}
+
+/* ============================================================
+   5) TELAS
+   ============================================================ */
+const palco = document.getElementById("palco");
+
+/* ordena da mais nova para a mais antiga, mantendo a ordem da lista
+   como critério de desempate dentro do mesmo dia                     */
+const ORDENADAS = NOTICIAS.map((n,i) => ({...n, ordem:i}))
+  .sort((a,b) => a.data === b.data ? a.ordem - b.ordem : (a.data < b.data ? 1 : -1));
+
+function cartao(n, i){
+  const e = ED[n.cat];
+  return `<button class="cartao" data-slug="${n.slug}" style="animation-delay:${i*70}ms">
+    <span class="foto">
+      ${imagem(n,false)}
+      <span class="selo" style="background:${e.cor}">${esc(e.nome)}</span>
+    </span>
+    <span class="corpo-cartao">
+      <span class="data-cartao">${dataCurta(n.data)}</span>
+      <h3>${esc(n.titulo)}</h3>
+      <p>${esc(n.resumo)}</p>
+      <span class="ler" style="color:${e.cor}">Ler a notícia <span class="fl">&rarr;</span></span>
+    </span>
+  </button>`;
+}
+
+function linha(n, i){
+  const e = ED[n.cat];
+  return `<li style="animation-delay:${Math.min(i,14)*45}ms">
+    <button class="linha" data-slug="${n.slug}">
+      <span class="cab">
+        <span class="tag" style="background:${e.cor}">${esc(e.nome)}</span>
+        <span class="dt">${dataCurta(n.data)}</span>
+      </span>
+      <h3>${esc(n.titulo)}</h3>
+      <p>${esc(n.resumo)}</p>
+    </button>
+  </li>`;
+}
+
+function telaInicio(){
+  marcarMenu(null);
+  const seis = ORDENADAS.slice(0, 6);      // só as 6 mais recentes
+  palco.innerHTML = `
+    <div class="cabeca-secao">
+      <h2>As últimas da semana</h2>
+      <span class="conta">6 notícias mais recentes</span>
+    </div>
+    <div class="grade">${seis.map(cartao).join("")}</div>`;
+  ligarCliques();
+}
+
+function telaAssunto(cat){
+  const e = ED[cat];
+  if(!e){ location.hash = "#/"; return; }
+  marcarMenu(cat);
+  const itens = ORDENADAS.filter(n => n.cat === cat).slice(0, 24);   // até 24 por assunto
+
+  if(itens.length === 0){
+    palco.innerHTML = `
+      <button class="voltar" data-ir="#/">&larr; Voltar para a página inicial</button>
+      <div class="cabeca-secao">
+        <h2 style="color:${e.cor}">${esc(e.nome)}</h2>
+        <span class="conta">Em breve</span>
+      </div>
+      <div class="vazio">
+        <span class="ic" aria-hidden="true">&#128172;</span>
+        <h3>Notícias a caminho</h3>
+        <p>Ainda estamos preparando o conteúdo de <strong>${esc(e.nome)}</strong>.
+           Volte em breve para conferir as primeiras notícias.</p>
+      </div>`;
+    ligarCliques();
+    return;
+  }
+
+  const aviso = itens.length < 6
+    ? `<div class="aviso-magra"><strong>Nota do protótipo:</strong> este assunto tem apenas
+       ${itens.length} ${itens.length===1?"notícia":"notícias"} nas edições usadas como exemplo.
+       Serve para você ver como fica um assunto com pouco conteúdo.</div>`
+    : "";
+
+  palco.innerHTML = `
+    <button class="voltar" data-ir="#/">&larr; Voltar para a página inicial</button>
+    <div class="cabeca-secao">
+      <h2 style="color:${e.cor}">${esc(e.nome)}</h2>
+      <span class="conta">${itens.length} ${itens.length===1?"notícia":"notícias"}</span>
+    </div>
+    ${aviso}
+    <ul class="lista">${itens.map(linha).join("")}</ul>`;
+  ligarCliques();
+}
+
+function telaBusca(termo){
+  marcarMenu(null);
+  const t = semAcento(termo.trim());
+  const achou = ORDENADAS.filter(n =>
+    semAcento(n.titulo).includes(t) || semAcento(n.resumo).includes(t)
+  );
+
+  palco.innerHTML = `
+    <div class="cabeca-secao">
+      <h2>Resultados para &ldquo;${esc(termo.trim())}&rdquo;</h2>
+      <span class="conta">${achou.length} ${achou.length===1?"notícia encontrada":"notícias encontradas"}</span>
+    </div>
+    ${ achou.length
+      ? `<ul class="lista">${achou.map(linha).join("")}</ul>`
+      : `<div class="vazio">
+           <span class="ic" aria-hidden="true">&#128269;</span>
+           <h3>Nenhuma notícia encontrada</h3>
+           <p>Não achamos nada com <strong>${esc(termo.trim())}</strong>.
+              Tente uma palavra mais curta, como <strong>juros</strong>,
+              <strong>dólar</strong> ou <strong>ChatGPT</strong>.</p>
+         </div>` }`;
+  ligarCliques();
+}
+
+function ligarCliques(){
+  palco.querySelectorAll("[data-slug]").forEach(b => {
+    b.addEventListener("click", () => {
+      porClique = true;
+      location.hash = "#/artigo/" + b.dataset.slug;
+    });
+  });
+  palco.querySelectorAll("[data-ir]").forEach(b => {
+    b.addEventListener("click", () => { limparBusca(); location.hash = b.dataset.ir; });
+  });
+}
+
+/* ============================================================
+   6) JANELA DO ARTIGO  (com endereço próprio)
+   ============================================================ */
+const fundo   = document.getElementById("fundo");
+const alvoArt = document.getElementById("conteudoArtigo");
+const btnX    = document.getElementById("fechar");
+let porClique = false;      // veio de um clique ou de um endereço colado?
+let baseAtual = "#/";       // tela que fica atrás da janela
+let focoAnterior = null;
+
+function abrirArtigo(slug){
+  const n = NOTICIAS.find(x => x.slug === slug);
+  if(!n){ location.hash = baseAtual; return; }
+  const e = ED[n.cat];
+
+  alvoArt.innerHTML = `
+    <div class="capa">${imagem(n,true)}</div>
+    <div class="artigo">
+      <div class="meta">
+        <span class="tag" style="background:${e.cor}">${esc(e.nome)}</span>
+        <span class="dt" style="font-size:14px;color:var(--tinta-3)">${dataLonga(n.data)}</span>
+      </div>
+      <h2 id="tituloArtigo">${esc(n.titulo)}</h2>
+      <p class="linha-fina">${esc(n.resumo)}</p>
+      <div class="txt">${n.corpo.map(p => `<p>${esc(p)}</p>`).join("")}</div>
+      ${n.fonte ? `<p class="fonte-art" style="font-size:14px;color:var(--tinta-3);margin-top:14px">Fonte: <a href="${esc(n.fonte.url)}" target="_blank" rel="noopener noreferrer">${esc(n.fonte.nome)}</a></p>` : ""}
+      <button class="btn-receber" data-abrir-cadastro="${esc(n.cat)}">🔔 Quero receber mais notícias sobre ${esc(e.nome)}</button>
+      <div class="rodape-art">
+        <span class="endereco"><b>Endereço definitivo desta notícia:</b><br>${esc(SITE)}/${esc(n.cat)}/${esc(n.slug)}/<br>
+          <span style="opacity:.7">No protótipo: #/artigo/${esc(n.slug)}</span></span>
+        <button class="btn-fechar-baixo" data-fechar>Fechar e voltar</button>
+      </div>
+    </div>`;
+
+  alvoArt.querySelector("[data-fechar]").addEventListener("click", fecharArtigo);
+  alvoArt.querySelector("[data-abrir-cadastro]").addEventListener("click", function(){
+    abrirCadastro(this.dataset.abrirCadastro);
+  });
+
+  focoAnterior = document.activeElement;
+  fundo.classList.add("aberta");
+  document.body.style.overflow = "hidden";
+  fundo.scrollTop = 0;
+  setTimeout(() => btnX.focus(), 60);
+}
+
+function fecharArtigo(){
+  if(porClique && history.length > 1){ history.back(); }
+  else { location.hash = baseAtual; }
+}
+
+function esconderJanela(){
+  fundo.classList.remove("aberta");
+  document.body.style.overflow = "";
+  if(focoAnterior && document.contains(focoAnterior)){ focoAnterior.focus(); }
+  focoAnterior = null;
+}
+
+btnX.addEventListener("click", fecharArtigo);
+/* toque fora da janela fecha */
+fundo.addEventListener("click", ev => { if(ev.target === fundo) fecharArtigo(); });
+/* tecla Esc fecha */
+document.addEventListener("keydown", ev => {
+  if(ev.key === "Escape"){
+    if(fundo.classList.contains("aberta")) fecharArtigo();
+    else if(fundoCadastro.classList.contains("aberta")) fecharCadastro();
+    else fecharGaveta();
+  }
+});
+
+/* ============================================================
+   6.1) CADASTRO — "Quero receber mais notícias"
+   Front-end pronto; envia para uma planilha via Google Apps Script.
+   Troque FORM_URL pela URL do Web App depois de publicar o script.
+   ============================================================ */
+const FORM_URL = "COLE_AQUI_A_URL_DO_APPS_SCRIPT_DEPOIS_DE_PUBLICAR";
+
+const fundoCadastro   = document.getElementById("fundoCadastro");
+const btnFecharCad    = document.getElementById("fecharCadastro");
+const tituloCadastro  = document.getElementById("tituloCadastro");
+const campoZap        = document.getElementById("campoZap");
+const campoEmail      = document.getElementById("campoEmail");
+const campoTelegram   = document.getElementById("campoTelegram");
+const msgTelegram     = document.getElementById("msgTelegram");
+const btnEnviarCad    = document.getElementById("btnEnviarCadastro");
+let categoriaCadastro = null;
+let focoAntesCadastro = null;
+
+function abrirCadastro(catId){
+  categoriaCadastro = catId;
+  const e = ED[catId];
+  tituloCadastro.innerHTML = `Cadastre-se para receber notícias sobre <span style="color:${e.cor}">${esc(e.nome)}</span>`;
+  focoAntesCadastro = document.activeElement;
+  fundoCadastro.classList.add("aberta");
+  document.body.style.overflow = "hidden";
+  setTimeout(() => campoZap.focus(), 60);
+}
+
+function fecharCadastro(){
+  fundoCadastro.classList.remove("aberta");
+  document.body.style.overflow = fundo.classList.contains("aberta") ? "hidden" : "";
+  if(focoAntesCadastro && document.contains(focoAntesCadastro)) focoAntesCadastro.focus();
+  focoAntesCadastro = null;
+}
+
+btnFecharCad.addEventListener("click", fecharCadastro);
+fundoCadastro.addEventListener("click", ev => { if(ev.target === fundoCadastro) fecharCadastro(); });
+
+campoTelegram.addEventListener("blur", function(){
+  if(!this.value.trim()) msgTelegram.classList.add("mostrar");
+});
+campoTelegram.addEventListener("focus", function(){
+  msgTelegram.classList.remove("mostrar");
+});
+
+btnEnviarCad.addEventListener("click", async function(){
+  const zap = campoZap.value.trim();
+  const email = campoEmail.value.trim();
+  const telegram = campoTelegram.value.trim();
+
+  if(!zap && !email){
+    alert("Por favor, preencha pelo menos o WhatsApp ou o e-mail.");
+    return;
+  }
+
+  btnEnviarCad.disabled = true;
+  btnEnviarCad.textContent = "Enviando...";
+
+  try{
+    await fetch(FORM_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain" },
+      body: JSON.stringify({
+        whatsapp: zap,
+        email: email,
+        telegram: telegram,
+        categoria: ED[categoriaCadastro].nome,
+        data: new Date().toISOString()
+      })
+    });
+    alert("✅ Cadastro realizado! Em breve você vai receber notícias sobre " + ED[categoriaCadastro].nome + ".");
+    campoZap.value = ""; campoEmail.value = ""; campoTelegram.value = "";
+    fecharCadastro();
+  }catch(err){
+    alert("Não deu para enviar agora. Tente de novo em alguns minutos.");
+  }
+
+  btnEnviarCad.disabled = false;
+  btnEnviarCad.textContent = "Quero receber ✓";
+});
+
+/* ============================================================
+   7) ROTEADOR — cada notícia tem endereço próprio
+      #/                      página inicial
+      #/assunto/ia-e-saude    lista do assunto
+      #/artigo/nome-da-noticia  notícia aberta
+   ============================================================ */
+function rotear(){
+  const h = decodeURIComponent(location.hash || "#/");
+
+  if(h.startsWith("#/artigo/")){
+    const slug = h.slice("#/artigo/".length);
+    /* garante que exista uma tela atrás da janela */
+    if(!palco.children.length) desenharBase(baseAtual);
+    abrirArtigo(slug);
+    const n = NOTICIAS.find(x => x.slug === slug);
+    if(n){
+      aplicarMeta({
+        titulo: n.titulo + " — Notícias IA 51+",
+        descricao: n.resumo,
+        url: `${SITE}/${n.cat}/${n.slug}/`
+      });
+      dadosDaNoticia(n);
+    }
+    return;
+  }
+
+  if(fundo.classList.contains("aberta")) esconderJanela();
+  porClique = false;
+  baseAtual = h.startsWith("#/assunto/") ? h : "#/";
+  desenharBase(h);
+}
+
+function desenharBase(h){
+  dadosDaNoticia(null);
+  if(h.startsWith("#/assunto/")){
+    const cat = h.slice("#/assunto/".length);
+    telaAssunto(cat);
+    const e = ED[cat];
+    aplicarMeta({
+      titulo: (e?.nome || "Assunto") + " — Notícias IA 51+",
+      descricao: `Notícias de ${e?.nome || "tecnologia"} explicadas em português claro para quem tem 50 anos ou mais.`,
+      url: `${SITE}/${cat}/`
+    });
+  } else {
+    telaInicio();
+    aplicarMeta({
+      titulo: "Notícias IA 51+ — Tecnologia e dinheiro sem complicação",
+      descricao: "Notícias de inteligência artificial, dinheiro e tecnologia explicadas em português claro para quem tem 50 anos ou mais. Sem jargão, sem complicação.",
+      url: SITE + "/"
+    });
+  }
+  window.scrollTo({top:0,behavior:"instant"});
+}
+
+/* ============================================================
+   8) BUSCA AO VIVO
+   ============================================================ */
+const campo  = document.getElementById("campoBusca");
+const btnLimpar = document.getElementById("limpar");
+let atrasoBusca;
+
+campo.addEventListener("input", () => {
+  const v = campo.value;
+  btnLimpar.classList.toggle("on", v.length > 0);
+  clearTimeout(atrasoBusca);
+  atrasoBusca = setTimeout(() => {
+    if(v.trim().length === 0){ desenharBase(baseAtual); return; }
+    if(fundo.classList.contains("aberta")) fecharArtigo();
+    telaBusca(v);
+  }, 160);
+});
+
+function limparBusca(){
+  campo.value = "";
+  btnLimpar.classList.remove("on");
+}
+btnLimpar.addEventListener("click", () => {
+  limparBusca();
+  desenharBase(baseAtual);
+  campo.focus();
+});
+
+/* logotipo volta para o início */
+document.getElementById("marca").addEventListener("click", () => {
+  limparBusca();
+  location.hash = "#/";
+});
+
+/* ============================================================
+   9) LIGA TUDO
+   ============================================================ */
+montarMenu();
+window.addEventListener("hashchange", rotear);
+rotear();
+</script>
+</body>
+</html>
