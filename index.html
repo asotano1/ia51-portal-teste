@@ -168,7 +168,7 @@ body::before{
 }
 .barra .env{
   display:flex;align-items:center;gap:14px;
-  padding-top:4px;padding-bottom:4px;flex-wrap:wrap;
+  padding-top:2px;padding-bottom:2px;flex-wrap:wrap;
 }
 
 .editorias{display:flex;align-items:center;gap:10px;flex-wrap:wrap;position:relative}
@@ -589,13 +589,13 @@ main{padding:10px 0 90px}
    3 aparecem no menu · o resto fica no botão "Mais"
    ============================================================ */
 const EDITORIAS = [
-  { id:"ia-e-financas",       nome:"IA e Finanças",        cor:"#1c6b4a", cor2:"#2f9d6e" },
   { id:"ia-no-dia-a-dia",     nome:"IA no Dia a Dia",      cor:"#1c4a78", cor2:"#3d7fb8" },
-  { id:"ferramentas-para-50", nome:"Ferramentas para 50+", cor:"#8f4d14", cor2:"#c9822f" },
   { id:"ia-e-saude",          nome:"IA e Saúde",           cor:"#8e2b45", cor2:"#c4566f" },
+  { id:"ia-e-financas",       nome:"IA e Finanças",        cor:"#1c6b4a", cor2:"#2f9d6e" },
+  { id:"ferramentas-para-50", nome:"Ferramentas para 50+", cor:"#8f4d14", cor2:"#c9822f" },
   { id:"ia-e-relacoes",       nome:"IA e Relações",        cor:"#4a3d78", cor2:"#7d6bb0" }
 ];
-const VISIVEIS = 3;
+const VISIVEIS = 2;
 const ED = Object.fromEntries(EDITORIAS.map(e => [e.id, e]));
 
 /* endereço definitivo do site — usado nos metadados e no rodapé do artigo */
