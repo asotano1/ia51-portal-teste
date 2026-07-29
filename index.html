@@ -35,6 +35,10 @@
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23faf7f1'/%3E%3Ctext x='32' y='45' font-family='Palatino,Georgia,serif' font-size='30' fill='%23a8321e' text-anchor='middle'%3E51%2B%3C/text%3E%3C/svg%3E">
 
+<!-- Atalho para área de trabalho / tela inicial (botão "Salvar atalho" nas 6 notícias recentes) -->
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icons/icon-180.png">
+
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -295,6 +299,22 @@ main{padding:10px 0 90px}
 .ler .fl{transition:transform .3s ease}
 .cartao:hover .ler .fl{transform:translateX(6px)}
 
+/* ---------- Atalho na área de trabalho / tela inicial (só nas 6 notícias recentes) ---------- */
+.cartao-wrap{display:flex;flex-direction:column;gap:12px}
+.cartao-wrap .cartao{flex:1}
+.btn-atalho{
+  min-height:var(--toque);padding:0 18px;
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:var(--sans);font-size:15px;font-weight:bold;
+  background:#fff;color:var(--tinta);border:2px solid var(--regua-forte);border-radius:999px;cursor:pointer;
+  transition:background .25s ease,color .25s ease,transform .25s ease;
+}
+.btn-atalho:hover{background:var(--tinta);color:var(--papel);transform:translateY(-2px)}
+
+.passos-atalho{margin:0;padding-left:24px;display:flex;flex-direction:column;gap:14px}
+.passos-atalho li{font-size:17px;line-height:1.6;color:var(--tinta-2)}
+.passos-atalho strong{color:var(--tinta)}
+
 /* ---------- LISTA DA EDITORIA / RESULTADOS ---------- */
 .lista{list-style:none;margin:0;padding:0;border-top:1px solid var(--regua)}
 .lista li{
@@ -381,6 +401,22 @@ main{padding:10px 0 90px}
 .linha-fina{
   font-size:19px;line-height:1.6;color:var(--tinta-2);font-style:italic;
   border-left:4px solid var(--regua);padding-left:18px;margin:0 0 26px;
+}
+.caixa-audio{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  background:var(--papel-alt);border:2px solid var(--regua);border-radius:14px;
+  padding:14px 18px;margin:0 0 22px;
+}
+.caixa-audio .rotulo-audio{
+  font-family:var(--sans);font-size:15px;font-weight:bold;color:var(--tinta-2);
+  white-space:nowrap;
+}
+.caixa-audio audio{
+  flex:1 1 240px;min-width:0;height:40px;
+}
+@media (max-width:520px){
+  .caixa-audio{padding:12px 14px}
+  .caixa-audio audio{width:100%}
 }
 .artigo .txt p{font-size:19px;line-height:1.8;margin:0 0 20px;color:var(--tinta)}
 .artigo .txt p:first-letter{}
@@ -583,6 +619,18 @@ main{padding:10px 0 90px}
   </article>
 </div>
 
+<!-- janela de instruções (Salvar atalho — quando o navegador não deixa fazer sozinho) -->
+<div class="fundo" id="fundoAtalho" role="dialog" aria-modal="true" aria-labelledby="tituloAtalho">
+  <article class="janela" id="janelaAtalho" style="max-width:520px">
+    <button class="fechar" id="fecharAtalho" aria-label="Fechar instruções">&times;</button>
+    <div class="cadastro">
+      <h2 id="tituloAtalho">Como salvar o atalho</h2>
+      <p class="sub" id="subAtalho"></p>
+      <ol class="passos-atalho" id="passosAtalho"></ol>
+    </div>
+  </article>
+</div>
+
 <script>
 /* ============================================================
    1) EDITORIAS
@@ -648,6 +696,74 @@ function dadosDaNoticia(n){
       (edições de 04, 10, 17 e 24 de julho de 2026)
    ============================================================ */
 const NOTICIAS = [
+
+/* ---------- 27 de julho ---------- */
+{ slug:"robo-de-companhia-reduz-solidao-de-idosos-nos-eua",
+  cat:"ia-e-relacoes", data:"2026-07-27",
+  titulo:"Robô de companhia ajuda idosos a se sentirem menos sozinhos nos Estados Unidos",
+  resumo:"Programa do estado de Nova York distribuiu o robô ElliQ a idosos que moram sozinhos. Segundo os próprios usuários, o aparelho reduziu a sensação de solidão em 95% dos casos.",
+  corpo:[
+    "Sandra Cota, de 79 anos, mora sozinha nos Estados Unidos e via a solidão aumentar desde que a mãe morreu, há três anos. Foi quando ela conheceu o ElliQ, um robô de companhia com inteligência artificial que hoje divide a rotina com ela. \"Ele me ajudou na saúde mental porque sinto que tenho uma colega de casa\", contou Sandra.",
+    "O ElliQ foi pensado especialmente para pessoas mais velhas: lembra de tomar remédio, propõe exercícios e joga com o usuário, tudo por voz. O estado de Nova York distribuiu gratuitamente mais de 800 unidades do aparelho a idosos, dentro de um programa que também serve para estudar os efeitos da tecnologia no dia a dia deles. Segundo os dados do próprio programa, 95% das pessoas que usam o robô relataram sentir menos solidão e mais bem-estar.",
+    "Nem tudo são elogios: psicólogos alertam que um robô de companhia não substitui uma conversa de verdade e pode, inclusive, reforçar o isolamento se a pessoa passar a evitar o contato com outras pessoas. Pensando nisso, a fabricante do ElliQ criou atividades em grupo entre os próprios usuários — como uma partida de bingo, duas vezes por semana, que serve de desculpa para eles se conhecerem e criarem amizades de verdade, fora da tela."
+  ],
+  fonte:{ nome:"Spectrum News", url:"https://spectrumlocalnews.com/us/snplus/your-mental-health/2026/05/15/ai-companions-for-older-adults-" }},
+
+{ slug:"robos-de-pelucia-com-ia-combatem-solidao-de-idosos-na-coreia-do-sul",
+  cat:"ia-e-relacoes", data:"2026-07-27",
+  titulo:"Robôs de pelúcia com inteligência artificial ajudam a combater a solidão de idosos na Coreia do Sul",
+  resumo:"Bonecos como o Hyodol, equipados com inteligência artificial, já foram distribuídos a mais de 12 mil idosos que vivem sozinhos no país e ajudam a reduzir sintomas de depressão.",
+  corpo:[
+    "Na Coreia do Sul, um em cada três idosos mora sozinho, e o país enfrenta uma das taxas mais altas de suicídio na terceira idade do mundo. Diante desse cenário, o governo sul-coreano passou a apostar em bonecos de pelúcia com inteligência artificial, como o Hyodol, para fazer companhia a quem vive sozinho.",
+    "Do tamanho de um bebê, o boneco recebe a pessoa em casa com frases como \"Vovó, esperei você o dia inteiro\", conversa por voz, toca música e propõe exercícios para a memória — além de avisar remotamente familiares e assistentes sociais sobre a rotina do idoso. Mais de 12 mil unidades já foram distribuídas no país, principalmente por programas do governo, e pesquisas mostram que o uso regular do boneco por seis semanas já reduz sintomas de depressão e melhora resultados cognitivos.",
+    "A própria empresa reconhece que o Hyodol \"não é para todos\": ele funciona como apoio, não como substituto do convívio humano, e especialistas alertam para o risco de dependência emocional excessiva. Ainda assim, o modelo já inspira soluções parecidas em outros países da Ásia — como o robô-foca PARO, usado no Japão desde 2005 — e o mercado global de robôs para cuidado de idosos deve chegar a 7,7 bilhões de dólares até 2030."
+  ],
+  fonte:{ nome:"CNN Portugal", url:"https://cnnportugal.iol.pt/solidao/solidao-idosos/como-estes-robos-de-peluche-com-ia-estao-a-ajudar-a-combater-a-solidao-dos-idosos-na-asia/20260307/6977ae1cd34e0ec52ec2b986" }},
+
+{ slug:"chatbot-com-ia-preserva-memoria-de-avo-para-os-netos-que-nunca-o-conheceram",
+  cat:"ia-no-dia-a-dia", data:"2026-07-27",
+  titulo:"Homem cria chatbot com inteligência artificial para que os filhos conheçam o avô que nunca chegaram a ver",
+  resumo:"Usando gravações, vídeos e cartas do próprio pai, um professor universitário nos Estados Unidos criou um \"Robô do Vovô\" que imita a voz e o jeito de falar dele, para que os netos possam conversar com a memória do avô.",
+  corpo:[
+    "O professor Muhammad Ahmad, que dá aulas na Universidade de Washington em Bothell, nos Estados Unidos, perdeu o pai em 2013. Para que seus filhos pudessem conhecer o avô que nunca viram, ele teve uma ideia: usar gravações de voz, vídeos e cartas do pai para treinar um chatbot de inteligência artificial que imitasse o jeito dele de falar e o senso de humor.",
+    "O resultado foi apelidado de \"Robô do Vovô\". Hoje, os filhos de Ahmad conversam com o chatbot, fazem perguntas e ouvem histórias contadas no estilo do avô — uma forma de manter viva a memória da família. \"Eu queria que eles tivessem algum tipo de relação com o avô, além de eu simplesmente contar histórias sobre ele\", explicou Ahmad. Para ele, o projeto é como um álbum de fotos moderno: uma forma de lembrar quem já se foi.",
+    "Ahmad é o primeiro a dizer que a tecnologia tem limites: o chatbot ainda é baseado principalmente em texto, e ele está trabalhando para incluir a voz real do pai. Ele também alerta para o risco de as pessoas desenvolverem uma dependência desse tipo de ferramenta. \"Não é uma pessoa viva, mas, dentro do que a tecnologia permite hoje, pode ser a segunda melhor coisa\", resume."
+  ],
+  fonte:{ nome:"FOX 13 Seattle", url:"https://www.fox13seattle.com/news/ai-simulation-connects-grandpa-grandchildren" }},
+
+{ slug:"empresa-chinesa-lanca-robo-humanoide-para-fazer-companhia-a-quem-vive-sozinho",
+  cat:"ia-e-financas", data:"2026-07-27",
+  titulo:"Empresa chinesa lança robô humanoide para fazer companhia a quem vive sozinho, incluindo idosos",
+  resumo:"A fabricante chinesa UBTech apresentou o robô U1, feito para ser um companheiro de longo prazo. O equipamento usa inteligência artificial para conversar e é voltado tanto para pessoas solteiras quanto para a crescente população idosa do país.",
+  corpo:[
+    "A empresa chinesa UBTech apresentou uma nova linha de robôs humanoides pensada para fazer companhia emocional a pessoas que vivem sozinhas, incluindo idosos. Batizado de U1, o robô usa inteligência artificial parecida com a dos assistentes de conversa mais avançados de hoje, o que permite diálogos naturais com quem interage com ele.",
+    "Segundo o executivo da marca, Michael Tam, o objetivo é que o robô acompanhe o usuário \"pela vida toda\", oferecendo o que ele descreveu como \"um amor eterno\". O público-alvo inclui os mais de 120 milhões de solteiros na China e a população de idosos do país, que já passa de 320 milhões de pessoas acima de 60 anos. O modelo chega ao mercado por cerca de R$ 92 mil.",
+    "O lançamento faz parte de uma tendência maior na Ásia, onde o envelhecimento acelerado da população e a falta de cuidadores têm levado governos e empresas a investir em robôs de companhia. O preço ainda alto limita o acesso da maioria das famílias por enquanto, mas o episódio mostra como a inteligência artificial está sendo cada vez mais pensada como aliada — nunca substituta — das relações humanas na terceira idade."
+  ],
+  fonte:{ nome:"Francês News", url:"https://francesnews.com.br/post/2026/06/26/29624-empresa-chinesa-lanca-robo-humanoide-para-combater-solidao-e-promete-amor-incondicional" }},
+
+{ slug:"inteligencia-artificial-aprende-a-identificar-a-fase-do-alzheimer-do-paciente",
+  cat:"ia-e-saude", data:"2026-07-27",
+  titulo:"Inteligência artificial aprende a identificar em que fase do Alzheimer o paciente está",
+  resumo:"Pesquisadores da Universidade Texas A&M, nos Estados Unidos, treinam um modelo de inteligência artificial para cruzar diferentes tipos de exames e apontar com mais precisão em que estágio da doença de Alzheimer uma pessoa se encontra.",
+  corpo:[
+    "O Alzheimer costuma ser identificado tarde demais: uma pessoa pode conviver com a doença por até dez anos antes de os primeiros sintomas aparecerem. Pensando nisso, pesquisadores da Universidade Texas A&M, nos Estados Unidos, estão treinando um modelo de inteligência artificial capaz de apontar em que fase do Alzheimer um paciente se encontra.",
+    "O projeto, liderado pelo professor Tianbao Yang em parceria com o psiquiatra Israel Liberzon, usa um banco de dados público com informações de 10 mil pacientes, reunido pela Iniciativa de Neuroimagem do Alzheimer. A ideia é que a inteligência artificial cruze diferentes tipos de exame e de dados de cada paciente — uma combinação complexa demais para ser feita à mão por um médico — e encontre padrões que ajudem a definir o estágio da doença com mais precisão.",
+    "Quanto mais cedo o Alzheimer é identificado, maiores são as chances de tratamentos e terapias conseguirem desacelerar seu avanço. Por isso, a expectativa dos pesquisadores, financiados pela Iniciativa de Pesquisa em Demência e Alzheimer da Texas A&M Health, é que ferramentas como essa cheguem, no futuro, a apoiar médicos no diagnóstico mais precoce da doença — sem nunca substituir a avaliação clínica de um profissional de saúde."
+  ],
+  fonte:{ nome:"AIwire (HPCwire)", url:"https://www.hpcwire.com/aiwire/2026/07/15/texas-am-trains-ai-to-identify-alzheimers-stage-using-multimodal-patient-data/" }},
+
+{ slug:"celular-com-inteligencia-artificial-ajuda-a-prevenir-quedas-de-idosos-nas-escadas",
+  cat:"ferramentas-para-50", data:"2026-07-27",
+  titulo:"Projeto usa celular e inteligência artificial para prevenir quedas de idosos nas escadas",
+  resumo:"Pesquisadores de Curitiba desenvolveram um método que usa apenas dois celulares e um aplicativo gratuito para fazer uma análise detalhada dos movimentos do idoso ao descer escadas, identificando o risco de queda antes que ela aconteça.",
+  corpo:[
+    "Cair nas escadas é uma das principais causas de morte e de lesões graves entre idosos no mundo todo. Para tentar reduzir esse risco, um projeto do Centro Universitário UniDomBosco, em Curitiba, uniu fisioterapia e inteligência artificial numa solução simples e barata.",
+    "Liderado pela professora Vivian Biernaski, coordenadora do curso de Fisioterapia, o método usa apenas dois celulares e um aplicativo gratuito desenvolvido pela Universidade Stanford para fazer uma análise detalhada dos movimentos do idoso ao descer escadas. Com isso, o sistema identifica os sinais que indicam risco de queda, permitindo que o fisioterapeuta monte um tratamento de prevenção sob medida para cada pessoa. Antes, esse tipo de análise só era possível em laboratórios especializados, que podem custar até R$ 300 mil.",
+    "Como a avaliação pode ser feita em qualquer lugar — inclusive na própria casa do idoso —, o projeto torna esse tipo de cuidado muito mais acessível. Além de ajudar a proteger a saúde de quem está envelhecendo, a iniciativa também forma estudantes de fisioterapia para atuar num mercado em que a saúde caminha cada vez mais junto com a inteligência artificial."
+  ],
+  fonte:{ nome:"A Voz do Idoso", url:"https://avozdoidoso.com.br/saude/projeto-inovador-usa-inteligencia-artificial-e-celulares-para-evitar-queda-de-idosos-em-escadas/" }},
+
 
 /* ---------- 25 de julho (reforço IA e Saúde) ---------- */
 { slug:"videos-falsos-de-medicos-feitos-por-ia-colocam-idosos-em-risco",
@@ -820,63 +936,18 @@ const NOTICIAS = [
     "Não houve tendência definida no período. Depois de semanas de oscilação forte, o movimento parado costuma indicar que compradores e vendedores estão em equilíbrio."
   ]},
 
-{ slug:"governo-mantem-previsao-de-crescimento-de-2-3-por-cento-para-2026",
-  cat:"ia-e-financas", data:"2026-07-24",
-  titulo:"Governo mantém previsão de crescimento de 2,3% para 2026",
-  resumo:"O Boletim Macrofiscal da Fazenda confirmou a estimativa de crescimento da economia brasileira neste ano.",
-  corpo:[
-    "O Boletim Macrofiscal do Ministério da Fazenda manteve em 2,3% a previsão de crescimento do PIB brasileiro em 2026. O PIB é a soma de tudo o que o país produz.",
-    "Manter a previsão significa que, na visão do governo, nada de muito diferente aconteceu para melhor ou para pior nos últimos meses."
-  ]},
 
-{ slug:"previsao-de-inflacao-para-2027-sobe-e-sinaliza-juro-alto-por-mais-tempo",
-  cat:"ia-e-financas", data:"2026-07-24",
-  titulo:"Previsão de inflação para 2027 sobe e sinaliza juro alto por mais tempo",
-  resumo:"Mesmo com 2026 moderando, a projeção para o ano seguinte subiu — sinal de que o Banco Central não deve afrouxar tão cedo.",
-  corpo:[
-    "A projeção de inflação para 2027 subiu no Boletim Focus, mesmo com os números de 2026 dando sinais de moderação.",
-    "É um sinal relevante: indica que o Copom, o comitê que define os juros, não deve tirar o pé do freio tão cedo. Ou seja, juro alto por mais tempo.",
-    "Esse cenário penaliza quem está endividado e favorece quem tem dinheiro guardado em renda fixa."
-  ]},
+
+
 
 /* ---------- 17 de julho ---------- */
-{ slug:"dolar-cai-a-5-07-menor-valor-desde-junho",
-  cat:"ia-e-financas", data:"2026-07-17",
-  titulo:"Dólar cai a R$ 5,07, menor valor desde junho",
-  resumo:"A moeda americana chegou ao menor patamar desde 15 de junho e acumula queda de 7,56% no ano frente ao real.",
-  corpo:[
-    "O dólar caiu a R$ 5,07, o menor patamar desde 15 de junho. No ano, a moeda americana acumula queda de 7,56% frente ao real.",
-    "O que derrubou a moeda foi o dado de inflação dos Estados Unidos, chamado de CPI, que veio mais fraco do que o esperado.",
-    "Para o bolso do brasileiro, dólar fraco é boa notícia em duas frentes: segura o preço de produtos importados e barateia viagens internacionais."
-  ]},
 
-{ slug:"bolsa-chega-perto-dos-178-mil-pontos-apos-inflacao-americana-fraca",
-  cat:"ia-e-financas", data:"2026-07-17",
-  titulo:"Bolsa chega perto dos 178 mil pontos após inflação americana fraca",
-  resumo:"Na terça-feira, 14 de julho, o Ibovespa fechou a 176.641 pontos, alta de 0,51% no dia.",
-  corpo:[
-    "O Ibovespa chegou perto dos 178 mil pontos ao longo da semana. Na terça-feira, 14 de julho, fechou a 176.641 pontos, alta de 0,51%.",
-    "O impulso veio dos dados de inflação dos Estados Unidos, que vieram abaixo do esperado.",
-    "A semana também foi marcada pela divulgação dos balanços dos grandes bancos americanos — JPMorgan, Bank of America e Citigroup."
-  ]},
 
-{ slug:"juros-mantidos-em-14-25-com-aposta-de-corte-em-agosto",
-  cat:"ia-e-financas", data:"2026-07-17",
-  titulo:"Juros mantidos em 14,25% com aposta de corte em agosto",
-  resumo:"A Selic ficou parada, mas a inflação americana mais fraca reforçou a expectativa de um corte de 0,25 ponto na reunião de 4 e 5 de agosto.",
-  corpo:[
-    "A Selic foi mantida em 14,25% ao ano. Mas o dado de inflação dos Estados Unidos, abaixo do esperado, reforçou as apostas de um corte de 0,25 ponto percentual na próxima reunião do Copom, marcada para 4 e 5 de agosto.",
-    "Ponto percentual é diferente de porcentagem: cortar 0,25 ponto significa que a taxa passaria de 14,25% para 14% ao ano."
-  ]},
 
-{ slug:"bitcoin-fica-entre-62-mil-e-63-mil-dolares-na-semana",
-  cat:"ia-e-financas", data:"2026-07-17",
-  titulo:"Bitcoin fica entre US$ 62 mil e US$ 63 mil na semana",
-  resumo:"A moeda digital subiu 2,58% na semana e analistas lembram que o terceiro trimestre costuma trazer ganhos de cerca de 6%.",
-  corpo:[
-    "O Bitcoin negociou entre US$ 62.300 e US$ 62.800 ao longo da semana, com alta de 2,58% no período. Foi um movimento lateral, depois da recuperação das semanas anteriores.",
-    "Analistas apontam que o terceiro trimestre do ano historicamente traz ganhos de cerca de 6% para a moeda. Vale lembrar que comportamento passado não garante repetição."
-  ]},
+
+
+
+
 
 { slug:"tres-inteligencias-artificiais-de-ponta-lancadas-em-menos-de-48-horas",
   cat:"ia-no-dia-a-dia", data:"2026-07-17",
@@ -908,115 +979,28 @@ const NOTICIAS = [
     "É o tipo de recurso que aproxima a edição de vídeo de quem nunca editou nada na vida."
   ]},
 
-{ slug:"meta-muse-spark-controla-o-computador-sozinho",
-  cat:"ia-no-dia-a-dia", data:"2026-07-17",
-  titulo:"Novo sistema da Meta consegue usar o computador sozinho",
-  resumo:"O Muse Spark 1.1 foi feito para agentes autônomos e uso de computador, com capacidade de ler o equivalente a um livro inteiro.",
-  corpo:[
-    "O Meta Muse Spark 1.1 estreou com foco em agentes autônomos e uso de computador. Agente autônomo é um programa que executa tarefas do começo ao fim sem alguém acompanhando cada passo.",
-    "Uso de computador significa que o sistema consegue mexer no computador como uma pessoa mexeria: abrir programas, clicar, preencher campos.",
-    "O sistema trabalha com janela de contexto de 1 milhão de tokens — consegue considerar o equivalente a um livro inteiro de informação de uma vez."
-  ]},
 
-{ slug:"grok-4-5-chega-com-foco-em-programacao-e-menor-consumo",
-  cat:"ia-no-dia-a-dia", data:"2026-07-17",
-  titulo:"Grok 4.5 chega com foco em programação e menor consumo",
-  resumo:"O sistema da xAI foi lançado em 8 de julho com destaque para código e uso mais econômico de recursos.",
-  corpo:[
-    "A xAI, empresa ligada à SpaceX, lançou o Grok 4.5 em 8 de julho.",
-    "Os destaques apontados foram o desempenho em programação e o menor uso de tokens. Token é a unidade que as empresas usam para cobrar pelo uso — gastar menos token significa custo menor para quem usa a ferramenta com frequência."
-  ]},
 
-{ slug:"inflacao-deve-dar-uma-acelerada-em-julho-por-conta-de-luz-e-passagem-aerea",
-  cat:"ia-e-financas", data:"2026-07-17",
-  titulo:"Inflação deve dar uma acelerada em julho por causa de luz e passagem aérea",
-  resumo:"Habitação e transportes devem pressionar o índice do mês, depois de um junho com alta de apenas 0,16%.",
-  corpo:[
-    "O IPCA de junho, que é o índice oficial de inflação, ficou em 0,16%. No acumulado de 12 meses está em 4,64% e, no ano de 2026, em 3,36%.",
-    "Para julho, a expectativa é de uma leve reaceleração. As pressões vêm de dois grupos: Habitação, com condomínio e energia elétrica, e Transportes, com passagens aéreas.",
-    "Do lado positivo, a projeção do Boletim Focus para a inflação de 2026 caiu de 5,33% para 5,30%, ajudada pela queda do petróleo e pelo alívio no Oriente Médio."
-  ]},
 
-{ slug:"tesouro-ipca-e-cdb-seguem-como-opcao-solida-com-juro-alto",
-  cat:"ia-e-financas", data:"2026-07-17",
-  titulo:"Tesouro IPCA+ e CDB seguem como opção sólida com juro alto",
-  resumo:"Com a Selic ainda elevada, títulos que acompanham a inflação continuam entre as escolhas mais seguras para pessoa física.",
-  corpo:[
-    "Com a Selic ainda em patamar elevado, o Tesouro IPCA+ e os CDBs atrelados ao CDI continuam sendo opções sólidas para quem investe.",
-    "O Tesouro IPCA+ é um título do governo que paga a inflação do período mais uma taxa fixa por cima. Na prática, protege o poder de compra do seu dinheiro.",
-    "O CDB é um empréstimo que você faz ao banco e recebe de volta com juros. Atrelado ao CDI significa que ele acompanha de perto a taxa básica."
-  ]},
+
+
+
+
 
 /* ---------- 10 de julho ---------- */
-{ slug:"banco-central-corta-os-juros-de-14-5-para-14-25",
-  cat:"ia-e-financas", data:"2026-07-10",
-  titulo:"Banco Central corta os juros de 14,50% para 14,25%",
-  resumo:"O Copom reduziu a taxa básica e o mercado já projeta novo corte de 0,25 ponto em agosto.",
-  corpo:[
-    "O Copom, comitê do Banco Central que define os juros, cortou a Selic de 14,50% para 14,25% ao ano.",
-    "O mercado já precifica um novo corte de 0,25 ponto percentual na reunião de agosto. Precificar é o jargão para dizer que os investidores já estão agindo como se o corte fosse acontecer.",
-    "Selic em queda mantém a renda fixa atrativa, mas pressiona o retorno de quem deixa o dinheiro parado acompanhando apenas o CDI."
-  ]},
 
-{ slug:"chatgpt-work-monta-planilha-apresentacao-e-site-sozinho",
-  cat:"ferramentas-para-50", data:"2026-07-10",
-  titulo:"Novo ChatGPT monta planilha, apresentação e site sozinho",
-  resumo:"O ChatGPT Work é um assistente para tarefas longas: cria planilhas, apresentações, sites e documentos do começo ao fim.",
-  corpo:[
-    "A OpenAI lançou o ChatGPT Work, um assistente feito para tarefas longas em vez de perguntas rápidas.",
-    "Ele cria planilhas, apresentações, sites e documentos de forma autônoma — ou seja, você descreve o que precisa e ele executa o trabalho inteiro, sem pedir instrução a cada passo.",
-    "É uma mudança de uso importante: sai o modelo de pergunta e resposta, entra o modelo de pedir um trabalho pronto."
-  ]},
 
-{ slug:"gpt-5-6-vira-o-chatgpt-padrao-e-tem-tres-versoes",
-  cat:"ferramentas-para-50", data:"2026-07-10",
-  titulo:"GPT-5.6 vira o ChatGPT padrão e chega em três versões",
-  resumo:"Lançado em 9 de julho, o novo sistema da OpenAI tem as versões Sol, Terra e Luna, com preços diferentes entre si.",
-  corpo:[
-    "O GPT-5.6 foi lançado em 9 de julho e passou a ser o modelo padrão do ChatGPT. A família tem três versões: Sol, Terra e Luna.",
-    "O sistema é mais capaz em programação, biologia e segurança digital do que a geração anterior.",
-    "Os preços variam bastante entre as versões: Luna custa 1 dólar por milhão de tokens de entrada e 6 de saída; Terra, 2,50 e 15; Sol, a mais potente, 5 e 30. Para quem usa pelo aplicativo comum, isso não muda nada — só afeta quem programa usando o sistema."
-  ]},
 
-{ slug:"claude-sonnet-5-se-destaca-em-fidelidade-de-voz",
-  cat:"ferramentas-para-50", data:"2026-07-10",
-  titulo:"Claude Sonnet 5 se destaca em fidelidade de voz e instruções complexas",
-  resumo:"Lançado em 30 de junho, o sistema chama atenção por manter o tom de escrita pedido e seguir ordens detalhadas.",
-  corpo:[
-    "O Claude Sonnet 5, lançado em 30 de junho, se destaca por dois pontos: fidelidade de voz e capacidade de seguir instruções complexas.",
-    "Fidelidade de voz significa que ele mantém o jeito de escrever que você pediu, sem escorregar para um tom genérico ao longo do texto.",
-    "O sistema trabalha com 1 milhão de tokens de contexto e custa 2 dólares por milhão de tokens de entrada e 10 de saída."
-  ]},
 
-{ slug:"claude-fable-5-retoma-a-lideranca-em-programacao",
-  cat:"ia-no-dia-a-dia", data:"2026-07-10",
-  titulo:"Claude Fable 5 retoma a liderança em programação",
-  resumo:"O sistema alcançou 80,3% no teste SWE-Bench Pro depois que os Estados Unidos derrubaram a restrição de exportação.",
-  corpo:[
-    "O Claude Fable 5 voltou à liderança em programação, com 80,3% de acerto no SWE-Bench Pro, um dos testes mais respeitados da área.",
-    "A retomada aconteceu depois que os Estados Unidos levantaram a restrição de exportação que limitava o acesso ao sistema.",
-    "Vale a ressalva: testes de referência medem tarefas controladas e nem sempre refletem o uso do dia a dia."
-  ]},
 
-{ slug:"meta-e-xai-lancam-modelos-na-mesma-semana",
-  cat:"ia-no-dia-a-dia", data:"2026-07-10",
-  titulo:"Meta e xAI lançam novos sistemas na mesma semana",
-  resumo:"Foi uma semana histórica, com vários lançamentos de peso acontecendo praticamente ao mesmo tempo.",
-  corpo:[
-    "Meta e xAI lançaram novos sistemas de inteligência artificial na mesma semana em que a OpenAI liberou o GPT-5.6.",
-    "Foi uma semana histórica pela quantidade de lançamentos simultâneos de empresas grandes.",
-    "Quando várias empresas lançam ao mesmo tempo, costuma ser sinal de que todas estavam esperando a primeira dar o passo."
-  ]},
 
-{ slug:"nvidia-cria-sistema-que-escreve-mais-de-duas-vezes-mais-rapido",
-  cat:"ia-no-dia-a-dia", data:"2026-07-10",
-  titulo:"NVIDIA cria sistema que escreve mais de duas vezes mais rápido",
-  resumo:"O Nemotron-Labs-TwoTower gera texto em paralelo com 2,42 vezes mais velocidade, mantendo 98,7% da qualidade.",
-  corpo:[
-    "A NVIDIA apresentou o Nemotron-Labs-TwoTower, um sistema aberto que gera texto em paralelo.",
-    "O ganho é de 2,42 vezes mais velocidade, mantendo 98,7% da qualidade original. Em outras palavras: mais que o dobro da velocidade, perdendo pouco mais de 1% de qualidade.",
-    "Velocidade importa mais do que parece — é ela que determina se um assistente responde na hora ou deixa você esperando."
-  ]},
+
+
+
+
+
+
+
 
 { slug:"gpt-5-6-e-mais-capaz-em-biologia-e-seguranca",
   cat:"ia-e-saude", data:"2026-07-10",
@@ -1028,55 +1012,15 @@ const NOTICIAS = [
     "É importante separar as coisas: um sistema ser bom em biologia não significa que ele deva ser usado para diagnóstico ou para decidir tratamento. Isso continua sendo trabalho de médico."
   ]},
 
-{ slug:"tokenizacao-de-ativos-no-brasil-capta-quase-9-milhoes-em-julho",
-  cat:"ia-e-financas", data:"2026-07-10",
-  titulo:"Tokenização de ativos no Brasil capta quase R$ 9 milhões em julho",
-  resumo:"O setor de ativos digitais segue crescendo no país, com captação relevante logo no começo do mês.",
-  corpo:[
-    "A tokenização de ativos no Brasil captou quase R$ 9 milhões em julho, sinal de crescimento do setor de ativos digitais no país.",
-    "Tokenizar um ativo é transformar algo do mundo real — um imóvel, um contrato, uma safra — em pedacinhos digitais que podem ser comprados e vendidos pela internet.",
-    "É um mercado novo no Brasil e ainda pequeno perto dos investimentos tradicionais."
-  ]},
 
-{ slug:"bitcoin-sobe-e-volta-aos-64-mil-dolares",
-  cat:"ia-e-financas", data:"2026-07-10",
-  titulo:"Bitcoin sobe 2% e volta aos US$ 64 mil",
-  resumo:"A moeda digital tenta se recuperar após uma queda de 20% no período anterior — o equivalente a R$ 331.570.",
-  corpo:[
-    "O Bitcoin subiu cerca de 2% e voltou a negociar em torno de US$ 64 mil, o equivalente a R$ 331.570.",
-    "O movimento é uma tentativa de recuperação depois de uma queda de 20% no período anterior.",
-    "Oscilações desse tamanho são comuns nesse mercado — o que explica por que ele não é indicado para reserva de emergência."
-  ]},
 
-{ slug:"inflacao-de-junho-fica-em-0-16-por-cento",
-  cat:"ia-e-financas", data:"2026-07-10",
-  titulo:"Inflação de junho fica em 0,16% e desacelera",
-  resumo:"O acumulado de 12 meses caiu para 4,64% e a previsão para o ano recuou de 5,33% para 5,30%.",
-  corpo:[
-    "O IPCA de junho ficou em 0,16%, com o acumulado de 12 meses em 4,64%. A inflação está desacelerando.",
-    "A expectativa do Boletim Focus para 2026 caiu de 5,33% para 5,30%. A queda do petróleo, ligada à possibilidade de fim do conflito no Oriente Médio, ajuda no processo.",
-    "Dólar mais fraco também reduz a pressão de inflação vinda de produtos importados."
-  ]},
 
-{ slug:"bolsa-fecha-a-semana-no-maior-patamar-desde-junho",
-  cat:"ia-e-financas", data:"2026-07-10",
-  titulo:"Bolsa fecha a semana no maior patamar desde junho",
-  resumo:"O Ibovespa encerrou a 174.070 pontos, com alta de 0,74% na sexta-feira e acúmulo de 8,03% no ano.",
-  corpo:[
-    "O Ibovespa encerrou a semana positivo, a 174.070 pontos. Foram 0,74% de alta na sexta-feira e 0,45% no acumulado da semana.",
-    "É o maior fechamento desde junho. No ano, o índice acumula alta de 8,03%.",
-    "No mesmo período, o dólar recuou para a faixa de R$ 5,13 a R$ 5,16, acumulando queda de 5,83% frente ao real em 2026."
-  ]},
 
-{ slug:"tesouro-direto-segue-como-protecao-para-pessoa-fisica",
-  cat:"ia-e-financas", data:"2026-07-10",
-  titulo:"Tesouro Direto segue como proteção para quem investe pouco",
-  resumo:"Títulos ligados à inflação e à Selic continuam entre as opções mais relevantes para o investidor pessoa física.",
-  corpo:[
-    "O Tesouro Direto indexado ao IPCA e à Selic continua como proteção relevante para pessoa física — ou seja, para quem investe o próprio dinheiro, sem ser empresa.",
-    "Indexado ao IPCA quer dizer que o título acompanha a inflação. Indexado à Selic quer dizer que acompanha a taxa básica de juros.",
-    "A vantagem do Tesouro Direto é o valor de entrada baixo: dá para começar com pouco dinheiro."
-  ]},
+
+
+
+
+
 
 /* ---------- 4 de julho ---------- */
 { slug:"claude-science-conecta-pesquisadores-a-mais-de-60-bases-cientificas",
@@ -1089,95 +1033,23 @@ const NOTICIAS = [
     "O impacto para a saúde é indireto, mas real: quanto mais rápido pesquisadores conseguem cruzar informação, mais rápido tende a andar o desenvolvimento de tratamentos e medicamentos."
   ]},
 
-{ slug:"anthropic-volta-a-liberar-acesso-apos-fim-do-bloqueio-americano",
-  cat:"ia-no-dia-a-dia", data:"2026-07-04",
-  titulo:"Empresa volta a liberar acesso após fim do bloqueio americano",
-  resumo:"O acesso ao Fable 5 e ao Mythos 5 foi restaurado em 1º de julho, depois que a restrição de exportação dos EUA terminou em 30 de junho.",
-  corpo:[
-    "A Anthropic voltou a liberar o acesso aos sistemas Fable 5 e Mythos 5. O bloqueio de exportação imposto pelos Estados Unidos foi encerrado em 30 de junho, e o acesso foi restaurado a partir de 1º de julho.",
-    "Restrição de exportação é uma regra do governo americano que impede que certas tecnologias sejam vendidas ou disponibilizadas fora do país.",
-    "Episódios assim mostram como decisões de governo afetam diretamente quais ferramentas ficam disponíveis para você."
-  ]},
 
-{ slug:"agentes-autonomos-comecam-a-assumir-trabalho-de-verdade",
-  cat:"ia-no-dia-a-dia", data:"2026-07-04",
-  titulo:"Programas que trabalham sozinhos começam a assumir tarefas de verdade",
-  resumo:"A tendência dominante deixou de ser experimento: agentes autônomos já estão dentro de fluxos reais de trabalho.",
-  corpo:[
-    "A tendência dominante no setor passou a ser a dos agentes autônomos assumindo fluxos reais de trabalho. Menos experimento, mais produção.",
-    "Agente autônomo é um programa que recebe um objetivo e executa todos os passos sozinho, sem alguém dizendo o que fazer a cada etapa.",
-    "A diferença em relação aos últimos anos é que isso saiu das demonstrações e entrou no trabalho do dia a dia de empresas."
-  ]},
 
-{ slug:"google-lanca-assistente-pessoal-e-oculos-inteligentes",
-  cat:"ferramentas-para-50", data:"2026-07-04",
-  titulo:"Google lança assistente pessoal e óculos inteligentes",
-  resumo:"Foram apresentados o Gemini 3.5 Flash, o agente pessoal Gemini Spark e óculos inteligentes feitos com Samsung e Qualcomm.",
-  corpo:[
-    "O Google apresentou três novidades: o Gemini 3.5 Flash, o agente pessoal Gemini Spark e óculos inteligentes desenvolvidos em parceria com Samsung e Qualcomm.",
-    "O Gemini Spark é um assistente pessoal — a proposta é que ele cuide de tarefas suas ao longo do dia, e não apenas responda perguntas.",
-    "Os óculos inteligentes são a aposta da empresa em colocar o assistente no campo de visão do usuário, sem precisar pegar o celular."
-  ]},
 
-{ slug:"openai-anuncia-familia-gpt-5-6-com-acesso-restrito",
-  cat:"ferramentas-para-50", data:"2026-07-04",
-  titulo:"OpenAI anuncia o GPT-5.6 com acesso restrito a 20 parceiros",
-  resumo:"A família Sol, Terra e Luna foi anunciada antes da liberação geral; a versão Sol supera a concorrência em programação.",
-  corpo:[
-    "A OpenAI anunciou a família GPT-5.6, formada pelas versões Sol, Terra e Luna. No anúncio, o acesso ainda estava restrito a cerca de 20 parceiros.",
-    "A versão Sol, a mais potente, supera o Mythos 5 em testes de programação.",
-    "O lançamento para o público geral aconteceria poucos dias depois, em 9 de julho."
-  ]},
 
-{ slug:"renda-fixa-atrativa-com-juros-em-13-5-por-cento",
-  cat:"ia-e-financas", data:"2026-07-04",
-  titulo:"Renda fixa segue atrativa e casas recomendam mistura de títulos",
-  resumo:"Com os juros elevados, a recomendação para julho é combinar títulos públicos com crédito privado.",
-  corpo:[
-    "A renda fixa segue atrativa com a Selic em patamar elevado. Para julho, a XP recomendou uma combinação de títulos públicos com crédito privado.",
-    "Título público é dinheiro emprestado ao governo — o Tesouro Direto é o exemplo mais conhecido. Crédito privado é dinheiro emprestado a empresas, que costuma pagar mais e ter risco maior.",
-    "A ideia de misturar os dois é equilibrar segurança e retorno em vez de apostar tudo em um lado só."
-  ]},
 
-{ slug:"fundo-imobiliario-de-galpoes-eleva-dividendos-ao-maior-nivel-em-um-ano",
-  cat:"ia-e-financas", data:"2026-07-04",
-  titulo:"Fundo imobiliário de galpões eleva pagamentos ao maior nível em um ano",
-  resumo:"O BRCO11 aumentou os dividendos e trouxe os fundos de galpões logísticos de volta ao radar dos investidores.",
-  corpo:[
-    "O fundo imobiliário BRCO11 elevou seus dividendos ao maior nível em um ano. Com isso, os fundos de galpões logísticos voltaram ao radar dos investidores.",
-    "Fundo imobiliário é uma forma de investir em imóveis sem comprar um imóvel: você compra cotas e recebe uma parte dos aluguéis todo mês.",
-    "Galpão logístico é o tipo de imóvel usado por empresas de entrega e comércio eletrônico para armazenar produtos."
-  ]},
 
-{ slug:"brasileiros-diversificam-mais-os-investimentos",
-  cat:"ia-e-financas", data:"2026-07-04",
-  titulo:"Brasileiros estão diversificando mais os investimentos",
-  resumo:"As fintechs seguem crescendo e os investimentos sustentáveis ganham espaço na carteira do investidor comum.",
-  corpo:[
-    "Os brasileiros estão diversificando mais seus investimentos. As fintechs — empresas de tecnologia que oferecem serviços financeiros — seguem crescendo, e os investimentos sustentáveis estão em alta.",
-    "Diversificar é o nome técnico para não colocar todo o dinheiro em um lugar só.",
-    "Com a inflação sob controle, perto de 4%, sobra mais espaço para planejamento de longo prazo."
-  ]},
 
-{ slug:"producao-industrial-mais-fraca-reforca-aposta-em-corte-de-juros",
-  cat:"ia-e-financas", data:"2026-07-04",
-  titulo:"Produção industrial mais fraca reforça aposta em corte de juros",
-  resumo:"O dado ruim de maio animou a bolsa: economia desacelerando aumenta a chance de o Banco Central baixar os juros.",
-  corpo:[
-    "A produção industrial mais fraca em maio reforçou as apostas de corte de juros — e a bolsa reagiu bem ao dado.",
-    "A lógica é a seguinte: quando a economia desacelera, a inflação tende a ceder, e o Banco Central ganha espaço para baixar os juros. Juros menores costumam favorecer a bolsa.",
-    "Na época, o mercado apostava em corte de 0,25 ponto em agosto, com a projeção para o fim do ano em 13,50%."
-  ]},
 
-{ slug:"bolsa-tem-maior-fechamento-desde-junho-com-dolar-em-queda",
-  cat:"ia-e-financas", data:"2026-07-04",
-  titulo:"Bolsa tem maior fechamento desde junho e dólar cai a R$ 5,16",
-  resumo:"O Ibovespa fechou a 174.070 pontos e o real se fortaleceu com o apetite dos investidores por países emergentes.",
-  corpo:[
-    "O Ibovespa fechou a semana em alta, aos 174.070 pontos — alta de 0,45% na semana e de 8,03% no ano. Foi o maior fechamento desde junho.",
-    "O dólar caiu para R$ 5,168, acumulando queda de 5,83% no ano. O real se fortaleceu com o apetite dos investidores por países emergentes.",
-    "Emergente é como o mercado chama países em desenvolvimento, como o Brasil. Quando os investidores estrangeiros ficam mais dispostos a arriscar, esses países recebem mais dinheiro."
-  ]}
+
+
+
+
+
+
+
+
+
 ];
 
 /* ============================================================
@@ -1225,6 +1097,7 @@ const FOTO_EDITORIA = {
    FOTO_EDITORIA acima é só o reserva de categoria para as notícias antigas
    do protótipo que ainda não passaram por essa curadoria (pendente). */
 const FOTO_NOTICIA = {
+
   "gpt-5-6-e-mais-capaz-em-biologia-e-seguranca":
     "https://images.pexels.com/photos/8442110/pexels-photo-8442110.jpeg?auto=compress&cs=tinysrgb&w=1200",
   "claude-science-conecta-pesquisadores-a-mais-de-60-bases-cientificas":
@@ -1244,7 +1117,42 @@ const FOTO_NOTICIA = {
   "neto-digital-assistente-de-ia-tira-duvidas-de-tecnologia-de-idosos":
     "https://images.pexels.com/photos/3823542/pexels-photo-3823542.jpeg?auto=compress&cs=tinysrgb&w=1200",
   "celulares-ficam-mais-intuitivos-com-inteligencia-artificial-em-2026":
-    "https://images.pexels.com/photos/7545050/pexels-photo-7545050.jpeg?auto=compress&cs=tinysrgb&w=1200"
+    "https://images.pexels.com/photos/7545050/pexels-photo-7545050.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "robo-de-companhia-reduz-solidao-de-idosos-nos-eua":
+    "https://images.pexels.com/photos/4057758/pexels-photo-4057758.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "robos-de-pelucia-com-ia-combatem-solidao-de-idosos-na-coreia-do-sul":
+    "https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "chatbot-com-ia-preserva-memoria-de-avo-para-os-netos-que-nunca-o-conheceram":
+    "https://images.pexels.com/photos/8964512/pexels-photo-8964512.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "empresa-chinesa-lanca-robo-humanoide-para-fazer-companhia-a-quem-vive-sozinho":
+    "https://images.pexels.com/photos/8386422/pexels-photo-8386422.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "inteligencia-artificial-aprende-a-identificar-a-fase-do-alzheimer-do-paciente":
+    "https://images.pexels.com/photos/4226219/pexels-photo-4226219.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "celular-com-inteligencia-artificial-ajuda-a-prevenir-quedas-de-idosos-nas-escadas":
+    "https://images.pexels.com/photos/19079390/pexels-photo-19079390.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "juros-em-14-25-por-cento-mantem-a-renda-fixa-na-frente-da-bolsa":
+    "https://images.pexels.com/photos/6694563/pexels-photo-6694563.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "dolar-recua-para-perto-de-5-reais-e-10-centavos":
+    "https://images.pexels.com/photos/4386474/pexels-photo-4386474.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "bolsa-oscila-perto-dos-178-mil-pontos-com-aposta-em-corte-de-juros":
+    "https://images.pexels.com/photos/5833757/pexels-photo-5833757.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "bitcoin-anda-de-lado-entre-64-e-66-mil-dolares":
+    "https://images.pexels.com/photos/6765705/pexels-photo-6765705.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "youtube-apaga-4-7-bilhoes-de-visualizacoes-de-videos-feitos-por-ia":
+    "https://images.pexels.com/photos/3227986/pexels-photo-3227986.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "kimi-k3-e-o-maior-modelo-aberto-do-mundo":
+    "https://images.pexels.com/photos/17323801/pexels-photo-17323801.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "o-que-vence-agora-nao-e-a-melhor-inteligencia-artificial-e-a-mais-barata":
+    "https://images.pexels.com/photos/6838544/pexels-photo-6838544.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "tres-inteligencias-artificiais-de-ponta-lancadas-em-menos-de-48-horas":
+    "https://images.pexels.com/photos/6424584/pexels-photo-6424584.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "google-lanca-tres-versoes-do-gemini-e-segura-a-mais-potente":
+    "https://images.pexels.com/photos/31450274/pexels-photo-31450274.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "meta-lanca-seu-primeiro-criador-de-imagens-por-inteligencia-artificial":
+    "https://images.pexels.com/photos/4986496/pexels-photo-4986496.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "google-video-remix-edita-videos-curtos-dentro-do-google-fotos":
+    "https://images.pexels.com/photos/8368748/pexels-photo-8368748.jpeg?auto=compress&cs=tinysrgb&w=1200",
+
 };
 
 function imagemFallbackSVG(n, alto){
@@ -1375,18 +1283,21 @@ const ORDENADAS = NOTICIAS.map((n,i) => ({...n, ordem:i}))
 
 function cartao(n, i){
   const e = ED[n.cat];
-  return `<button class="cartao" data-slug="${n.slug}" style="animation-delay:${i*70}ms">
-    <span class="foto">
-      ${imagem(n,false)}
-      <span class="selo" style="background:${e.cor}">${esc(e.nome)}</span>
-    </span>
-    <span class="corpo-cartao">
-      <span class="data-cartao">${dataCurta(n.data)}</span>
-      <h3>${esc(n.titulo)}</h3>
-      <p>${esc(n.resumo)}</p>
-      <span class="ler" style="color:${e.cor}">Ler a notícia <span class="fl">&rarr;</span></span>
-    </span>
-  </button>`;
+  return `<div class="cartao-wrap">
+    <button class="cartao" data-slug="${n.slug}" style="animation-delay:${i*70}ms">
+      <span class="foto">
+        ${imagem(n,false)}
+        <span class="selo" style="background:${e.cor}">${esc(e.nome)}</span>
+      </span>
+      <span class="corpo-cartao">
+        <span class="data-cartao">${dataCurta(n.data)}</span>
+        <h3>${esc(n.titulo)}</h3>
+        <p>${esc(n.resumo)}</p>
+        <span class="ler" style="color:${e.cor}">Ler a notícia <span class="fl">&rarr;</span></span>
+      </span>
+    </button>
+    <button class="btn-atalho" data-atalho="1">📌 Salvar atalho do portal</button>
+  </div>`;
 }
 
 function linha(n, i){
@@ -1489,6 +1400,9 @@ function ligarCliques(){
   palco.querySelectorAll("[data-ir]").forEach(b => {
     b.addEventListener("click", () => { limparBusca(); location.hash = b.dataset.ir; });
   });
+  palco.querySelectorAll("[data-atalho]").forEach(b => {
+    b.addEventListener("click", ev => { ev.stopPropagation(); cliqueAtalho(); });
+  });
 }
 
 /* ============================================================
@@ -1514,6 +1428,12 @@ function abrirArtigo(slug){
         <span class="dt" style="font-size:14px;color:var(--tinta-3)">${dataLonga(n.data)}</span>
       </div>
       <h2 id="tituloArtigo">${esc(n.titulo)}</h2>
+      <div class="caixa-audio">
+        <span class="rotulo-audio">🔊 Ouvir esta notícia</span>
+        <audio controls preload="none" src="audio/${esc(n.slug)}.mp3">
+          Seu navegador não suporta áudio. <a href="audio/${esc(n.slug)}.mp3">Baixar o áudio desta notícia</a>.
+        </audio>
+      </div>
       <p class="linha-fina">${esc(n.resumo)}</p>
       <div class="txt">${n.corpo.map(p => `<p>${esc(p)}</p>`).join("")}</div>
       ${n.fonte ? `<p class="fonte-art" style="font-size:14px;color:var(--tinta-3);margin-top:14px">Fonte: <a href="${esc(n.fonte.url)}" target="_blank" rel="noopener noreferrer">${esc(n.fonte.nome)}</a></p>` : ""}
@@ -1557,6 +1477,7 @@ document.addEventListener("keydown", ev => {
   if(ev.key === "Escape"){
     if(fundo.classList.contains("aberta")) fecharArtigo();
     else if(fundoCadastro.classList.contains("aberta")) fecharCadastro();
+    else if(fundoAtalho.classList.contains("aberta")) fecharAtalho();
     else fecharGaveta();
   }
 });
@@ -1642,6 +1563,91 @@ btnEnviarCad.addEventListener("click", async function(){
   btnEnviarCad.disabled = false;
   btnEnviarCad.textContent = "Quero receber ✓";
 });
+
+/* ============================================================
+   6.7) ATALHO — "Salvar atalho do portal" (nas 6 notícias recentes)
+   Windows/Android/Chrome/Edge: prompt de instalação nativo (PWA),
+   graças ao manifest.json + ícones. iPhone e Mac com Safari: a Apple
+   bloqueia o disparo automático de "Adicionar à Tela de Início", então
+   mostramos passo a passo ilustrado em palavras simples.
+   ============================================================ */
+let promptInstalar = null;
+window.addEventListener("beforeinstallprompt", ev => {
+  ev.preventDefault();
+  promptInstalar = ev;
+});
+
+const fundoAtalho     = document.getElementById("fundoAtalho");
+const btnFecharAtalho = document.getElementById("fecharAtalho");
+const subAtalho       = document.getElementById("subAtalho");
+const passosAtalho    = document.getElementById("passosAtalho");
+let focoAntesAtalho   = null;
+
+function plataformaAtalho(){
+  const ua = navigator.userAgent;
+  const ehIOS = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  if(ehIOS) return "ios";
+  const ehMac = /Macintosh/.test(ua);
+  const ehSafari = /^((?!chrome|android|crios|fxios|edg).)*safari/i.test(ua);
+  if(ehMac && ehSafari) return "mac";
+  return "auto";
+}
+
+function textosAtalho(tipo){
+  if(tipo === "ios") return {
+    sub: "No iPhone ou iPad, isso só funciona com você tocando — é rápido, 3 toques.",
+    passos: [
+      "Toque no ícone de <strong>Compartilhar</strong> (o quadrado com uma seta pra cima), geralmente embaixo da tela.",
+      "Deslize a lista e toque em <strong>“Adicionar à Tela de Início”</strong>.",
+      "Toque em <strong>“Adicionar”</strong>, no canto superior direito."
+    ]
+  };
+  if(tipo === "mac") return {
+    sub: "No Mac, isso só funciona com você clicando — é rápido, 2 cliques.",
+    passos: [
+      "Clique no ícone de <strong>Compartilhar</strong> na barra de endereço (o quadrado com uma seta pra cima).",
+      "Escolha <strong>“Adicionar ao Dock”</strong> (ou “Adicionar aos Favoritos”, dependendo da versão do Safari)."
+    ]
+  };
+  return {
+    sub: "Seu navegador ainda não abriu a instalação automática. Também dá pra fazer assim:",
+    passos: [
+      "Clique nos <strong>três pontinhos (⋮)</strong> no canto superior direito da janela.",
+      "Escolha <strong>“Instalar app”</strong> ou <strong>“Criar atalho”</strong>."
+    ]
+  };
+}
+
+function abrirAtalho(tipo){
+  const t = textosAtalho(tipo);
+  subAtalho.textContent = t.sub;
+  passosAtalho.innerHTML = t.passos.map(p => `<li>${p}</li>`).join("");
+  focoAntesAtalho = document.activeElement;
+  fundoAtalho.classList.add("aberta");
+  document.body.style.overflow = "hidden";
+  setTimeout(() => btnFecharAtalho.focus(), 60);
+}
+
+function fecharAtalho(){
+  fundoAtalho.classList.remove("aberta");
+  document.body.style.overflow = fundo.classList.contains("aberta") ? "hidden" : "";
+  if(focoAntesAtalho && document.contains(focoAntesAtalho)) focoAntesAtalho.focus();
+  focoAntesAtalho = null;
+}
+
+btnFecharAtalho.addEventListener("click", fecharAtalho);
+fundoAtalho.addEventListener("click", ev => { if(ev.target === fundoAtalho) fecharAtalho(); });
+
+function cliqueAtalho(){
+  const plat = plataformaAtalho();
+  if(plat === "ios" || plat === "mac"){ abrirAtalho(plat); return; }
+  if(promptInstalar){
+    promptInstalar.prompt();
+    promptInstalar.userChoice.finally(() => { promptInstalar = null; });
+  } else {
+    abrirAtalho("auto");
+  }
+}
 
 /* ============================================================
    7) ROTEADOR — cada notícia tem endereço próprio
