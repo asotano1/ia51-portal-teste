@@ -641,7 +641,8 @@ const EDITORIAS = [
   { id:"ia-e-saude",          nome:"IA e Saúde",           cor:"#8e2b45", cor2:"#c4566f" },
   { id:"ia-e-financas",       nome:"IA e Finanças",        cor:"#1c6b4a", cor2:"#2f9d6e" },
   { id:"ferramentas-para-50", nome:"Ferramentas para 50+", cor:"#8f4d14", cor2:"#c9822f" },
-  { id:"ia-e-relacoes",       nome:"IA e Relações",        cor:"#4a3d78", cor2:"#7d6bb0" }
+  { id:"ia-e-relacoes",       nome:"IA e Relações",        cor:"#4a3d78", cor2:"#7d6bb0" },
+  { id:"auxilio-da-visao",    nome:"IA no Auxílio da Visão", cor:"#0e6e77", cor2:"#3aa7b0" }
 ];
 const VISIVEIS = 2;
 const ED = Object.fromEntries(EDITORIAS.map(e => [e.id, e]));
@@ -696,6 +697,92 @@ function dadosDaNoticia(n){
       (edições de 04, 10, 17 e 24 de julho de 2026)
    ============================================================ */
 const NOTICIAS = [
+
+/* ---------- 31 de julho ---------- */
+{ slug:"openai-anuncia-caixa-de-som-com-ia-para-a-casa",
+  cat:"ia-no-dia-a-dia", data:"2026-07-31",
+  titulo:"OpenAI anuncia sua primeira caixa de som com inteligência artificial para a casa",
+  resumo:"A OpenAI revelou que seu primeiro produto físico vai ser uma caixa de som sem tela, com câmera e sensores, pensada para ser um companheiro de IA dentro de casa. Lançamento previsto para o fim de 2026.",
+  corpo:[
+    "A OpenAI, empresa por trás do ChatGPT, anunciou no dia 14 de julho de 2026 que seu primeiro produto físico vai ser uma caixa de som inteligente sem tela, projetada para ser um companheiro de IA dentro de casa. A informação foi revelada pela Bloomberg e confirmada por outras fontes do setor.",
+    "O produto será diferente dos assistentes de voz que conhecemos, como o Amazon Echo ou o Google Home. Enquanto esses dispositivos respondem a perguntas e executam comandos, o novo aparelho da OpenAI foi concebido para ser algo mais próximo de um computador doméstico da era da inteligência artificial.",
+    "O dispositivo terá câmera, microfone e outros sensores que permitem a ele observar o ambiente ao redor e compreender melhor o contexto do usuário. Isso significa que ele não apenas ouve, mas enxerga o que está acontecendo na sala, podendo reagir de forma mais natural e contextualizada.",
+    "Entre as funções previstas estão controlar aparelhos da casa conectada, tocar músicas e podcasts, responder perguntas, enviar mensagens e acessar todas as capacidades do ChatGPT. A grande diferença em relação aos concorrentes é a proposta de ser uma presença mais humanizada no lar, com capacidade de manter conversas longas, lembrar da rotina do usuário e agir de forma mais proativa.",
+    "O hardware é liderado por Tang Tan, executivo que passou 25 anos na Apple antes de se juntar à OpenAI como vice-presidente de hardware. O lançamento está previsto para o final de 2026 ou início de 2027, com preço estimado entre 200 e 300 dólares — num mercado que a Apple também está prestes a renovar com sua própria linha de produtos para casa."
+  ],
+  fonte:{ nome:"TechCrunch", url:"https://techcrunch.com/2026/07/14/openais-first-hardware-device-is-reportedly-a-screenless-speaker-that-can-move/" }},
+
+{ slug:"ia-comeca-a-apoiar-decisoes-medicas-nos-consultorios",
+  cat:"ia-e-saude", data:"2026-07-31",
+  titulo:"Inteligência artificial começa a apoiar decisões médicas dentro dos consultórios",
+  resumo:"Pesquisas do Georgia Institute of Technology mostram que a IA está avançando das tarefas administrativas para apoiar diagnósticos e decisões clínicas reais, sem substituir o julgamento do médico.",
+  corpo:[
+    "Uma série de pesquisas publicada no final de julho de 2026 por especialistas do Georgia Institute of Technology, nos Estados Unidos, mostra que a inteligência artificial está avançando para além das tarefas administrativas nos hospitais e chegando ao coração das decisões clínicas.",
+    "Até pouco tempo atrás, o papel da IA na medicina se resumia, na maior parte do tempo, a organizar prontuários, reduzir papelada e agilizar o agendamento de consultas. Agora, os pesquisadores dizem que a tecnologia começa a apoiar os médicos em decisões reais sobre diagnóstico e tratamento — como no caso do OpenEvidence, sistema que responde perguntas médicas com base em literatura científica atualizada e funciona como uma segunda opinião instantânea.",
+    "Outra frente de avanço é o cuidado com a saúde mental: a IA está ajudando sistemas de saúde pública a identificar sinais precoces de deterioração mental em grupos populacionais inteiros. Dispositivos vestíveis, como smartwatches, também ganham papel crescente, coletando dados do corpo que a IA transforma em informação útil para médicos e pacientes — o que pode ser especialmente transformador para populações rurais com menos acesso a médicos.",
+    "Mas os próprios pesquisadores alertam: médicos que se formarem ao lado da IA precisarão, mesmo assim, desenvolver a capacidade de raciocinar de forma independente, para não virarem apenas validadores de sugestões geradas por algoritmo. Segundo Jon Duke, diretor do Center for Health Analytics & Informatics do Georgia Tech, a IA mais poderosa na medicina não é a que substitui o médico, mas a que fortalece o julgamento humano sem criar dependência."
+  ],
+  fonte:{ nome:"Georgia Tech News Center", url:"https://news.gatech.edu/news/2026/07/29/diagnosis-wellness-ais-healthcare-revolution" }},
+
+{ slug:"openai-corta-precos-em-oitenta-por-cento-e-apresenta-novos-modelos",
+  cat:"ferramentas-para-50", data:"2026-07-31",
+  titulo:"OpenAI corta preços em 80% e apresenta novos modelos com diferentes velocidades",
+  resumo:"A OpenAI reduziu em 80% o preço do modelo mais barato da família GPT-5.6 e lançou um modo mais rápido para o modelo topo de linha, num momento de forte concorrência entre as IAs.",
+  corpo:[
+    "Na última semana de julho de 2026, a OpenAI fez duas mudanças importantes que vão afetar diretamente quem usa inteligência artificial no dia a dia ou desenvolve produtos com essa tecnologia.",
+    "A primeira foi o corte de preço no modelo GPT-5.6 Luna, o mais acessível da família, com redução de 80%. A nova tarifa ficou em 20 centavos de dólar por cada um milhão de tokens de entrada e 1 dólar e 20 centavos por um milhão de tokens de saída — tokens são os pedaços de texto que a IA processa. Na prática, ficou muito mais barato rodar esses modelos em grande volume.",
+    "A segunda mudança foi a apresentação do modelo Sol em um modo mais rápido chamado Fast Mode, que entrega resultados até 2,5 vezes mais ágeis que o modo padrão. A família GPT-5.6 organiza os modelos em três níveis: Sol, o mais potente, voltado para raciocínio avançado e programação; Terra, que equilibra inteligência e custo; e Luna, o mais acessível, indicado para tarefas em grande volume.",
+    "A concorrência não ficou parada: a Anthropic disponibilizou o Claude Sonnet 5 via API, o Google segue com o Gemini 3.6 Flash, e a xAI lançou o Grok 4.5 também em julho. Para quem está começando a explorar ferramentas de inteligência artificial, o momento é especialmente bom: mais opções, mais velocidade e preços em queda constante."
+  ],
+  fonte:{ nome:"VentureBeat", url:"https://venturebeat.com/technology/ai-price-wars-openai-cuts-gpt-5-6-luna-prices-by-80-as-model-competition-shifts-toward-cost" }},
+
+{ slug:"banco-espanhol-realiza-primeiro-pagamento-feito-por-agente-de-ia",
+  cat:"ia-e-financas", data:"2026-07-31",
+  titulo:"Banco espanhol realiza o primeiro pagamento feito por um agente de inteligência artificial no mundo real",
+  resumo:"O CaixaBank, da Espanha, concluiu em parceria com a Visa a primeira transação real iniciada por um agente de IA agindo no lugar de uma pessoa, sem confirmação manual.",
+  corpo:[
+    "Em julho de 2026, aconteceu um marco silencioso na história do dinheiro digital: pela primeira vez, um banco completou uma transação financeira real iniciada por um agente de inteligência artificial agindo no lugar de um ser humano. Quem protagonizou esse momento foi o CaixaBank, da Espanha, em parceria com a Visa.",
+    "Na prática: imagine um assistente de IA configurado para pagar automaticamente uma conta quando determinada condição for cumprida — como quando uma assinatura estiver para vencer ou o preço de um produto favorito baixar. O agente age de forma autônoma, sem que o usuário precise confirmar cada transação manualmente.",
+    "Foi exatamente isso que o CaixaBank testou com o programa Agentic Ready da Visa, lançado na Europa em março deste ano. O piloto utilizou dados reais de cartão em sistemas de vendas convencionais, protegidos pela tokenização, verificação de identidade e monitoramento de fraudes da Visa — provando, segundo o banco, \"a viabilidade de pagamentos iniciados por agentes de IA dentro da infraestrutura atual\".",
+    "A tendência é global: a Visa já conduziu testes similares com o banco DBS, na Ásia, e com o Santander, na América Latina. Para o consumidor comum, a mudança que se aproxima é essa: a inteligência artificial não vai apenas ajudar a tomar decisões financeiras — em breve, com autorização do usuário, poderá executar essas decisões por ele."
+  ],
+  fonte:{ nome:"CaixaBank", url:"https://www.caixabank.com/en/headlines/news/caixabank-completes-its-first-transaction-initiated-by-an-artificial-intelligence-agent-in-collaboration-with-visa" }},
+
+{ slug:"china-regulamenta-relacionamentos-com-ia",
+  cat:"ia-e-relacoes", data:"2026-07-31",
+  titulo:"China regulamenta relacionamentos com inteligência artificial",
+  resumo:"Desde 15 de julho, a China exige que aplicativos de companheiros virtuais de IA sigam regras contra dependência emocional, com proteção especial para menores de idade.",
+  corpo:[
+    "Desde 15 de julho de 2026, a China passou a exigir que aplicativos de companheiros virtuais baseados em inteligência artificial sigam um conjunto de regras que pode mudar o futuro desse mercado no mundo inteiro. A medida vale para qualquer sistema de IA capaz de simular uma personalidade humana e manter interações emocionais prolongadas com o usuário.",
+    "A lei não proíbe que uma IA seja carinhosa ou acolhedora. O que o governo chinês tentou bloquear foi o uso deliberado da IA para criar dependência emocional, controlar psicologicamente o usuário ou estimular comportamento de vício. Para menores de idade, a regra é mais rígida: nenhuma plataforma pode oferecer parceiros ou relação íntima virtual a pessoas com menos de 18 anos.",
+    "Entre as obrigações práticas, a lei exige que o sistema avise o usuário após cada duas horas seguidas de uso, deixe claro que o companheiro virtual é uma máquina, e garanta o direito de apagar dados e encerrar a relação virtual sem obstáculos. Em situações de risco à saúde mental, a plataforma deve adotar medidas de intervenção e, em casos extremos, acionar contatos de emergência.",
+    "Analistas apontam que a lei também tem relação com a queda da natalidade na China, com receio de que parceiros artificiais compitam com casamentos e famílias reais. A China foi o primeiro país a estabelecer limites claros nesse território — outros países terão que decidir logo onde colocar as próprias fronteiras."
+  ],
+  fonte:{ nome:"Xinhua", url:"https://english.news.cn/20260715/4bf39cb3c4db42babc10ed37932cfd94/c.html" }},
+
+{ slug:"cocal-do-sul-primeira-cidade-do-brasil-a-oferecer-oculos-com-ia-gratis-para-cegos",
+  cat:"auxilio-da-visao", data:"2026-07-31",
+  titulo:"Cocal do Sul vai ser a primeira cidade do Brasil a oferecer óculos com inteligência artificial de graça para cegos",
+  resumo:"A Câmara de Vereadores da cidade catarinense aprovou um projeto que vai distribuir gratuitamente óculos inteligentes da Meta para moradores com deficiência visual.",
+  corpo:[
+    "Uma cidade de Santa Catarina está prestes a escrever uma página inédita na história da inclusão digital no Brasil. Cocal do Sul, no sul do estado, teve aprovado pela Câmara de Vereadores um projeto que vai disponibilizar gratuitamente óculos inteligentes com inteligência artificial da Meta para pessoas com deficiência visual do município — o primeiro município do Brasil a oferecer essa tecnologia de graça como política pública.",
+    "A iniciativa nasceu da experiência prática do professor Alexandre Rzatki, que é deficiente visual e começou a usar os óculos inteligentes há cerca de nove meses. A tecnologia usa IA para interpretar o ambiente ao redor do usuário e transmitir essas informações por áudio em tempo real, identificando objetos, lendo textos em placas e embalagens, descrevendo cenas e reconhecendo rostos de pessoas conhecidas. Na prática, quem usa os óculos pode entrar num supermercado e saber o que está na prateleira à frente, ouvir o conteúdo de uma correspondência ou receber alertas sobre obstáculos na rua. Na primeira etapa, a prefeitura pretende atender seis moradores com deficiência visual.",
+    "No campo tecnológico mais amplo, a Apple também avançou no mesmo terreno ao anunciar o Image Explorer, recurso integrado ao VoiceOver do iPhone que usa inteligência artificial com processamento local para gerar descrições detalhadas de imagens, documentos e recibos — com previsão de chegar ao público com o iOS 27, em setembro de 2026. O que Cocal do Sul e a Apple mostram é que a inteligência artificial não é só para quem enxerga bem, pensa rápido e digita facilmente: ela está sendo construída também para quem o mundo da tecnologia sempre deixou de lado."
+  ],
+  fonte:{ nome:"ND+", url:"https://ndmais.com.br/tecnologia/cidade-sc-e-pioneira-ao-oferecer-oculos-inteligentes/" }},
+
+{ slug:"meta-distribui-oculos-de-ia-para-veteranos-cegos",
+  cat:"auxilio-da-visao", data:"2026-07-31",
+  titulo:"Meta distribui óculos de inteligência artificial para veteranos cegos nos Estados Unidos",
+  resumo:"Em parceria com o Conselho Americano dos Cegos, a Meta distribuiu óculos Ray-Ban com IA a veteranos militares cegos durante uma convenção em Saint Louis, nos Estados Unidos.",
+  corpo:[
+    "No dia 27 de julho de 2026, uma iniciativa pouco noticiada no Brasil marcou um passo importante no uso da inteligência artificial para ajudar pessoas com deficiência visual. O Conselho Americano dos Cegos, em parceria com a Meta e a Associação de Veteranos Cegos, distribuiu óculos Ray-Ban Meta com inteligência artificial a veteranos militares cegos durante a Convenção Nacional da organização, em Saint Louis, no estado de Missouri.",
+    "Os óculos combinam câmera, microfone e alto-falantes embutidos com um assistente de IA que consegue descrever o ambiente ao redor, ler textos em voz alta, identificar objetos, responder perguntas e até fazer chamadas telefônicas. Para alguém que perdeu a visão, o dispositivo funciona como um novo par de olhos portátil, disponível o tempo todo no rosto do usuário.",
+    "A iniciativa faz parte de um compromisso maior da Meta de distribuir os óculos a 130 mil veteranos cegos em todo o mundo. Os Estados Unidos têm uma das maiores populações de veteranos com deficiência visual do mundo, muitos vítimas de ferimentos em combate — para essa população, ganhar independência no dia a dia representa uma mudança profunda na qualidade de vida.",
+    "Iniciativas como essa mostram uma direção promissora para a IA: não apenas automatizar tarefas, mas devolver autonomia a pessoas que dependem de outros para realizar atividades que a maioria considera simples."
+  ],
+  fonte:{ nome:"American Council of the Blind", url:"https://www.acb.org/american-council-blind-distribute-ray-ban-meta-ai-glasses-blind-veterans-st-louis-july-27" }},
+
 
 /* ---------- 27 de julho ---------- */
 { slug:"robo-de-companhia-reduz-solidao-de-idosos-nos-eua",
@@ -1089,7 +1176,8 @@ const FOTO_EDITORIA = {
   "ia-no-dia-a-dia":     "https://images.pexels.com/photos/7331674/pexels-photo-7331674.jpeg?auto=compress&cs=tinysrgb&w=1200",
   "ferramentas-para-50": "https://images.pexels.com/photos/6248437/pexels-photo-6248437.jpeg?auto=compress&cs=tinysrgb&w=1200",
   "ia-e-saude":          "https://images.pexels.com/photos/8376236/pexels-photo-8376236.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  "ia-e-relacoes":       "https://images.pexels.com/photos/8769743/pexels-photo-8769743.jpeg?auto=compress&cs=tinysrgb&w=1200"
+  "ia-e-relacoes":       "https://images.pexels.com/photos/8769743/pexels-photo-8769743.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "auxilio-da-visao":    "https://images.pexels.com/photos/8327706/pexels-photo-8327706.jpeg?auto=compress&cs=tinysrgb&w=1200"
 };
 /* Regra a partir de 25/07: toda "captação de notícias" nova busca 6 fotos
    diferentes, uma por notícia, relacionadas ao assunto específico dela —
@@ -1152,6 +1240,22 @@ const FOTO_NOTICIA = {
     "https://images.pexels.com/photos/4986496/pexels-photo-4986496.jpeg?auto=compress&cs=tinysrgb&w=1200",
   "google-video-remix-edita-videos-curtos-dentro-do-google-fotos":
     "https://images.pexels.com/photos/8368748/pexels-photo-8368748.jpeg?auto=compress&cs=tinysrgb&w=1200",
+
+  /* ---------- 31 de julho ---------- */
+  "openai-anuncia-caixa-de-som-com-ia-para-a-casa":
+    "https://images.pexels.com/photos/29292011/pexels-photo-29292011.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "ia-comeca-a-apoiar-decisoes-medicas-nos-consultorios":
+    "https://images.pexels.com/photos/4266931/pexels-photo-4266931.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "openai-corta-precos-em-oitenta-por-cento-e-apresenta-novos-modelos":
+    "https://images.pexels.com/photos/3862142/pexels-photo-3862142.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "banco-espanhol-realiza-primeiro-pagamento-feito-por-agente-de-ia":
+    "https://images.pexels.com/photos/5239822/pexels-photo-5239822.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "china-regulamenta-relacionamentos-com-ia":
+    "https://images.pexels.com/photos/8036934/pexels-photo-8036934.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "cocal-do-sul-primeira-cidade-do-brasil-a-oferecer-oculos-com-ia-gratis-para-cegos":
+    "https://images.pexels.com/photos/8327706/pexels-photo-8327706.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "meta-distribui-oculos-de-ia-para-veteranos-cegos":
+    "https://images.pexels.com/photos/10223581/pexels-photo-10223581.jpeg?auto=compress&cs=tinysrgb&w=1200",
 
 };
 
