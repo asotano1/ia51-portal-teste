@@ -286,6 +286,18 @@ main{padding:10px 0 90px}
   backdrop-filter:blur(3px);box-shadow:0 2px 10px rgba(0,0,0,.24);
 }
 
+.formato{
+  position:absolute;right:14px;bottom:14px;
+  font-size:12px;font-weight:bold;letter-spacing:.01em;
+  color:var(--tinta);background:rgba(255,253,249,.94);
+  padding:6px 12px;border-radius:999px;
+  display:flex;align-items:center;gap:6px;white-space:nowrap;
+  backdrop-filter:blur(3px);box-shadow:0 2px 10px rgba(0,0,0,.18);
+}
+@media (max-width:480px){
+  .formato{font-size:11px;padding:5px 10px;gap:4px}
+}
+
 .corpo-cartao{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
 .data-cartao{font-size:13px;color:var(--tinta-3);letter-spacing:.09em;text-transform:uppercase;margin-bottom:9px}
 .cartao h3{
@@ -1392,6 +1404,7 @@ function cartao(n, i){
       <span class="foto">
         ${imagem(n,false)}
         <span class="selo" style="background:${e.cor}">${esc(e.nome)}</span>
+        <span class="formato">📄 Escrito · 🔊 Narrado</span>
       </span>
       <span class="corpo-cartao">
         <span class="data-cartao">${dataCurta(n.data)}</span>
