@@ -1,0 +1,75 @@
+# ═══════════════════════════════════════════════════════════════
+#  ia51mais.com  —  configuração do servidor (Hostinger / LiteSpeed)
+#  Sobe junto com o index.html, na pasta public_html
+# ═══════════════════════════════════════════════════════════════
+
+# ---------------------------------------------------------------
+# 1. ACENTUAÇÃO
+# Sem isto o servidor pode anunciar outro padrão de caracteres, que
+# VENCE o declarado dentro do HTML — e o site mostra "InteligÃªncia"
+# no lugar de "Inteligência".
+# ---------------------------------------------------------------
+AddDefaultCharset UTF-8
+<IfModule mod_mime.c>
+  AddCharset UTF-8 .html .css .js
+</IfModule>
+
+# ---------------------------------------------------------------
+# 2. ENDEREÇO ÚNICO: https, sem www
+# Site acessível por 4 endereços diferentes divide a força no Google.
+# Aqui tudo é redirecionado para https://ia51mais.com
+# ---------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # http -> https
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^(.*)$ https://ia51mais.com/$1 [R=301,L]
+
+  # www -> sem www
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://ia51mais.com/$1 [R=301,L]
+</IfModule>
+
+# ---------------------------------------------------------------
+# 3. VELOCIDADE — compressão
+# Velocidade é fator de posicionamento no Google e o index.html
+# tem cerca de 70 KB. Comprimido cai para menos de 20 KB.
+# ---------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ---------------------------------------------------------------
+# 4. VELOCIDADE — cache do navegador
+# O HTML não pode ser guardado em cache: senão o testador continua
+# vendo a versão antiga depois de cada correção que você subir.
+# ---------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# ---------------------------------------------------------------
+# 5. SEGURANÇA (cabeçalhos básicos)
+# ---------------------------------------------------------------
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+# ---------------------------------------------------------------
+# 6. Impede que alguém liste os arquivos da pasta pelo navegador
+# ---------------------------------------------------------------
+Options -Indexes

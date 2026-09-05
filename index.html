@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WS9VCNQT1X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WS9VCNQT1X');
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Notícias IA 51+ — Tecnologia e dinheiro sem complicação</title>
 <meta name="description" content="Notícias de inteligência artificial, dinheiro e tecnologia explicadas em português claro para quem tem 50 anos ou mais. Sem jargão, sem complicação.">
 
-<!-- ══════════════════════════════════════════════════════════════════
-     FASE DE TESTES — APAGUE AS 2 LINHAS ABAIXO PARA ENTRAR NO GOOGLE
-     Enquanto elas existirem, o Google NÃO coloca o site na busca.
-     É proposital: evita que este protótipo dispute lugar com o
-     site definitivo depois. Apagar = liberar a indexação.
-     ══════════════════════════════════════════════════════════════════ -->
-<meta name="robots" content="noindex, nofollow">
-<meta name="googlebot" content="noindex, nofollow">
-<!-- ═══════════════ FIM DO BLOQUEIO DE FASE DE TESTES ═══════════════ -->
 
 <link rel="canonical" href="https://ia51mais.com/">
 <meta name="author" content="Notícias IA 51+">
@@ -27,11 +27,8 @@
 <meta property="og:url" content="https://ia51mais.com/">
 <meta property="og:title" content="Notícias IA 51+ — Tecnologia e dinheiro sem complicação">
 <meta property="og:description" content="Notícias de inteligência artificial, dinheiro e tecnologia explicadas em português claro para quem tem 50 anos ou mais.">
-<!-- TODO no lançamento: criar capa 1200x630 e descomentar as 2 linhas.
-     Imagem inexistente quebra a prévia do link, por isso está desligada.
 <meta property="og:image" content="https://ia51mais.com/capa-social.png">
 <meta name="twitter:card" content="summary_large_image">
--->
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23faf7f1'/%3E%3Ctext x='32' y='45' font-family='Palatino,Georgia,serif' font-size='30' fill='%23a8321e' text-anchor='middle'%3E51%2B%3C/text%3E%3C/svg%3E">
 
@@ -124,6 +121,12 @@ body::before{
   padding:14px 20px;z-index:200;border-radius:0 0 8px 0;font-weight:bold;
 }
 .pular:focus{left:0}
+
+/* ---------- título real p/ SEO/acessibilidade, invisível visualmente ---------- */
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
 
 /* =================== CABEÇALHO =================== */
 .topo{
@@ -260,7 +263,7 @@ main{padding:10px 0 90px}
 }
 
 .cartao{
-  display:flex;flex-direction:column;text-align:left;
+  display:flex;flex-direction:column;text-align:left;text-decoration:none;
   background:#fffdf9;border:1px solid var(--regua);border-radius:16px;
   overflow:hidden;cursor:pointer;padding:0;
   font-family:var(--sans);color:var(--tinta);
@@ -274,6 +277,15 @@ main{padding:10px 0 90px}
   transform:translateY(-8px);box-shadow:var(--sombra-up);border-color:var(--tinta);outline:none;
 }
 .cartao:focus-visible{box-shadow:var(--sombra-up),0 0 0 4px rgba(168,50,30,.28)}
+
+/* ---------- Card de destaque (furo do meio da semana) ---------- */
+.cartao.destaque{background:#fff8e8;border:2px solid var(--realce)}
+.etiqueta-destaque{
+  display:flex;align-items:center;gap:6px;
+  background:var(--realce);color:#fff8e8;
+  font-family:var(--sans);font-size:11px;font-weight:bold;letter-spacing:.05em;text-transform:uppercase;
+  padding:8px 16px;
+}
 
 .foto{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--papel-alt);flex:none}
 .foto svg,.foto img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .55s cubic-bezier(.22,.9,.3,1)}
@@ -334,7 +346,7 @@ main{padding:10px 0 90px}
   animation:entra .5s cubic-bezier(.22,.9,.3,1) forwards;
 }
 .linha{
-  width:100%;text-align:left;background:transparent;border:0;
+  display:block;width:100%;text-align:left;text-decoration:none;background:transparent;border:0;
   border-bottom:1px solid var(--regua);
   padding:22px 62px 22px 20px;position:relative;cursor:pointer;
   font-family:var(--sans);color:var(--tinta);
@@ -548,17 +560,26 @@ main{padding:10px 0 90px}
   .cartao{opacity:1;transform:none}
   .lista li{opacity:1;transform:none}
 }
+
+.leia-tambem{margin-top:34px;padding-top:22px;border-top:2px solid var(--regua)}
+.leia-tambem h3{font-family:var(--sans);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px;color:var(--tinta-2)}
+.leia-tambem ul{margin:0;padding:0;list-style:none}
+.leia-tambem li{margin:0 0 8px}
+.leia-tambem a{font-family:var(--serif);font-size:17px;color:var(--realce);text-decoration:none}
+.leia-tambem a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
 
 <a class="pular" href="#conteudo">Pular para as notícias</a>
 
+<h1 class="sr-only">Notícias de Inteligência Artificial para quem tem 50 anos ou mais</h1>
+
 <header class="topo">
   <div class="faixa-data">
     <div class="env">
-      <span>Sábado, <strong>25 de julho de 2026</strong></span>
-      <span>Protótipo &middot; Edição de teste</span>
+      <span id="dataTopo">Notícias atualizadas semanalmente</span>
+      <span>ia51mais.com</span>
     </div>
   </div>
 
@@ -588,9 +609,10 @@ main{padding:10px 0 90px}
   <div class="env">
     <div>
       <div class="nome">Notícias IA 51+</div>
-      <p>Protótipo para testar a experiência de uso. Ainda não é o site final.</p>
+      <p>Notícias de inteligência artificial e tecnologia, explicadas em português claro para quem tem 50 anos ou mais.</p>
+      <a class="btn-receber" href="https://t.me/ia51maisnoticias" target="_blank" rel="noopener noreferrer" style="margin-top:14px;text-decoration:none">📢 Receba as notícias no Telegram</a>
     </div>
-    <p>Conteúdo real das edições de 4, 10, 17 e 24 de julho de 2026.</p>
+    <p id="rodapeInfo">Conteúdo real das edições de 4, 10, 17 e 24 de julho de 2026.</p>
   </div>
 </footer>
 
@@ -625,6 +647,7 @@ main{padding:10px 0 90px}
           </div>
         </div>
         <button class="botao-cadastro" id="btnEnviarCadastro">Quero receber ✓</button>
+        <p class="nota-cadastro" id="msgCadastroStatus" role="status" aria-live="polite" style="display:none;font-weight:bold"></p>
         <p class="nota-cadastro">Sem spam. Você pode cancelar quando quiser.</p>
       </div>
     </div>
@@ -677,6 +700,10 @@ function aplicarMeta({titulo, descricao, url}){
   metaTag('meta[property="og:title"]', "content", titulo);
   metaTag('meta[property="og:description"]', "content", descricao);
   metaTag('meta[property="og:url"]', "content", url);
+  /* avisa o Google Analytics que a "página" mudou dentro da SPA (troca de matéria/categoria sem recarregar) */
+  if(typeof gtag === "function"){
+    gtag("event", "page_view", { page_title: titulo, page_location: url });
+  }
 }
 
 /* dados estruturados da notícia aberta (formato que o Google lê).
@@ -709,6 +736,415 @@ function dadosDaNoticia(n){
       (edições de 04, 10, 17 e 24 de julho de 2026)
    ============================================================ */
 const NOTICIAS = [
+
+/* ---------- 3 de setembro ---------- */
+{ slug:"idoso-sozinho-recebe-ligacao-de-uma-ia-vale-a-pena-essa-companhia-por-telefone",
+  cat:"ia-e-relacoes", data:"2026-09-03",
+  titulo:"Idoso sozinho recebe ligação de uma inteligência artificial: vale a pena essa companhia por telefone?",
+  resumo:"A americana Meela liga por telefone para conversar com idosos que moram sozinhos — sem aplicativo, só a voz do outro lado da linha perguntando como foi o dia. Especialistas reforçam: é um complemento à companhia humana, nunca um substituto.",
+  corpo:[
+    "Nos Estados Unidos, moradores de casas de repouso têm recebido ligações de uma inteligência artificial chamada Meela, criada para conversar por telefone com quem vive sozinho. Não é um robô físico nem um aplicativo para instalar: é uma voz do outro lado da linha que pergunta como foi o dia, puxa assunto sobre hobbies e escuta com paciência. Salvador Gonzalez, de 84 anos, é um dos usuários: conversa de dez a vinte minutos com a Meela sobre música, sobre como está se sentindo e sobre detalhes do dia a dia. Cerca de 70 idosos de uma mesma casa de repouso já se inscreveram para receber as ligações. A ideia não é substituir contato humano, e sim preencher os momentos vazios entre uma visita e outra — e funciona bem justamente por usar um meio que a geração 50+ já domina de cor: o telefone.",
+    "Pesquisas recentes sobre tecnologia e solidão na terceira idade mostram um leque de soluções: robôs sociais com capacidade de interação emocional, assistentes de voz, sistemas de telepresença que conectam parentes à distância e chatbots de conversa disponíveis a qualquer hora. Entre essas alternativas, os robôs sociais aparecem como os que mais reduzem a sensação de solidão nos estudos — mas os especialistas são unânimes num ponto: nenhuma tecnologia, sozinha, resolve o problema. Na Coreia do Sul, bairros de Seul e Yongin já oferecem dispositivos de IA para idosos que moram sozinhos, alguns capazes até de perceber sinais de mortes solitárias, quando ninguém nota por dias que a pessoa precisava de ajuda.",
+    "O próprio estudo que acompanhou casos como o de Salvador Gonzalez faz questão de frisar: essas ferramentas são promissoras, mas ainda são um recurso emergente, não uma solução completa. Uma conversa com uma inteligência artificial pode ajudar a preencher um horário ocioso e trazer uma sensação de companhia, mas não substitui uma ligação de um filho, uma visita de um neto ou um encontro com amigos — o risco é a tecnologia virar desculpa para adiar esse contato, em vez de complementá-lo.",
+    "Para quem tem mais de cinquenta anos e vive sozinho, ou tem um familiar nessa situação, vale considerar esse tipo de ferramenta como um complemento, nunca como substituto: uma companhia a mais para os momentos vazios do dia, sem deixar de lado as ligações de verdade para quem se ama. E, como em qualquer contato por telefone com um número desconhecido, vale desconfiar se, no meio da conversa, surgir um pedido de dado pessoal ou dinheiro — isso nunca é parte legítima desse tipo de serviço."
+  ],
+  fonte:{ nome:"Forbes", url:"https://www.forbes.com/sites/rashishrivastava/2025/10/18/lonely-seniors-are-turning-to-ai-bots-for-companionship/" }},
+
+{ slug:"inteligencia-artificial-ja-ajuda-a-diagnosticar-cancer-no-brasil-o-que-muda-para-o-paciente",
+  cat:"ia-e-saude", data:"2026-09-03",
+  titulo:"Inteligência artificial já ajuda a diagnosticar câncer no Brasil: o que isso muda para o paciente?",
+  resumo:"Hospitais brasileiros já usam algoritmos de IA para analisar exames de imagem e apontar sinais de câncer mais cedo, mas a Sociedade Brasileira de Oncologia Clínica alerta que o país ainda precisa de mais regulação sobre o tema.",
+  corpo:[
+    "Hospitais e centros de pesquisa no Brasil já usam inteligência artificial para ajudar a diagnosticar câncer mais cedo — e, segundo a Sociedade Brasileira de Oncologia Clínica, essa tecnologia veio para ficar, mas ainda precisa de mais regulação no país. Na prática, algoritmos analisam exames de imagem, como mamografias e tomografias, e conseguem apontar sinais da doença que às vezes passam despercebidos aos olhos do médico. Levantamentos de 2025 mostram que 18% dos hospitais brasileiros já usavam algum tipo de aplicação de inteligência artificial, número que sobe para 31% entre hospitais com mais de 50 leitos. Um exemplo real: três pacientes com câncer de pulmão foram diagnosticados a partir de um programa de IA em funcionamento em hospitais do país. Para o paciente, na prática, isso pode significar um exame lido com mais uma camada de atenção, sem substituir o olhar do médico.",
+    "Em fevereiro de 2026, o Conselho Federal de Medicina publicou a Resolução CFM nº 2.454/2026, que passou a normatizar o uso da inteligência artificial na prática médica no Brasil. A regra deixa um ponto bem claro: por mais que o algoritmo aponte um sinal suspeito numa imagem, a decisão final sobre diagnóstico e tratamento continua sendo sempre do médico — a IA entra como ferramenta de apoio, nunca como substituta do profissional.",
+    "Uma das ferramentas mais usadas em programas de rastreamento no Brasil é o Lunit INSIGHT, sistema que analisa mamografias e radiografias de tórax e sinaliza lesões suspeitas para o radiologista revisar com mais atenção. O uso desse tipo de tecnologia tem crescido principalmente em exames de rotina — como a mamografia de rastreamento, recomendada a partir dos 40 ou 50 anos, dependendo do histórico de cada mulher — que é justamente onde a repetição de milhares de imagens torna mais fácil um sinal passar despercebido.",
+    "Para quem tem mais de cinquenta anos, o recado é tranquilizador: se o hospital ou clínica onde você faz seus exames de rotina já usa inteligência artificial como apoio ao diagnóstico, isso tende a significar mais uma camada de atenção sobre o resultado, não menos cuidado médico. Vale perguntar ao seu médico se esse tipo de tecnologia é usada no seu acompanhamento e, como sempre, manter os exames de rastreamento em dia — a IA ajuda a olhar com mais atenção, mas não substitui a prevenção."
+  ],
+  fonte:{ nome:"SBOC (Sociedade Brasileira de Oncologia Clínica)", url:"https://sboc.org.br/noticias/3527-ja-usada-no-diagnostico-do-cancer-inteligencia-artificial-ainda-precisa-de-regulacao-no-brasil/" }},
+
+{ slug:"seu-banco-vai-usar-mais-inteligencia-artificial-veja-o-que-muda-no-aplicativo",
+  cat:"ia-no-dia-a-dia", data:"2026-09-03",
+  titulo:"Seu banco vai usar mais inteligência artificial: veja o que muda no aplicativo",
+  resumo:"O Banco do Brasil lançou uma nova versão do aplicativo com tela personalizada e atendimento por texto ou voz — movimento que outros bancos brasileiros também vêm fazendo, com distribuição gradual até o fim de setembro.",
+  corpo:[
+    "O Banco do Brasil lançou, no fim de agosto, uma nova versão do seu aplicativo com foco em inteligência artificial e personalização — um movimento que outros bancos brasileiros também vêm fazendo nos últimos meses. Na prática, isso significa uma tela inicial reorganizada de acordo com o que cada cliente mais usa, recursos de acessibilidade ampliados e a possibilidade de resolver tarefas conversando por texto ou por voz, em vez de navegar por vários menus até achar a opção certa. A distribuição da nova versão é gradual, e a expectativa do banco é que todos os clientes estejam usando o aplicativo atualizado até o fim de setembro.",
+    "O movimento reflete uma tendência mais ampla no país: levantamentos recentes mostram que aplicativos com inteligência artificial já estão presentes em quase quatro em cada dez celulares brasileiros. A ideia por trás dessas mudanças é sempre a mesma — trocar menus longos e botões escondidos por uma conversa direta, parecida com mandar uma mensagem, que consegue entender o que a pessoa quer sem que ela precise saber exatamente onde clicar.",
+    "Vale um alerta importante nesse tipo de atualização: como o aplicativo muda de aparência, é comum que quem já está acostumado com a versão antiga sinta estranheza nos primeiros dias — o caminho para resolver isso não é evitar abrir o aplicativo, e sim explorar com calma, sem pressa, testando cada função nova longe de qualquer decisão que envolva movimentar dinheiro.",
+    "Para quem tem mais de cinquenta anos, a dica é simples: quando o aplicativo do seu banco anunciar uma atualização, reserve alguns minutos sem pressa para conhecer as novidades antes de mexer em qualquer transferência ou pagamento — e, se alguma função nova parecer confusa, a agência ou o telefone de atendimento do banco continuam sendo o caminho mais seguro para tirar dúvida, sem depender só do que a inteligência artificial responde dentro do aplicativo."
+  ],
+  fonte:{ nome:"Diário do Comércio", url:"https://diariodocomercio.com.br/negocios/banco-brasil-novo-app-ia/" }},
+
+{ slug:"como-usar-a-inteligencia-artificial-do-google-pela-primeira-vez-passo-a-passo-do-gemini",
+  cat:"ferramentas-para-50", data:"2026-09-03",
+  titulo:"Como usar a inteligência artificial do Google pela primeira vez: passo a passo simples do Gemini",
+  resumo:"O Gemini é a inteligência artificial gratuita do Google — dá para usar direto pelo navegador ou pelo aplicativo, com a mesma conta do Gmail, e conversar por texto, voz ou até enviando uma foto tirada na hora.",
+  corpo:[
+    "O Gemini é a inteligência artificial gratuita do Google, e dá para usá-la sem pagar nada e sem precisar instalar programa nenhum: basta acessar o site gemini.google.com pelo navegador do celular ou computador, usando a mesma conta do Gmail que você já tem. Na primeira visita, o próprio site pede para aceitar os termos de uso — depois disso, é só digitar uma pergunta na caixa de texto, do mesmo jeito que se escreve uma mensagem de WhatsApp, e esperar a resposta aparecer na tela. Também existe um aplicativo oficial \"Google Gemini\", disponível para baixar na Play Store (Android) ou na App Store (iPhone), que funciona do mesmo jeito, mas direto do celular.",
+    "Depois de entrar, dá para conversar por texto ou até por voz, como numa ligação, contando o que precisa e recebendo a resposta falada de volta. O Gemini também consegue olhar para uma foto tirada na hora pela câmera do celular — útil, por exemplo, para tirar uma dúvida sobre uma planta do jardim, ler a bula de um remédio com letra pequena, ou entender uma conta de luz cheia de termos técnicos, bastando fotografar e perguntar o que aquilo significa.",
+    "Um jeito simples de começar: pergunte algo do dia a dia, como uma receita para o almoço com os ingredientes que você já tem em casa, ou peça para explicar, em palavras simples, uma notícia que você leu e não entendeu direito. Não existe pergunta boba — o Gemini está ali justamente para ser usado sem medo de errar, e dá para refazer a pergunta quantas vezes for preciso até a resposta ficar clara.",
+    "Para quem tem mais de cinquenta anos e nunca usou nenhuma inteligência artificial, o Gemini pode ser uma boa porta de entrada por ser gratuito e ligado à própria conta do Google que muitos já têm. Como em qualquer ferramenta desse tipo, vale lembrar que ela pode errar — então informação sobre saúde, dinheiro ou qualquer decisão importante sempre merece uma segunda checagem com uma fonte confiável ou um profissional."
+  ],
+  fonte:{ nome:"Google (Central de Ajuda do Gemini)", url:"https://support.google.com/gemini/answer/13275745" }},
+
+{ slug:"golpe-com-voz-clonada-por-inteligencia-artificial-como-se-proteger",
+  cat:"ia-e-financas", data:"2026-09-03",
+  titulo:"Ligação parece da família, mas é golpe? Veja como a inteligência artificial clona vozes para roubar dinheiro",
+  resumo:"Com apenas três segundos de áudio, criminosos já conseguem clonar a voz de um familiar com inteligência artificial — deepfakes cresceram 830% no Brasil entre 2024 e 2025, e pessoas com mais de cinquenta anos são alvo frequente.",
+  corpo:[
+    "Golpes que usam inteligência artificial para clonar a voz de um familiar cresceram forte em 2026 no Brasil, e bancos já emitiram alerta sobre o risco de milhões de pessoas serem alvo desse tipo de fraude. O funcionamento é simples e assustador: com apenas três segundos de áudio da voz de alguém — retirado, por exemplo, de um vídeo postado nas redes sociais — um criminoso consegue usar inteligência artificial para reproduzir aquela voz de forma convincente. Em seguida, liga fingindo ser o filho, a filha ou o neto, contando uma história urgente (um acidente, uma prisão, uma emergência médica) e pedindo dinheiro na hora, geralmente por Pix. O objetivo é sempre o mesmo: fazer a vítima agir pelo medo, antes que dê tempo de pensar ou checar a informação.",
+    "Os números mostram a dimensão do problema: dados da Polícia Federal apontam um crescimento de 830% no uso de deepfakes entre 2024 e 2025 no Brasil, e a inteligência artificial já está presente em 42,5% das fraudes financeiras registradas no país. A Federação Brasileira de Bancos estima perdas de R$ 10,1 bilhões com fraudes bancárias, com uma fatia cada vez maior envolvendo esse tipo de tecnologia. Uma pesquisa da Fundação Seade mostrou ainda que 82% dos idosos já foram alvo de alguma tentativa de golpe digital, e 12% chegaram a perder dinheiro de verdade.",
+    "A boa notícia é que a defesa contra esse golpe não exige nenhum conhecimento técnico — só uma mudança de hábito. Especialistas em segurança recomendam sempre confirmar a informação ligando de volta para o número de telefone já salvo do familiar (nunca o número que ligou), e, se possível, fazer uma videochamada iniciada por você mesmo antes de tomar qualquer decisão. Combinar com a família uma \"palavra-chave\" secreta, que só vocês conhecem, também é uma forma simples de confirmar rapidamente se quem está do outro lado da linha é mesmo quem diz ser.",
+    "Para quem tem mais de cinquenta anos, a regra mais importante é: nenhuma emergência de verdade exige que o dinheiro seja transferido em minutos, sem checagem. Se uma ligação pedir Pix urgente por causa de um acidente ou prisão, desligue, respire e ligue de volta pelo número que você já tem salvo daquela pessoa — na dúvida, ligar para outro parente que possa confirmar a história também ajuda a ganhar tempo antes de qualquer transferência."
+  ],
+  fonte:{ nome:"Forbes Brasil", url:"https://forbes.com.br/forbes-tech/2026/08/phishing-deepfakes-e-voz-clonada-como-a-ia-esta-mudando-os-golpes/" }},
+
+{ slug:"oculos-com-inteligencia-artificial-chegam-de-graca-a-alunos-cegos-no-parana",
+  cat:"auxilio-da-visao", data:"2026-09-03",
+  titulo:"Óculos com inteligência artificial chegam de graça a alunos cegos: como funciona a tecnologia?",
+  resumo:"O governo do Paraná distribui gratuitamente óculos com inteligência artificial (OrCam MyEye 2.0) para 147 alunos com cegueira total da rede estadual, dispositivo que lê textos em voz alta e reconhece rostos sem precisar de internet.",
+  corpo:[
+    "O governo do Paraná começou a distribuir gratuitamente óculos com inteligência artificial para os 147 alunos com cegueira total matriculados na rede estadual de ensino, segundo anúncio da Secretaria da Inovação e Inteligência Artificial do estado. O modelo escolhido, o OrCam MyEye 2.0, é um dispositivo leve que se prende à armação de qualquer óculos comum e usa uma câmera para ler textos em voz alta, reconhecer rostos já cadastrados e identificar produtos do dia a dia — tudo sem precisar de conexão com a internet. Para os estudantes, a promessa é mais autonomia dentro e fora da sala de aula: ler um livro, uma prova ou uma placa de rua sem depender de outra pessoa a cada instante.",
+    "O movimento acompanha uma tendência maior: cada vez mais empresas de tecnologia lançam óculos equipados com câmera, microfone e inteligência artificial voltados para quem é cego ou tem baixa visão. A empresa Solos, por exemplo, uniu forças com a Envision para lançar um assistente chamado Ally, integrado a óculos inteligentes que descrevem o ambiente ao redor por voz. Já os óculos Ray-Ban, feitos em parceria com a Meta, permitem até conectar o usuário por chamada de vídeo a voluntários que enxergam, para ajudar numa tarefa específica, como ler o rótulo de um remédio.",
+    "O diferencial do programa do Paraná é o custo zero para a família: dispositivos desse tipo costumam custar bem mais que um óculos comum, o que limitava o acesso a quem podia pagar. Ao entregar o equipamento pela rede pública de ensino, o estado tenta reduzir essa desigualdade — ainda que a iniciativa, por enquanto, esteja restrita aos alunos matriculados na rede estadual, não à população em geral.",
+    "Para quem tem mais de cinquenta anos e enfrenta baixa visão, ou tem um neto ou familiar nessa situação, vale a pena perguntar à Secretaria de Educação ou à associação de pessoas com deficiência visual da sua cidade se programas parecidos já chegaram à sua região — e, como sempre, lembrar que esse tipo de óculos é uma ferramenta de apoio à autonomia, não um tratamento: o acompanhamento oftalmológico continua sendo indispensável."
+  ],
+  fonte:{ nome:"Secretaria da Inovação e Inteligência Artificial do Paraná", url:"https://www.inova.pr.gov.br/Noticia/Estado-entrega-oculos-com-inteligencia-artificial-para-apoiar-alunos-cegos-da-rede-estadual" }},
+
+/* ---------- 2 de setembro (furo do meio da semana) ---------- */
+{ slug:"por-que-chatbot-e-dificil-depois-dos-60-pesquisa-da-usp-tem-solucao",
+  cat:"ia-no-dia-a-dia", data:"2026-09-02", destaque:true,
+  titulo:"Por que é tão difícil usar chatbot depois dos 60? Pesquisa da USP tem a solução",
+  resumo:"Pesquisa de doutorado do ICMC-USP (São Carlos) mapeou por que chatbots de bancos, planos de saúde e órgãos públicos são difíceis de usar pra quem tem 60+ e criou a ferramenta \"Clear\", com 43 diretrizes — testada contra o ChatGPT com usuários reais, com preferência unânime pelo chatbot acessível.",
+  corpo:[
+    "Se você já ficou preso numa conversa sem fim com o chatbot do banco ou do plano de saúde, sem entender direito o que precisa fazer, o problema não é falta de jeito com tecnologia. É que esses robôs de atendimento, quase sempre, não foram pensados pra quem tem mais de sessenta anos. É essa a conclusão de uma pesquisa de doutorado do Instituto de Ciências Matemáticas e de Computação (ICMC) da USP em São Carlos, divulgada em julho de 2026. A pesquisadora Cynthya Letícia Teles de Oliveira descobriu que a maioria dos chatbots usa mensagem longa demais, linguagem pouco objetiva, excesso de informação de uma vez só e caminhos de navegação confusos — o que transforma uma tarefa simples, como marcar uma consulta ou resolver um problema no banco, numa experiência frustrante justamente pra quem já tem mais dificuldade com telas e menus.",
+    "O momento não podia ser mais oportuno. Segundo levantamento do IBGE divulgado neste mesmo mês, 90,5% dos brasileiros com 10 anos ou mais usaram internet em 2025. Entre as pessoas com 60 anos ou mais, o uso saltou de 70,1% para 74,5% — o maior crescimento entre todas as faixas etárias. Mesmo assim, entre quem ainda não usa a internet, quase metade (44,9%) diz que o motivo é simplesmente \"não saber usar\". Ou seja: o idoso está entrando no mundo digital, mas o mundo digital não está pronto pra recebê-lo.",
+    "Foi daí que nasceu a ferramenta batizada de Clear, um conjunto de 43 diretrizes organizadas em sete grupos: clareza e navegação por botões, interação por voz, conteúdo das mensagens, retorno do sistema, design da tela, identidade e acolhimento, e segurança e proteção de dados. \"Muitos idosos relataram insegurança diante das novas tecnologias, medo de golpes e pouca rede de apoio pra aprender a usá-las — por isso a importância de chatbots com linguagem simples e acolhedora, que deixem claras as próprias limitações\", resume o professor Marcelo Manzato, que orientou a pesquisa.",
+    "Pra testar se a teoria funcionava na prática, a pesquisadora comparou um chatbot construído com essas 43 diretrizes com o ChatGPT comum. Cinco pessoas entre 60 e 75 anos fizeram as mesmas tarefas nos dois sistemas — e o resultado foi unânime: todo mundo preferiu o chatbot desenhado pensando neles, relatando mais facilidade, mais confiança e mais sensação de acolhimento durante a conversa.",
+    "Pra quem tem mais de cinquenta anos e às vezes se sente \"burro\" na frente de um chatbot de banco ou de operadora, vale guardar essa pesquisa como recado: o problema quase sempre é do design da ferramenta, não da sua capacidade. Na prática, isso significa que você tem todo o direito de pedir ajuda, repetir a pergunta de um jeito mais simples, ou procurar atendimento humano quando o robô não resolve — e que empresas sérias, aos poucos, vão ser cobradas a fazer esse tipo de tecnologia funcionar também pra você."
+  ],
+  fonte:{ nome:"Jornal da USP", url:"https://jornal.usp.br/diversidade/com-mais-idosos-na-internet-pesquisa-sugere-diretrizes-para-tornar-chatbots-mais-inclusivos-e-acessiveis/" }},
+
+/* ---------- 28 de agosto ---------- */
+{ slug:"inteligencia-artificial-vira-aliada-de-quem-tem-mais-de-cinquenta-contra-a-solidao",
+  cat:"ia-e-relacoes", data:"2026-08-28",
+  titulo:"Inteligência artificial vira aliada de quem tem mais de cinquenta anos contra a solidão",
+  resumo:"Reportagem do Gizmodo Brasil mostra como pessoas com mais de cinquenta anos vêm usando assistentes de inteligência artificial não só para tirar dúvidas, mas também para manter contato social e combater a solidão — um movimento que já aparece com força em vários países.",
+  corpo:[
+    "Uma reportagem publicada em 21 de agosto pelo Gizmodo Brasil mostrou como a inteligência artificial está deixando de ser novidade para se tornar companhia no dia a dia de quem tem mais de cinquenta anos. Segundo o levantamento, cada vez mais pessoas mais velhas usam assistentes de inteligência artificial não só para tirar dúvidas ou organizar tarefas, mas também para manter contato social e combater a sensação de solidão — um movimento que já aparece com força em países como China, Reino Unido e Estados Unidos.",
+    "Na Argentina, o fenômeno também ganha força, puxado principalmente pela facilidade de acesso a celulares e ferramentas controladas por voz. Nesses países, o tempo que os mais velhos passam interagindo com o celular já é comparável — e em alguns casos até maior — do que o de jovens da Geração Z, quando somado ao tempo de televisão. O uso vai de perguntas rápidas até conversas mais longas, num movimento que se aproxima do que pesquisas anteriores já haviam identificado sobre chatbots de companhia.",
+    "A reportagem também reforça um alerta importante: o mesmo tipo de tecnologia que ajuda a espantar a solidão também abre espaço para golpes digitais e informações falsas, principalmente entre quem tem menos familiaridade com a tecnologia. O risco financeiro chama atenção especial, já que aposentados costumam ter menos margem para recuperar prejuízo em caso de fraude.",
+    "Para quem tem mais de cinquenta anos, o equilíbrio é o que importa: usar a inteligência artificial como companhia ocasional para um bate-papo, uma dúvida ou uma dica do dia a dia não tem problema nenhum — o cuidado é não deixar que ela substitua o contato com filhos, netos, amigos e vizinhos, e desconfiar sempre de qualquer conversa que peça dado pessoal ou dinheiro."
+  ],
+  fonte:{ nome:"Gizmodo Brasil", url:"https://www.gizmodo.com.br/inteligencia-artificial-conquista-os-idosos-e-vira-aliada-na-saude-e-na-autonomia-64880" }},
+
+{ slug:"ministerio-da-saude-lanca-rede-de-hospitais-inteligentes-com-ia",
+  cat:"ia-e-saude", data:"2026-08-28",
+  titulo:"Ministério da Saúde lança rede de hospitais inteligentes com inteligência artificial",
+  resumo:"O ministro Alexandre Padilha abriu, em 5 de agosto, o 1º Simpósio Internacional de Hospitais Inteligentes e IA na Saúde, em São Paulo, apresentando a Rede Nacional de Hospitais e Serviços Inteligentes e Medicina de Alta Precisão.",
+  corpo:[
+    "O ministro da Saúde, Alexandre Padilha, participou, em 5 de agosto, da abertura do 1º Simpósio Internacional de Hospitais Inteligentes e IA na Saúde, em São Paulo. O evento reuniu especialistas para discutir os novos caminhos da assistência à saúde no Brasil com o uso de inovação, medicina intensiva e monitoramento conectado, além de apresentar a Rede Nacional de Hospitais e Serviços Inteligentes e Medicina de Alta Precisão, projeto que prevê modernizar a rede pública com apoio de inteligência de dados para a tomada de decisão dos profissionais de saúde.",
+    "\"O Brasil está estruturando um mercado de tecnologia e de produtos para a saúde, desenvolvidos a partir das características do nosso país e que poderão ser utilizados tanto pela rede pública quanto pela rede privada. Com a execução desse projeto, vamos atrair empresas internacionais, gerar mais empregos, renda e tecnologia\", afirmou o ministro, durante o evento.",
+    "Uma das frentes já em funcionamento é a Rede Nacional de UTIs Inteligentes, hoje ativa em seis unidades de saúde do país — Manaus, Curitiba, Porto Alegre, Rio de Janeiro (no Hospital Universitário Clementino Fraga Filho), Recife e Belo Horizonte. As tecnologias adotadas permitem monitorar o paciente continuamente, ajudam a identificar cedo qualquer alteração no quadro clínico e organizam, de forma integrada ao prontuário eletrônico, as informações mais relevantes para a equipe médica decidir. A estratégia inclui ainda o projeto-piloto do SAMU Inteligente, que já roda em Recife, Belo Horizonte e Porto Alegre, integrando ambulâncias, UTIs e centrais de regulação em tempo real para agilizar o atendimento pré-hospitalar.",
+    "Para quem tem mais de cinquenta anos, ou está com um familiar internado, essa mudança tende a significar mais agilidade no diagnóstico e menos tempo de resposta em situações de urgência — especialmente em UTI e no atendimento do SAMU, onde cada minuto conta. Vale ficar de olho se o hospital ou plano de saúde da região já usa esse tipo de tecnologia, e não hesitar em perguntar ao médico como ela está sendo usada no cuidado."
+  ],
+  fonte:{ nome:"Ministério da Saúde", url:"https://www.gov.br/saude/pt-br/assuntos/noticias-ms/2026/agosto/ministro-da-saude-participa-de-simposio-sobre-hospitais-inteligentes-e-uso-da-inteligencia-artificial-no-cuidado" }},
+
+{ slug:"pesquisa-mostra-que-noventa-e-tres-por-cento-dos-brasileiros-ja-usam-ia",
+  cat:"ia-no-dia-a-dia", data:"2026-08-28",
+  titulo:"Pesquisa mostra que 93% dos brasileiros já usam inteligência artificial",
+  resumo:"Levantamento do Observatório Fundação Itaú em parceria com o Datafolha mostra que quase todo brasileiro já usa alguma ferramenta de IA no dia a dia — mas quase metade ainda não sabe explicar o que o termo significa.",
+  corpo:[
+    "Uma pesquisa do Observatório Fundação Itaú em parceria com o Datafolha, batizada de \"Consumo e uso de Inteligência Artificial no Brasil\", trouxe um retrato detalhado de como a população brasileira lida com a tecnologia. O levantamento, feito com quase três mil entrevistas em todas as regiões do país, mostra que 93% das pessoas já utilizam alguma ferramenta que aplica inteligência artificial — mesmo que boa parte delas (46%) não saiba explicar direito o que o termo significa.",
+    "O uso mais comum acontece sem que a pessoa perceba: 89% usam IA em redes sociais como Instagram, Facebook e WhatsApp; 78% em sistemas de recomendação de filmes, vídeos e músicas, como Netflix, YouTube e Spotify; 63% em aplicativos de navegação como Waze e Google Maps; e 54% em assistentes de voz como Alexa e Siri. Ferramentas mais \"visíveis\", como ChatGPT, Gemini ou geradores de imagem, aparecem depois, usadas por 43% e 31% dos entrevistados, respectivamente.",
+    "A pesquisa mostra uma diferença importante por idade: entre pessoas de 16 a 34 anos, a IA está \"muito\" presente no dia a dia de cerca de 4 em cada 10; entre quem tem 60 anos ou mais, essa proporção cai para apenas 19%. Também é nessa faixa etária que mais gente diz que já ouviu falar em IA, mas não sabe explicar o que é — o dado reforça uma sensação comum entre os mais velhos: usar a tecnologia no dia a dia sem necessariamente entender o rótulo por trás dela.",
+    "Para quem tem mais de cinquenta anos, o recado da pesquisa é tranquilizador: se você usa Netflix, Waze, WhatsApp ou pede para a Alexa tocar uma música, você já usa inteligência artificial todos os dias — não é preciso \"aprender IA do zero\" para começar, porque, na prática, você já começou. A diferença está em usar essas ferramentas com mais consciência, sabendo quando confiar e quando checar a informação por conta própria."
+  ],
+  fonte:{ nome:"Fundação Itaú / Datafolha", url:"https://www.fundacaoitau.org.br/noticias/noticias/93-das-pessoas-utilizam-ferramenta-de-ia-diz-pesquisa-da-fundacao-itau-e-datafolha" }},
+
+{ slug:"meta-ai-chega-ao-whatsapp-instagram-e-facebook",
+  cat:"ferramentas-para-50", data:"2026-08-28",
+  titulo:"Meta AI chega ao WhatsApp, Instagram e Facebook",
+  resumo:"A Meta ampliou a integração do seu assistente de inteligência artificial dentro do WhatsApp, Instagram, Facebook e Messenger — hoje é possível conversar com o Meta AI direto dentro dos aplicativos que a maioria dos brasileiros já usa todos os dias.",
+  corpo:[
+    "A Meta ampliou a integração do seu assistente de inteligência artificial, o Meta AI, dentro do WhatsApp, Instagram, Facebook e Messenger — hoje ele pode ser acessado tanto como aplicativo independente quanto direto de dentro dessas plataformas que grande parte dos brasileiros já usa todos os dias. Para conversar com o assistente no WhatsApp, basta procurar \"Meta AI\" na lista de contatos ou tocar no ícone de IA na tela inicial das conversas.",
+    "Na prática, o Meta AI funciona como uma conversa comum: dá para fazer perguntas sobre qualquer assunto, pedir uma receita, tirar uma dúvida rápida ou até pedir ajuda para escrever uma mensagem mais clara. Em grupos de família ou de amigos, é possível mencionar \"@Meta AI\" para que todo mundo veja a resposta ao mesmo tempo — útil, por exemplo, para resolver uma dúvida que surgiu na conversa sem precisar sair do grupo.",
+    "Uma das funções mais usadas é a geração de imagens: basta digitar \"imagine\" seguido de uma descrição — como \"imagine um jardim de rosas ao entardecer\" — para o assistente criar uma imagem na hora, que pode ser enviada na conversa como qualquer outra foto. É uma forma simples de criar uma figurinha personalizada, um cartão de aniversário ou só se divertir com a tecnologia, sem precisar instalar nenhum aplicativo novo.",
+    "Para quem tem mais de cinquenta anos e já usa WhatsApp no dia a dia, essa pode ser uma porta de entrada tranquila para a inteligência artificial: a ferramenta já está instalada, não tem custo adicional e funciona dentro de um aplicativo que a maioria já domina. Como em qualquer assistente de IA, vale lembrar: ele pode errar, então informação importante — principalmente sobre saúde ou dinheiro — sempre merece uma segunda checagem."
+  ],
+  fonte:{ nome:"Meta", url:"https://about.fb.com/br/news/2025/08/apresentando-o-app-meta-ai-uma-nova-forma-de-acessar-seu-assistente-de-inteligencia-artificial/" }},
+
+{ slug:"golpe-do-pix-errado-fica-mais-sofisticado-com-ia-em-2026",
+  cat:"ia-e-financas", data:"2026-08-28",
+  titulo:"Golpe do \"Pix errado\" fica mais sofisticado com inteligência artificial em 2026",
+  resumo:"Especialistas em segurança alertam que o golpe do Pix errado deve ficar ainda mais sofisticado ao longo de 2026 com ajuda de inteligência artificial — pessoas com mais de cinquenta anos já são 53% das vítimas.",
+  corpo:[
+    "O golpe do \"Pix errado\" segue entre as fraudes mais usadas contra brasileiros, e especialistas em segurança alertam que a modalidade deve ficar ainda mais sofisticada ao longo de 2026, com ajuda de inteligência artificial. Segundo relatório da Associação de Defesa de Dados Pessoais e do Consumidor (ADDP), cerca de 28 milhões de brasileiros foram vítimas de golpes pelo Pix em 2025, e pessoas com mais de cinquenta anos já representam 53% dos casos — a maior fatia entre todas as faixas etárias.",
+    "O funcionamento do golpe é sempre parecido: o criminoso transfere um valor pequeno para a vítima \"por engano\" e, pouco depois, entra em contato pedindo a devolução — mas para uma conta diferente da que enviou o dinheiro. Ao mesmo tempo, ele aciona o Mecanismo Especial de Devolução (MED) do Banco Central, alegando ter sido vítima de fraude. Quem devolve o valor manualmente para a conta indicada acaba perdendo o dinheiro duas vezes: o que devolveu e o que teve bloqueado durante a apuração do MED.",
+    "\"Em 2026, o golpe não começa com erro de português. Ele começa com o nome da vítima, sua cidade e uma história que faz sentido para ela. A IA potencializa a engenharia social, tornando o convencimento mais rápido e preciso\", alerta Daniel Barbosa, pesquisador de segurança da ESET Brasil. Para conter o abuso do MED nesse tipo de golpe, o Banco Central já aprimorou o regulamento do Pix, e a nova funcionalidade que rastreia o caminho do dinheiro entre contas deve se tornar obrigatória em fevereiro de 2026.",
+    "Para quem tem mais de cinquenta anos, a regra prática continua sendo a mais segura: se um Pix \"errado\" cair na conta, a devolução deve ser feita sempre pela função \"Devolver\" dentro do próprio aplicativo do banco, nunca por uma nova transferência manual para a conta que a pessoa do outro lado indicar. Qualquer pedido de urgência, ameaça de bloqueio ou instrução específica de como pagar é sinal de alerta — na dúvida, o caminho mais seguro é ligar direto para o banco antes de fazer qualquer coisa."
+  ],
+  fonte:{ nome:"WeLiveSecurity (ESET)", url:"https://www.welivesecurity.com/pt/golpes-fraudes/ia-e-engenharia-social-devem-tornar-golpes-com-pix-mais-sofisticados-em-2026/" }},
+
+{ slug:"oculos-da-meta-ajudam-pessoas-com-baixa-visao",
+  cat:"auxilio-da-visao", data:"2026-08-28",
+  titulo:"Óculos da Meta ajudam pessoas com baixa visão",
+  resumo:"Os óculos inteligentes da Meta, feitos em parceria com a Ray-Ban, estão ganhando um novo papel como ferramenta de acessibilidade para pessoas cegas ou com baixa visão, segundo a oftalmologista Flávia Sardenberg.",
+  corpo:[
+    "Os óculos inteligentes da Meta, desenvolvidos em parceria com a Ray-Ban, estão ganhando um novo papel além do de acessório tecnológico: o de ferramenta de acessibilidade para pessoas cegas ou com baixa visão. Equipados com câmera, microfones, alto-falantes e inteligência artificial, os óculos permitem interagir com o ambiente ao redor sem precisar pegar o celular a cada dúvida, segundo reportagem publicada em 20 de agosto pela oftalmologista Flávia Sardenberg, no portal capixaba Folha Vitória.",
+    "Por meio da câmera, o sistema consegue descrever em áudio o que está diante da pessoa — identificar objetos, ler embalagens, reconhecer ambientes — funcionando como uma espécie de assistente visual sempre disponível, ativado só por comando de voz. Uma das funções de maior potencial é a integração com o Be My Eyes, plataforma que conecta o usuário, por chamada de vídeo, a voluntários que enxergam e podem orientar em tempo real numa tarefa específica, como ler uma etiqueta ou identificar uma peça de roupa. Em 2026, esse recurso foi ampliado para também permitir conexão, por voz, com familiares, amigos e serviços de atendimento de empresas.",
+    "Uma das maiores vantagens, segundo a especialista, é que a tecnologia fica incorporada ao próprio campo de visão e é acionada por voz — a pessoa recebe a informação por áudio sem precisar localizar e manusear um smartphone, mantendo as mãos livres. Mas a oftalmologista faz questão de reforçar um ponto importante: os óculos não tratam a baixa visão nem recuperam visão perdida. Eles são tecnologia assistiva, e não substituem o acompanhamento oftalmológico nem os programas de reabilitação visual, que continuam sendo essenciais para preservar a funcionalidade e a qualidade de vida do paciente.",
+    "Para quem tem mais de cinquenta anos e enfrenta baixa visão, ou tem um familiar nessa situação, o recado é equilibrado: vale a pena conhecer esse tipo de recurso como um aliado a mais na autonomia do dia a dia, mas sempre em conjunto com o acompanhamento médico — e nunca como substituto da consulta com o oftalmologista."
+  ],
+  fonte:{ nome:"Folha Vitória", url:"https://www.folhavitoria.com.br/saude/oculos-meta-como-a-tecnologia-pode-ajudar-pessoas-com-baixa-visao/" }},
+
+/* ---------- 26 de agosto (furo do meio da semana) ---------- */
+{ slug:"assistente-de-inteligencia-artificial-funciona-so-por-mensagem-de-texto-e-mira-quem-tem-65-anos-ou-mais",
+  cat:"ferramentas-para-50", data:"2026-08-26", destaque:true,
+  titulo:"Assistente de inteligência artificial funciona só por mensagem de texto e mira quem tem 65 anos ou mais",
+  resumo:"Lançado nos Estados Unidos em 4 de agosto, o \"Ask Proxy\" é um assistente de inteligência artificial que funciona só por mensagem de texto, sem aplicativo — pensado especialmente para quem, como boomers e idosos, não quer aprender a mexer em uma interface nova.",
+  corpo:[
+    "No dia 4 de agosto, foi lançado nos Estados Unidos e no Canadá o \"Ask Proxy\", um assistente de inteligência artificial que funciona inteiramente por mensagem de texto — sem aplicativo para baixar, sem comandos especiais para aprender e sem precisar configurar um \"agente\" complicado. Para começar, basta salvar o número de telefone do Proxy nos contatos e mandar uma mensagem com a palavra \"Start\": a partir daí, o próprio assistente conduz uma conversa de cerca de vinte minutos para entender interesses, rotina e forma de tomar decisões do usuário, com a opção de conectar a agenda pessoal.",
+    "Depois dessa configuração inicial, basta trocar mensagem com o Proxy como se fosse um parente ou amigo, sem comandos especiais. A revista americana Tom's Guide testou o serviço com uma usuária de mais de setenta anos e mostrou exemplos práticos: enviar uma foto do interior da geladeira para receber sugestão de receita, gravar um áudio para anotar um lembrete, ou pedir ajuda para escolher um presente de aposentadoria. O diferencial, segundo a reportagem, é que o Proxy também manda mensagem por conta própria — avisando com antecedência sobre aniversário de neto, sugerindo reserva de restaurante antes de uma data importante, ou simplesmente puxando papo, o que ajudou a combater a sensação de solidão relatada pela usuária testada.",
+    "Christine Landis, criadora do Proxy, contou que a ideia nasceu da constatação de que a maior dificuldade das pessoas com IA não é usar a ferramenta, mas lembrar do que perguntar a ela: \"Todo mundo falava do que a IA conseguia fazer depois que você perguntava alguma coisa. Eu ficava pensando em tudo que as pessoas esquecem de perguntar antes disso — é aí que a vida fica sobrecarregada\", disse a executiva, em comunicado oficial. Já Janet, usuária de oitenta anos, resumiu a experiência: \"Eu e meu marido sempre tivemos curiosidade por IA, mas parecia complicado demais para aprender. É tão simples que a gente se sente capaz de um jeito que nem imaginava.\" O serviço inclui quinze mensagens gratuitas para teste e depois cobra vinte e nove dólares por mês, por enquanto só nos Estados Unidos e no Canadá — sem previsão de chegada ao Brasil. A empresa garante que não vende dados, não mostra anúncio e não usa as conversas para treinar outras IAs.",
+    "Para quem tem mais de cinquenta anos e já se sente à vontade trocando mensagem de texto, esse tipo de assistente pode ser, de fato, uma porta de entrada mais simples para a inteligência artificial do que baixar um aplicativo novo e aprender a escrever comandos. Mas vale o mesmo cuidado de sempre: mesmo com a promessa de privacidade, o recomendável é nunca compartilhar dado sensível como senha, número de cartão ou documento por mensagem de texto com nenhum assistente de IA, e sempre checar com um profissional de confiança qualquer sugestão envolvendo saúde ou dinheiro. Como o serviço, por enquanto, só funciona em inglês e com número de telefone americano ou canadense, quem mora no Brasil ainda vai precisar esperar — mas a tendência de assistentes mais simples, sem aplicativo e sem comando técnico, é a mesma que já aparece em outras ferramentas de IA voltadas para o público 50+."
+  ],
+  fonte:{ nome:"Tom's Guide", url:"https://www.tomsguide.com/ai/this-new-ai-assistant-makes-ai-easier-for-people-65-no-app-or-prompts-required" }},
+
+/* ---------- 21 de agosto ---------- */
+{ slug:"ia-pode-piorar-solidao-diz-estudo-de-stanford",
+  cat:"ia-e-relacoes", data:"2026-08-21",
+  titulo:"Estudo de Stanford mostra que IA pode piorar a solidão em vez de aliviar",
+  resumo:"Pesquisa de Stanford publicada na Nature Human Behaviour mostrou que pessoas com poucos contatos sociais que buscam apoio emocional em chatbots de IA se sentem mais sozinhas depois — e o debate sobre \"traição\" com companheiros de IA ganhou força na mesma semana.",
+  corpo:[
+    "Uma pesquisa da Universidade Stanford, divulgada nos primeiros dias de agosto e publicada na revista científica Nature Human Behaviour, trouxe um dado que reacendeu o debate sobre até que ponto vale a pena buscar companhia emocional em um chatbot de inteligência artificial. Os pesquisadores, liderados pela professora Diyi Yang, do Departamento de Ciência da Computação de Stanford, analisaram respostas de 1.131 usuários do aplicativo Character.AI nos Estados Unidos, além de quase 465 mil mensagens trocadas em mais de 4.600 conversas doadas voluntariamente para o estudo.",
+    "A conclusão surpreendeu até a própria equipe: pessoas que já tinham poucos contatos sociais no mundo real e recorreram ao chatbot para desabafar sobre problemas pessoais não se sentiram melhor depois — na maioria dos casos, se sentiram mais sozinhas. Segundo Diyi Yang, abrir o coração para uma inteligência artificial não substitui uma conversa com outro ser humano, e em muitos casos o efeito é o oposto do esperado. A pesquisadora alerta para um círculo vicioso: quem já tem pouca rede de apoio se apega ao chatbot, reduz ainda mais o contato humano real, e acaba se sentindo mais solitário do que antes.",
+    "O estudo chegou poucos dias antes de a imprensa internacional intensificar outro debate ligado ao tema: afinal, ter um \"namorado\" ou \"namorada\" de inteligência artificial conta como traição? Uma reportagem da emissora australiana ABC, publicada em 13 de agosto, mostrou que cerca de dois terços das pessoas que mantêm esse tipo de relacionamento romântico com um chatbot escondem isso do parceiro ou parceira real — e quase metade delas já está em um relacionamento humano ao mesmo tempo em que conversa com a inteligência artificial de forma íntima.",
+    "Para quem tem mais de cinquenta anos, o alerta dos pesquisadores é simples e vale a pena guardar: não há problema algum em usar um assistente de inteligência artificial para organizar o dia, tirar uma dúvida ou até bater um papo ocasional. O risco aparece quando ele começa a substituir as conversas com filhos, amigos, vizinhos ou grupos da igreja e do bairro — o tipo de contato humano que nenhuma tecnologia, por mais avançada que seja, consegue repor de verdade."
+  ],
+  fonte:{ nome:"Stanford Report", url:"https://news.stanford.edu/stories/2026/08/ai-companions-chatbots-loneliness-research" }},
+
+{ slug:"summit-em-sao-paulo-mostra-o-quarto-do-futuro-para-idosos",
+  cat:"ia-e-saude", data:"2026-08-21",
+  titulo:"Summit em São Paulo mostra o \"quarto do futuro\" para quem envelhece em casa",
+  resumo:"O 2º Summit Envelhecer em Casa reuniu médicos, arquitetos e gerontologistas em São Paulo para mostrar como sensores, assistentes de IA e tecnologia por voz já ajudam a cuidar de idosos dentro de casa, sem substituir o cuidado humano.",
+  corpo:[
+    "No dia 11 de agosto, o Espaço Janela, no bairro de Pinheiros, em São Paulo, recebeu o 2º Summit Envelhecer em Casa, um encontro que reuniu médicos, arquitetos, especialistas em gerontologia e empresas de tecnologia para debater um tema cada vez mais presente na vida das famílias brasileiras: como cuidar bem de quem está envelhecendo sem precisar, necessariamente, internar a pessoa ou tirá-la de casa.",
+    "O destaque do evento foi uma simulação batizada de \"Quarto do Futuro\", um ambiente montado especialmente para mostrar, na prática, como a inteligência artificial já pode apoiar a rotina de uma pessoa mais velha dentro da própria casa. Entre as soluções apresentadas estavam assistentes de inteligência artificial conectados à rotina de cuidadores, avisando automaticamente quando algo foge do padrão; plataformas que monitoram o bem-estar emocional, identificando sinais de tristeza ou isolamento antes que se agravem; sensores discretos, instalados em tapetes, camas ou poltronas, capazes de identificar quedas ou mudanças bruscas de movimento; e tecnologias acionadas por voz, que ajudam a organizar a rotina, estimular a memória e manter contato com os familiares.",
+    "Segundo os especialistas presentes, esse tipo de tecnologia tem um papel especialmente importante diante de uma realidade conhecida: falta gente. Com menos profissionais de enfermagem e cuidado disponíveis no mercado, cada vez mais famílias vão precisar combinar o cuidado presencial com ferramentas de inteligência artificial que ajudem a cobrir as lacunas — sem, no entanto, substituir o toque e a atenção humana.",
+    "Para quem já pensa em como vai envelhecer, ou está organizando o cuidado de um pai, mãe ou cônjuge, o recado do Summit é prático: vale a pena pesquisar esse tipo de solução antes que a necessidade seja urgente. Um sensor de queda instalado com calma, testado e ajustado à rotina da casa, funciona muito melhor do que um equipamento comprado às pressas depois de um susto. No fim das contas, a tecnologia funciona melhor como um par de olhos extra — nunca como substituta da visita, do telefonema ou da companhia de quem se importa de verdade."
+  ],
+  fonte:{ nome:"Jornal do Brás", url:"https://jornaldobras.com.br/noticia/132818/ia-saude-e-quarto-do-futuro-pautam-evento-sobre-envelhecimento-em-casa-em-sao-paulo" }},
+
+{ slug:"ia-invisivel-ja-influencia-rotina-de-50-milhoes-de-brasileiros",
+  cat:"ia-no-dia-a-dia", data:"2026-08-21",
+  titulo:"\"IA invisível\" já influencia a rotina de 50 milhões de brasileiros",
+  resumo:"Pesquisa TIC Domicílios 2025 do Cetic.br mostra que 50 milhões de brasileiros já usam IA — mas o mais relevante é como o algoritmo já decide, nos bastidores, preço, crédito e ofertas antes mesmo do primeiro clique.",
+  corpo:[
+    "Uma reportagem publicada nesta semana trouxe um retrato revelador de como a inteligência artificial já influencia o dia a dia de milhões de brasileiros, mesmo sem que a maioria perceba. Segundo dados da pesquisa TIC Domicílios 2025, feita pelo Cetic.br — braço de pesquisa do Comitê Gestor da Internet no Brasil —, cerca de 32% dos usuários de internet no país, o equivalente a 50 milhões de pessoas com 10 anos ou mais, já usam algum tipo de inteligência artificial. Desse total, 84% recorrem à tecnologia para assuntos pessoais.",
+    "Mas o dado mais interessante não é esse: é o que os especialistas chamam de \"inteligência artificial invisível\" — aquela que atua nos bastidores de aplicativos, bancos, lojas on-line e seguradoras, sem que o usuário perceba diretamente. Ao sugerir um restaurante, uma música ou a melhor rota no trânsito, o sistema está cruzando, em tempo real, informações como histórico de buscas, localização, horário de uso e até as preferências de pessoas com perfil parecido com o seu. O resultado parece natural, mas foi calculado por um algoritmo.",
+    "No mundo corporativo, esse mesmo tipo de tecnologia ganha um peso maior. No setor financeiro, sistemas de inteligência artificial ajudam bancos a analisar risco, decidir quem recebe crédito e barrar fraudes antes que aconteçam. No varejo, preveem estoque e personalizam ofertas antes mesmo de você fechar a compra. Nos seguros, avaliam perfis e aceleram a aprovação de propostas. \"A tecnologia que mais molda a nossa rotina nem sempre é aquela que responde a uma pergunta na tela. Muitas vezes, ela já entrou em ação antes do primeiro clique\", explica Wesley Araújo, especialista da consultoria Blueshift, ouvido pela reportagem.",
+    "O alerta que fica é sobre supervisão. Relatórios internacionais como o Stanford AI Index e o NIST AI Risk Management Framework, dos Estados Unidos, reforçam que decisões automatizadas envolvendo dinheiro, preços ou segurança precisam continuar sendo revisadas por seres humanos, e não apenas confiadas ao algoritmo.",
+    "Para o público acima de cinquenta anos, entender essa \"IA invisível\" ajuda a interpretar melhor situações do dia a dia — por que um app de compras oferece um preço diferente do vizinho, por que um pedido de crédito é aprovado mais rápido em um banco do que em outro, ou por que certas propagandas parecem \"ler a sua mente\". Não é mágica: é um sistema calculando, o tempo todo, o que é mais provável que você aceite."
+  ],
+  fonte:{ nome:"Notícias do Mundo da Tecnologia", url:"https://noticiastecnologia.wordpress.com/2026/08/20/inteligencia-artificial-influencia-a-rotina-de-50-milhoes-de-brasileiros-de-sugestoes-de-almoco-a-decisoes-de-credito/" }},
+
+{ slug:"google-lanca-pixel-11-com-ia-que-entende-fala-natural",
+  cat:"ferramentas-para-50", data:"2026-08-21",
+  titulo:"Google lança Pixel 11 com inteligência artificial que entende fala natural",
+  resumo:"No Made by Google 2026, o Pixel 11 chegou com o chip Tensor G6 e o recurso \"Rambler\", que entende comandos de voz mesmo com pausas e frases incompletas — uma tendência que facilita o uso por voz para quem não gosta de digitar.",
+  corpo:[
+    "No dia 12 de agosto, o Google realizou em Nova York o evento Made by Google 2026, onde apresentou a nova linha de celulares Pixel 11 — e, mais uma vez, deixou claro que a inteligência artificial é hoje o verdadeiro protagonista dos lançamentos de smartphones, mais até do que o hardware.",
+    "A família chegou com quatro modelos — Pixel 11, Pixel 11 Pro, Pixel 11 Pro XL e o dobrável Pixel 11 Pro Fold —, todos equipados com o novo chip Tensor G6, fabricado com tecnologia de 2 nanômetros, a mesma classe de processo usada nos chips mais avançados do mundo atualmente. Mas a mudança que mais deve impactar o uso diário está no software: o assistente Gemini ganhou um novo modo, chamado de \"Gemini Intelligence\", capaz de executar tarefas de várias etapas sozinho, como um funcionário digital que entende o pedido e vai atrás de resolver.",
+    "Uma das novidades mais úteis para quem não gosta de digitar é o recurso batizado de \"Rambler\" — um sistema de voz reformulado para entender a forma como as pessoas realmente falam, com frases incompletas, pausas, \"hã\" e mudanças de assunto no meio da fala, sem travar ou pedir para repetir. Na prática, significa poder ditar um recado, uma lista de compras ou uma mensagem de voz sem se preocupar em formular frases perfeitas — o aparelho entende o sentido, não só as palavras.",
+    "O Google também ampliou os recursos de transcrição e tradução automática: vídeos, podcasts e mensagens de voz recebidas em outro idioma agora podem ser traduzidos e legendados na hora, direto no aparelho. Nos Estados Unidos, os preços variam de 899 a 1.899 dólares, e as primeiras entregas começaram no dia 20 de agosto — o modelo ainda não tem data confirmada de chegada ao Brasil.",
+    "Mesmo para quem não pretende trocar de celular agora, a tendência importa: cada vez mais, os assistentes de inteligência artificial são pensados para funcionar por voz, em linguagem natural, sem exigir que o usuário aprenda comandos técnicos ou navegue por menus complicados. Para o público acima de cinquenta anos, essa é, na prática, a direção que facilita o uso — falar com o celular como quem fala com uma pessoa, e deixar que ele entenda o resto."
+  ],
+  fonte:{ nome:"Google", url:"https://blog.google/products-and-platforms/devices/pixel/pixel-11-features/" }},
+
+{ slug:"mercado-pago-transforma-assistente-de-ia-em-gerente-pessoal",
+  cat:"ia-e-financas", data:"2026-08-21",
+  titulo:"Mercado Pago transforma assistente de inteligência artificial em gerente pessoal",
+  resumo:"O \"Mago\", assistente de IA do Mercado Pago, virou um \"personal banker\" que organiza finanças e executa tarefas por comando de voz ou texto — mas toda operação ainda precisa de confirmação explícita do usuário.",
+  corpo:[
+    "O Mercado Pago anunciou, na segunda semana de agosto, uma evolução do seu assistente financeiro de inteligência artificial, batizado de \"Mago\". A ferramenta, que já soma 17 milhões de usuários desde que foi lançada, em outubro de 2025, passa agora a funcionar como o que a empresa chama de \"personal banker\" — um gerente de banco pessoal, disponível dentro do próprio aplicativo, a qualquer hora do dia.",
+    "Na prática, o Mago entende comandos em linguagem natural — do tipo que qualquer pessoa usaria numa conversa comum, sem termos técnicos — e usa as próprias informações da conta do usuário dentro da plataforma para organizar as finanças, simular cenários futuros e sugerir oportunidades para o dinheiro render mais. Ele também executa tarefas do dia a dia, como fazer um Pix, consultar o extrato ou organizar a conta, sempre dentro de uma experiência de conversa, como se estivesse trocando mensagens com uma pessoa.",
+    "Um ponto que a empresa faz questão de destacar: o Mago não é um consultor financeiro e não decide nada sozinho. Ele organiza, explica, simula e executa exatamente o que foi pedido — mas toda operação, sem exceção, precisa de confirmação explícita do usuário antes de ser concluída. A tecnologia está disponível, por enquanto, para 17 milhões de clientes, com expansão gradual prevista para toda a base da empresa, que soma 88 milhões de usuários no Brasil.",
+    "Esse tipo de assistente financeiro por inteligência artificial deve se tornar cada vez mais comum em bancos e fintechs — e para quem tem mais de cinquenta anos, vale um cuidado redobrado antes de usar qualquer ferramenta assim: primeiro, nunca compartilhar senha, nem mesmo com um assistente \"de dentro\" do próprio banco; segundo, sempre ler a confirmação antes de aprovar qualquer transferência ou pagamento sugerido pela inteligência artificial, mesmo que pareça óbvio; e terceiro, lembrar que esse tipo de assistente é uma ferramenta de organização, não uma autorização automática — a palavra final sobre o dinheiro continua sendo sempre da pessoa, nunca do algoritmo."
+  ],
+  fonte:{ nome:"TI Inside", url:"https://tiinside.com.br/14/08/2026/mercado-pago-libera-nova-ia-para-17-milhoes-de-clientes/" }},
+
+{ slug:"inteligencia-artificial-ajuda-a-evitar-cegueira-em-pernambuco",
+  cat:"auxilio-da-visao", data:"2026-08-21",
+  titulo:"Inteligência artificial ajuda a evitar cegueira em Pernambuco",
+  resumo:"O Projeto V.E.R. leva saúde ocular com apoio de IA a 13.300 alunos e professores de Serra Talhada (PE) — parte de uma onda maior de softwares que já detectam glaucoma e retinopatia diabética anos antes dos primeiros sintomas.",
+  corpo:[
+    "A inteligência artificial se consolidou, em 2026, como uma das maiores aliadas da oftalmologia na hora de evitar que doenças oculares evoluam até causar cegueira — e um projeto em andamento no interior de Pernambuco mostra bem o que isso significa na prática, longe dos grandes centros.",
+    "Embora tenha sido lançado há alguns meses, o Projeto V.E.R. — Visão em Rede segue em fase final de implementação neste mês de agosto, o que o torna um retrato atual do que já está funcionando no Brasil. Executado pela Fundação Altino Ventura, com apoio do programa Juntos pela Saúde — uma parceria entre o BNDES, a Umane e o Instituto para o Desenvolvimento do Investimento Social —, o projeto leva saúde ocular com apoio de inteligência artificial à cidade de Serra Talhada, no sertão pernambucano. Ao todo, 13.300 alunos e professores de 64 escolas municipais estão sendo avaliados com o apoio de uma \"Carteira Digital de Saúde Ocular\", que registra o histórico de cada pessoa e ajuda a identificar quem precisa de atendimento especializado — sem que a família precise se deslocar até uma clínica de oftalmologia.",
+    "O caso ilustra uma mudança maior que a tecnologia tem provocado na área: softwares de inteligência artificial já conseguem analisar exames como a tomografia de coerência óptica e a retinografia com uma profundidade praticamente microscópica, identificando sinais de glaucoma ou retinopatia diabética anos antes de a pessoa sentir qualquer sintoma. Em estudos recentes, esses modelos alcançaram até 97% de precisão diagnóstica — um patamar próximo, e em alguns casos superior, ao de especialistas humanos avaliando as mesmas imagens. Até na cirurgia de catarata a inteligência artificial já ajuda: hoje ela é usada para calcular, com muito mais precisão, o grau da lente que será colocada no olho do paciente, aumentando as chances de a pessoa sair da cirurgia sem precisar mais de óculos.",
+    "Depois de validado em Serra Talhada, o modelo do Projeto V.E.R. deve ser disponibilizado gratuitamente para outros municípios brasileiros — uma notícia especialmente relevante para quem mora longe de grandes centros e tem dificuldade de acesso a um oftalmologista. Para o público acima de cinquenta anos, o recado de sempre continua valendo: exames de rotina não devem esperar o aparecimento de sintomas, porque é exatamente aí que a inteligência artificial já provou que consegue enxergar primeiro."
+  ],
+  fonte:{ nome:"Medicina S/A", url:"https://medicinasa.com.br/projeto-ia-saude-ocular/" }},
+
+/* ---------- 20 de agosto (furo do meio da semana) ---------- */
+{ slug:"prova-de-vida-do-inss-fica-automatica-com-inteligencia-artificial",
+  cat:"ia-e-financas", data:"2026-08-20", destaque:true,
+  titulo:"Prova de vida do INSS fica automática com ajuda de inteligência artificial",
+  resumo:"O INSS passou a cruzar dados de outras bases do governo com IA pra confirmar que o aposentado está vivo, sem precisar ir à agência — mas o novo sistema também virou isca pra golpista.",
+  corpo:[
+    "O INSS passou a confirmar automaticamente que aposentados e pensionistas continuam vivos, usando inteligência artificial para cruzar dados de várias bases do governo — sem precisar mais de ida anual à agência bancária, como era antes. O sistema roda o ano inteiro em segundo plano, sem que o beneficiário precise fazer nada, enquanto houver atividade recente registrada em seu nome.",
+    "Qualquer sinal de movimentação já vale como prova de vida: consulta ou vacinação pelo SUS, acesso ao aplicativo ou site do Gov.br, renovação de RG, CNH ou passaporte, participação em eleição, ou até um saque com biometria no banco. Só quando o sistema fica dez meses seguidos sem encontrar nenhum desses sinais é que o INSS entra em contato — pelo aplicativo Meu INSS, SMS ou correspondência — dando um prazo para o beneficiário se regularizar, seja por biometria facial no próprio celular, pelo aplicativo do banco ou presencialmente. Quem não regulariza dentro do prazo tem o benefício temporariamente bloqueado, mas os valores retidos são liberados assim que a pendência é resolvida.",
+    "O aumento da fiscalização digital, porém, também virou terreno fértil para golpistas. Mensagens falsas ameaçando suspensão do benefício, pedindo senha, dados bancários ou transferência por Pix para \"regularizar a prova de vida\" têm circulado com mais frequência. O INSS reforça que nunca liga nem manda mensagem pedindo senha, dado bancário ou pagamento de qualquer taxa — o único canal oficial para tirar dúvidas é o aplicativo/site Meu INSS ou o telefone 135.",
+    "Para quem tem mais de cinquenta anos, o recado prático é simples: manter o cadastro atualizado no Gov.br e no Meu INSS, dar uma olhada de vez em quando nas notificações oficiais, e desconfiar de qualquer mensagem não solicitada pedindo dado pessoal ou dinheiro — em caso de dúvida, o caminho seguro é ligar para o 135 ou ir a uma agência, nunca clicar em link recebido por SMS ou WhatsApp."
+  ],
+  fonte:{ nome:"Seu Dinheiro", url:"https://www.seudinheiro.com/2026/financas-pessoais/prova-de-vida-do-inss-automatica-entenda-o-funcionamento-otrp/" }},
+
+/* ---------- 14 de agosto ---------- */
+{ slug:"china-desliga-namorados-de-ia-e-usuarios-vivem-luto-digital",
+  cat:"ia-e-relacoes", data:"2026-08-14",
+  titulo:"China desliga \"namorados\" de inteligência artificial e usuários vivem luto digital",
+  resumo:"Regra chinesa que entrou em vigor em julho levou ByteDance, Alibaba e Tencent a desligar chatbots de companhia, gerando uma onda de luto digital entre quem passou anos conversando com seu \"namorado\" ou \"namorada\" de IA.",
+  corpo:[
+    "Milhões de pessoas na China perderam seus \"namorados\" e \"namoradas\" virtuais nas últimas semanas, depois que o governo chinês passou a exigir que as gigantes de tecnologia do país desligassem funções de companhia baseadas em inteligência artificial. A regra, batizada de \"Medidas Interinas para a Administração de Serviços Interativos Antropomórficos de IA\", entrou em vigor em 15 de julho, mas foi só nos últimos dias que o impacto ficou visível: ByteDance (dona do chatbot Doubao), Alibaba (com o assistente Qwen) e Tencent (com o Yuanbao) removeram ou limitaram as ferramentas que permitiam criar personagens de IA com personalidade própria, capazes de manter conversas afetivas contínuas.",
+    "A medida busca conter a dependência emocional em chatbots de companhia, um mercado que só na China movimentou 4,1 bilhões de yuans (cerca de R$ 3 bilhões) em 2024, com crescimento anual projetado de 85%. Uma pesquisa do Instituto Tencent, divulgada em abril, mostrou que mais de 70% dos jovens chineses entrevistados já haviam sentido algum grau de dependência dessas ferramentas, e 23% desenvolveram uma dependência habitual.",
+    "Nas redes sociais chinesas, o desligamento das funções gerou uma onda de luto digital: usuários compartilharam prints de suas últimas conversas e relataram sensação de perda real, como se tivessem terminado um relacionamento. Uma pessoa escreveu que passou mais de dois anos com seu \"namorado de IA\" e agora sente \"um vazio no coração\".",
+    "Para quem tem mais de cinquenta anos, o episódio chinês é um alerta útil, mesmo à distância. Especialistas em saúde mental reforçam que conversar com um chatbot pode, sim, aliviar momentos de solidão — mas não substitui vínculos humanos reais, e o ideal é que sirva como apoio pontual, nunca como a principal fonte de companhia. Wang Jiang, do Instituto de Pesquisa do Ciberespaço da China, resumiu o risco: a exposição prolongada a esse tipo de IA pode enfraquecer habilidades humanas importantes, como a empatia e a capacidade de lidar com desentendimentos reais."
+  ],
+  fonte:{ nome:"Fast Company Brasil", url:"https://fastcompanybrasil.com/ia/china-desliga-companheiros-ia-usuarios-ressuscitar/" }},
+
+{ slug:"estudantes-criam-dispositivo-de-ia-que-detecta-quedas-de-idosos",
+  cat:"ia-e-saude", data:"2026-08-14",
+  titulo:"Estudantes cariocas criam dispositivo de inteligência artificial que detecta quedas de idosos",
+  resumo:"Alunas da Faetec, no Rio de Janeiro, criaram um dispositivo vestível com sensores e IA que detecta quedas de idosos em tempo real e avisa a família automaticamente — projeto será apresentado na Rio Innovation Week.",
+  corpo:[
+    "Alunas da Fundação de Apoio à Escola Técnica (Faetec), no Rio de Janeiro, criaram um dispositivo vestível que usa sensores e inteligência artificial para detectar quedas de idosos em tempo real e enviar alertas automáticos a familiares. O projeto, desenvolvido por estudantes da Escola Técnica Estadual Henrique Lage sob orientação do professor Altair Martins, será apresentado na Rio Innovation Week.",
+    "O protótipo é discreto e usa um sensor inercial e um microcontrolador para monitorar constantemente a aceleração e a posição do corpo de quem o usa. Quando o padrão de movimento é compatível com uma queda, o aparelho dispara automaticamente um aviso, por aplicativo, para os contatos de emergência cadastrados. Ele também tem um botão de SOS, para que a própria pessoa peça ajuda manualmente se precisar.",
+    "O problema que a tecnologia tenta resolver é grande. Segundo a Organização Mundial da Saúde, uma em cada três pessoas com mais de 65 anos sofre pelo menos uma queda por ano. No Brasil, o Ministério da Saúde aponta as quedas como uma das principais causas de internação e de morte nessa faixa etária — muitas vezes porque o socorro demora a chegar, não porque o acidente em si seja necessariamente grave.",
+    "Dispositivos assim se somam a uma tendência maior: sensores, relógios e até robôs de companhia equipados com inteligência artificial vêm sendo desenvolvidos no Brasil e no mundo para permitir que pessoas mais velhas continuem morando sozinhas com mais segurança. A vantagem de um projeto como esse é reduzir o tempo entre o acidente e o socorro, o que na prática pode ser a diferença entre uma recuperação tranquila e uma complicação grave, como uma fratura sem atendimento rápido."
+  ],
+  fonte:{ nome:"Brasil em Folhas", url:"https://www.brasilemfolhas.com.br/2026/08/alunas-criam-dispositivo-para-detectar-quedas-de-idosos/" }},
+
+{ slug:"whatsapp-testa-alerta-de-golpe-com-inteligencia-artificial",
+  cat:"ia-no-dia-a-dia", data:"2026-08-14",
+  titulo:"WhatsApp testa alerta de golpe com inteligência artificial",
+  resumo:"O WhatsApp começou a testar o \"Alerta de Golpe\", recurso que usa IA rodando no próprio aparelho para identificar mensagens suspeitas sem violar a criptografia — mira especialmente os golpes mais comuns contra o público 50+.",
+  corpo:[
+    "O WhatsApp começou a testar um novo recurso de segurança que usa inteligência artificial para identificar possíveis golpes recebidos por mensagem. Batizado de \"Alerta de Golpe\", o sistema analisa o conteúdo de mensagens vindas de números que não estão na lista de contatos do usuário e avisa quando encontra um padrão suspeito — sem enviar o conteúdo das conversas para os servidores da Meta, empresa dona do aplicativo.",
+    "Quando o sistema identifica uma possível tentativa de fraude, aparece um alerta na tela para quem recebeu a mensagem. A partir daí, a pessoa pode escolher denunciar o contato, bloqueá-lo, ou marcá-lo como confiável — nesse último caso, os avisos deixam de aparecer para aquele contato específico. Segundo a Meta, o modelo de inteligência artificial roda direto no aparelho do usuário, o que preserva a criptografia de ponta a ponta das conversas.",
+    "A empresa também criou uma camada extra de auditoria: cada atualização do modelo de IA usado no recurso é registrada, antes de ser liberada, em um livro de transparência público e imutável — uma forma de garantir que ninguém, nem mesmo a própria Meta, consiga direcionar uma versão adulterada da ferramenta para uma pessoa específica.",
+    "Para o público acima de cinquenta anos, que é um dos alvos preferidos de golpistas no WhatsApp — golpes do motoboy, do falso parente em apuros, do PIX errado — a novidade pode se tornar uma camada extra de proteção. Por enquanto, o recurso está disponível de forma limitada na versão beta do aplicativo, e a Meta ainda não informou quando ele chega para o público em geral. A recomendação de sempre continua valendo: desconfiar de pedidos de dinheiro urgentes, mesmo de contatos conhecidos, e sempre confirmar por telefone antes de fazer qualquer transferência."
+  ],
+  fonte:{ nome:"Canaltech", url:"https://canaltech.com.br/inteligencia-artificial/whatsapp-quer-usar-ia-para-barrar-golpes-e-proteger-usuarios/" }},
+
+{ slug:"google-leva-novos-recursos-de-ia-para-celulares-android",
+  cat:"ferramentas-para-50", data:"2026-08-14",
+  titulo:"Google leva novos recursos de inteligência artificial para celulares Android",
+  resumo:"O Google liberou uma leva de recursos de IA para o Android, com destaque para tradução de linguagem de sinais em tempo real, o assistente Gemini executando tarefas em dezenas de apps e pistas visuais nos aparelhos Pixel.",
+  corpo:[
+    "O Google começou a liberar uma nova leva de recursos de inteligência artificial para os celulares Android, com destaque para funções pensadas em acessibilidade. Uma das novidades é o \"Live Transcribe\", que transforma linguagem de sinais em voz em tempo real usando a câmera frontal do aparelho, pensado inicialmente para pessoas surdas, mas que mostra o tipo de tradução instantânea que a IA já consegue fazer no bolso de qualquer um.",
+    "O assistente Gemini também ficou mais robusto: agora ele consegue executar tarefas de várias etapas dentro de cerca de quarenta aplicativos integrados, com novos parceiros como Wix, Fever, Pandora e Zocdoc entrando na lista. Na prática, isso significa pedir para o assistente resolver uma tarefa que antes exigiria abrir vários aplicativos diferentes — como agendar um compromisso e já colocar um lembrete na agenda — numa única conversa.",
+    "Nos aparelhos mais recentes da linha Pixel, o Google também apostou em pistas visuais para tornar a inteligência artificial mais fácil de entender: no modelo dobrável Pixel Pro Fold, luzes ao redor da câmera mudam de cor para indicar se o Gemini está ouvindo, pensando ou respondendo — uma forma de deixar claro, sem precisar ler nada na tela, em que momento da conversa a IA está. Já nos relógios inteligentes, o assistente ganhou a capacidade de iniciar treinos ou configurar cronômetros por voz, funcionando mesmo sem conexão à internet.",
+    "Para quem acha os aplicativos de celular complicados, esse tipo de recurso tende a facilitar o dia a dia: menos telas para navegar, mais comandos por voz e pistas visuais simples para saber o que a inteligência artificial está fazendo a cada momento."
+  ],
+  fonte:{ nome:"Google", url:"https://blog.google/products-and-platforms/devices/pixel/pixel-11-pro-fold/" }},
+
+{ slug:"agentes-de-ia-comecam-a-fazer-compras-no-lugar-das-pessoas",
+  cat:"ia-e-financas", data:"2026-08-14",
+  titulo:"Agentes de inteligência artificial começam a fazer compras no lugar das pessoas",
+  resumo:"Os chamados \"pagamentos agênticos\" já não são promessa futura: assistentes de IA da OpenAI, Anthropic e Stripe já compram sozinhos, com Visa e Mastercard testando modelos próprios — mercado pode movimentar trilhões até 2030.",
+  corpo:[
+    "Uma mudança silenciosa está acontecendo na forma como as compras são feitas pela internet: cada vez mais, quem aperta o botão de \"comprar\" não é mais uma pessoa, e sim um agente de inteligência artificial agindo em nome dela. Segundo reportagens recentes sobre o tema, os chamados \"pagamentos agênticos\" já não são mais uma promessa futura — eles já acontecem hoje, em volume crescente, e colocam pressão sobre bancos, bandeiras de cartão e reguladores para adaptar a infraestrutura de pagamentos, que ainda foi pensada para compras feitas diretamente por humanos.",
+    "Empresas como OpenAI, Anthropic e Stripe já lançaram ferramentas que permitem que assistentes de inteligência artificial pesquisem preços, comparem produtos e finalizem compras sozinhos, seguindo instruções e limites definidos pelo usuário. Visa e Mastercard também já testam seus próprios modelos de pagamento pensados especificamente para esse tipo de transação automatizada. Segundo estimativas da consultoria McKinsey, esse modelo de \"comércio agêntico\" pode movimentar entre 3 trilhões e 5 trilhões de dólares em compras no varejo mundial até 2030.",
+    "No Brasil, o tema já apareceu em fóruns do setor, como o Fórum E-Commerce Brasil 2026, e o mercado espera que o Banco Central se posicione em breve sobre como regular esse tipo de pagamento automatizado.",
+    "Para quem está pensando em aposentadoria, essa mudança merece atenção, mesmo que pareça distante do dia a dia. Se cada vez mais compras passam a ser decididas por um algoritmo — mesmo que configurado pelo próprio usuário —, cresce também a importância de entender bem que permissões e limites de gasto são dados a esses assistentes antes de ativá-los. A recomendação de especialistas em segurança financeira continua a mesma de sempre: nunca compartilhar senhas ou dar autorização de pagamento irrestrita para nenhuma ferramenta, por mais confiável que pareça."
+  ],
+  fonte:{ nome:"Forbes", url:"https://www.forbes.com/sites/boazsobrado/2026/03/19/stripe-visa-and-mastercard-race-to-build-ai-agent-payment-rails/" }},
+
+{ slug:"ia-ajuda-a-diagnosticar-catarata-mais-cedo-no-agosto-cinza",
+  cat:"auxilio-da-visao", data:"2026-08-14",
+  titulo:"IA ajuda a diagnosticar catarata mais cedo no Agosto Cinza",
+  resumo:"Na campanha Agosto Cinza, dados da Fiocruz mostram que 14 milhões de brasileiros 50+ têm catarata — retinógrafos portáteis com IA já ajudam no diagnóstico precoce em Unidades Básicas de Saúde por todo o país.",
+  corpo:[
+    "Agosto é o mês da campanha \"Agosto Cinza\", dedicada à conscientização sobre a catarata — a principal causa de cegueira reversível no mundo. Um levantamento da Fundação Oswaldo Cruz (Fiocruz) mostra a dimensão do problema no Brasil: 25% dos brasileiros com cinquenta anos ou mais, o equivalente a 14 milhões de pessoas, já têm catarata. Médicos alertam que um dos maiores erros da população é adiar a consulta até a visão piorar bastante, esperando a catarata \"amadurecer\" — um conceito que a medicina considera hoje ultrapassado.",
+    "A inteligência artificial tem ajudado a mudar esse cenário, principalmente na etapa do diagnóstico. Equipamentos chamados retinógrafos portáteis, acoplados a um smartphone, já são usados em mutirões de saúde pelo país — como o programa que roda em Unidades Básicas de Saúde de Campo Grande, feito em parceria entre telemedicina e inteligência artificial. O aparelho fotografa o fundo do olho, e um software de IA analisa a imagem na hora, identificando sinais de catarata, glaucoma e retinopatia diabética muitas vezes antes de a pessoa sentir qualquer sintoma.",
+    "Esse tipo de tecnologia também está no centro de um investimento federal de cerca de R$ 1,8 bilhão anunciado para modernizar Unidades Básicas de Saúde em mais de cinco mil municípios brasileiros, com o objetivo de ampliar o acesso ao diagnóstico precoce de doenças oculares — incluindo a compra de mais retinógrafos portáteis para uso em rastreamentos populacionais.",
+    "Para quem tem mais de cinquenta anos, o recado prático é simples: sinais como visão embaçada, sensibilidade exagerada à luz, dificuldade para dirigir à noite ou necessidade de trocar o grau dos óculos com frequência merecem uma consulta oftalmológica, não devem ser encarados como algo \"normal da idade\". Quanto mais cedo o diagnóstico — cada vez mais rápido graças à inteligência artificial —, mais simples e segura tende a ser a cirurgia, quando ela for necessária."
+  ],
+  fonte:{ nome:"Medicina S/A", url:"https://medicinasa.com.br/retinografos-ministerio-saude/" }},
+
+
+/* ---------- 07 de agosto ---------- */
+{ slug:"pesquisa-mostra-como-brasileiros-encaram-a-ia-na-intimidade",
+  cat:"ia-e-relacoes", data:"2026-08-07",
+  titulo:"Pesquisa mostra como os brasileiros estão encarando a inteligência artificial na intimidade",
+  resumo:"Pesquisa da Gleeden na Intimi Expo, com 1.271 brasileiros, mostra que 51,2% não consideram traição usar IA para fins íntimos, e quase metade já se sente à vontade desabafando com um chatbot.",
+  corpo:[
+    "Uma pesquisa divulgada na primeira semana de agosto trouxe um retrato inédito de como os brasileiros estão lidando com a inteligência artificial dentro da vida afetiva e íntima. O levantamento, feito pela plataforma Gleeden durante a 12ª edição da Intimi Expo, ouviu 1.271 pessoas — 78% delas mulheres, a maioria entre 26 e 35 anos.",
+    "O resultado mais chamativo: 51,2% dos entrevistados disseram que usar inteligência artificial para fins eróticos ou íntimos não é considerado traição. Mais da metade enxerga essas ferramentas como algo separado do relacionamento real, e não como uma forma de infidelidade.",
+    "Mas a pesquisa também mostrou que o tema ainda gera desconforto e negociação dentro dos casais. Quando perguntados se contariam ao parceiro caso usassem IA para interações íntimas, 49,7% disseram que sim, contariam abertamente. Já 33,9% afirmaram que isso dependeria da situação — do tipo de uso, da intensidade, do contexto. E 16,4% preferiram dizer que manteriam a informação em segredo.",
+    "Além do lado erótico, o estudo revelou algo talvez ainda mais relevante para quem passou dos cinquenta anos: quase metade dos participantes já se sente confortável desabafando emocionalmente com um chatbot de inteligência artificial — um uso que mostra como a IA está virando uma espécie de confidente digital, inclusive para pessoas de meia-idade e da terceira idade que lidam com solidão, luto ou distanciamento dos filhos.",
+    "Especialistas recomendam que a inteligência artificial sirva como apoio pontual, e não como substituto de vínculos humanos reais. Buscar ajuda profissional ou manter contato com amigos e família continua sendo insubstituível quando o assunto é solidão ou saúde emocional a longo prazo."
+  ],
+  fonte:{ nome:"Alô Alô Bahia", url:"https://aloalobahia.com/noticias/2026/08/05/relacionamento-com-ia-e-traicao-estudo-mostra-como-brasileiros-enxergam-a-inteligencia-artificial-na-intimidade/" }},
+
+{ slug:"brasil-oficializa-uso-da-ia-na-medicina",
+  cat:"ia-e-saude", data:"2026-08-07",
+  titulo:"Brasil oficializa o uso da inteligência artificial na medicina e amplia os hospitais inteligentes",
+  resumo:"O Conselho Federal de Medicina publicou a Resolução 2.454/2026, reconhecendo oficialmente o uso da IA na prática médica — 62,5% dos hospitais brasileiros já usam algum tipo de IA nas operações do dia a dia.",
+  corpo:[
+    "Agosto marcou um momento importante para a inteligência artificial dentro dos hospitais brasileiros. O Conselho Federal de Medicina publicou a Resolução nº 2.454/2026, reconhecendo oficialmente que a IA já faz parte da prática médica no país. Para ajudar os médicos a se adaptarem, a Associação Médica Brasileira lançou uma cartilha orientando como incorporar a tecnologia de forma ética, segura e transparente — o prazo de adaptação das instituições termina ainda neste mês.",
+    "Um levantamento recente mostrou que 62,5% dos hospitais brasileiros já utilizam algum tipo de inteligência artificial nas suas operações do dia a dia, seja para organizar exames, prever demanda de leitos ou apoiar diagnósticos.",
+    "No lado da infraestrutura pública, o governo avançou com o projeto do Hospital Inteligente, financiado pelo Banco do Brics e voltado para atendimento de urgência e emergência, integrando IA, conectividade 5G e sistemas digitais direto no atendimento ao paciente. Já está rodando, em fase piloto, o SAMU Inteligente, implementado em Recife, Belo Horizonte e Porto Alegre, permitindo que UTIs, ambulâncias e centrais de regulação compartilhem dados clínicos em tempo real — ganhando minutos preciosos em casos graves.",
+    "Para quem tem mais de cinquenta anos, o impacto é direto: mais agilidade no diagnóstico de doenças crônicas, menos espera em emergências e sistemas que ajudam o médico a não deixar passar sinais de alerta em exames de rotina. Especialistas reforçam, porém, que a IA entra como apoio à decisão médica — o julgamento clínico e o exame físico continuam sendo feitos por pessoas."
+  ],
+  fonte:{ nome:"Portal CFM", url:"https://portal.cfm.org.br/noticias/cfm-normatiza-uso-da-ia-na-medicina/" }},
+
+{ slug:"summit-em-sp-mostra-como-ia-pode-ajudar-a-envelhecer-em-casa",
+  cat:"ia-no-dia-a-dia", data:"2026-08-07",
+  titulo:"Summit em São Paulo mostra como a inteligência artificial pode ajudar a envelhecer em casa",
+  resumo:"No dia 11 de agosto, São Paulo recebe o 2º Summit Envelhecer em Casa, com o 'Quarto do Futuro' simulando sensores de IA, comandos de voz e monitoramento para dar mais segurança a quem mora sozinho.",
+  corpo:[
+    "No dia 11 de agosto, São Paulo recebe a 2ª edição do Summit Envelhecer em Casa, evento que reúne médicos, arquitetos, gerontólogos e especialistas em inovação para debater como a inteligência artificial pode apoiar quem está envelhecendo sem precisar sair de casa. O evento é promovido pela Sanii e pela ISA Saúde, em parceria com a Yuna e a Nestlé Nutrition & Health, com apoio da Sociedade Brasileira de Geriatria e Gerontologia de São Paulo e da Associação Brasileira de Hospitais e Clínicas de Transição.",
+    "O grande destaque da programação é o \"Quarto do Futuro\" — um ambiente montado para simular o quarto de uma pessoa idosa equipado com sensores inteligentes capazes de identificar quedas, sistemas de monitoramento do bem-estar emocional, assistentes de IA e comandos ativados por voz, tudo pensado para dar mais segurança e autonomia a quem mora sozinho.",
+    "A ideia central do evento é discutir como reduzir o tempo de internação hospitalar de forma segura, trazendo o cuidado de volta para casa, sem que a tecnologia substitua o cuidado humano de cuidadores e familiares. Na prática, isso já aparece hoje em coisas simples: lembretes automáticos de remédios, alarmes que avisam a família em caso de queda, e assistentes de voz que ajudam a checar o tempo ou acender uma luz sem precisar se levantar."
+  ],
+  fonte:{ nome:"Economia SP", url:"https://economiasp.com/2026/07/30/ia-saude-e-quarto-do-futuro-pautam-evento-sobre-envelhecimento-em-casa-em-sp/" }},
+
+{ slug:"itau-lanca-ia-i-no-aplicativo-do-banco",
+  cat:"ferramentas-para-50", data:"2026-08-07",
+  titulo:"Itaú lança assistente de inteligência artificial dentro do aplicativo do banco",
+  resumo:"O Itaú começou a liberar o ia.i, assistente de IA generativa dentro do app do banco, que responde em linguagem simples sobre gastos, cartões e investimentos — meta é chegar a 3 milhões de usuários até setembro.",
+  corpo:[
+    "O Itaú começou a distribuir em agosto uma nova ferramenta de inteligência artificial generativa integrada ao aplicativo do banco, batizada de ia.i. Na prática, funciona como um chat: o cliente escreve uma pergunta e recebe uma resposta personalizada, sem precisar navegar por menus ou ligar para a central de atendimento.",
+    "A novidade começou a chegar em 27 de julho para um grupo inicial de 300 mil clientes e vai sendo liberada aos poucos — a expectativa é alcançar 3 milhões de usuários até setembro, e todos os clientes pessoa física até o fim do ano.",
+    "O diferencial do ia.i é que ele analisa o perfil financeiro de cada cliente para dar respostas personalizadas: quanto foi gasto em determinado mês, detalhamento de gastos por categoria, sugestões de economia ou dúvidas sobre cartões, empréstimos e investimentos. Para quem acha os aplicativos de banco confusos, a mudança facilita bastante a vida — basta perguntar em português simples, como numa conversa com um atendente.",
+    "Segundo levantamento do banco de investimentos Goldman Sachs, Itaú e Nubank estão à frente dos concorrentes nessa corrida da inteligência artificial no setor bancário, com Bradesco e Banco do Brasil logo atrás. O movimento reflete uma tendência maior: os bancos brasileiros devem investir R$ 50,4 bilhões em tecnologia neste ano, alta de 8% sobre 2025, boa parte direcionada à IA generativa, segundo a Febraban."
+  ],
+  fonte:{ nome:"Itaú", url:"https://feito.itau.com.br/itau-iai-superapp-inteligencia-artificial/" }},
+
+{ slug:"ex-executivos-do-nubank-lancam-consultoria-com-ia",
+  cat:"ia-e-financas", data:"2026-08-07",
+  titulo:"Ex-executivos do Nubank lançam consultoria financeira com inteligência artificial no Brasil",
+  resumo:"Dois ex-executivos do Nubank lançaram a Decade Wealth Management, consultoria que usa IA para montar estratégias de investimento personalizadas, hoje restritas a quem tem gestor de patrimônio tradicional.",
+  corpo:[
+    "Uma nova empresa de consultoria financeira, criada por dois ex-executivos do Nubank, começou a atender clientes no Brasil em agosto. Chamada Decade Wealth Management, a empresa usa inteligência artificial para analisar o perfil financeiro de cada cliente e sugerir estratégias de investimento personalizadas — um serviço que, até pouco tempo atrás, só estava disponível para quem tinha acesso a gestores de patrimônio tradicionais e caros.",
+    "A startup foi fundada em setembro de 2025 e já levantou US$ 85 milhões (cerca de R$ 470 milhões) numa rodada liderada pela gestora Greenoaks, com participação da Benchmark e da Diffusion.",
+    "A proposta é usar IA para reduzir o custo de um serviço tradicionalmente caro e reservado a poucos. Em vez de depender inteiramente de um gestor humano, o sistema de inteligência artificial ajuda a montar e ajustar a carteira do cliente, acompanhando o mercado com mais agilidade. Esse movimento é parte de uma tendência maior: mais de 80% das instituições financeiras do país já usam IA generativa em alguma etapa das operações, seja para detectar fraudes, analisar risco de crédito ou apoiar decisões de investimento.",
+    "Para quem está pensando em aposentadoria ou já está perto dela, esse tipo de ferramenta pode representar acesso a orientação financeira mais sofisticada sem precisar de uma fortuna guardada. Ainda assim, vale o alerta de sempre: nenhuma ferramenta de IA substitui a cautela na hora de investir, e o ideal é sempre buscar apoio de um profissional certificado."
+  ],
+  fonte:{ nome:"Bloomberg Línea", url:"https://www.bloomberglinea.com.br/negocios/ex-executivos-do-nubank-lancam-consultoria-de-gestao-de-patrimonio-baseada-em-ia/" }},
+
+{ slug:"oculos-com-ia-ganham-assistente-de-voz-para-cegos",
+  cat:"auxilio-da-visao", data:"2026-08-07",
+  titulo:"Óculos com inteligência artificial ganham assistente de voz para ajudar pessoas cegas",
+  resumo:"A Solos e a Envision ampliaram a parceria dos óculos AirGo, criando o Ally Solos: assistente de voz que lê textos, descreve ambientes e reconhece rostos para pessoas cegas ou com baixa visão.",
+  corpo:[
+    "A Solos, fabricante de óculos inteligentes, e a Envision, uma das principais empresas do mundo em tecnologia assistiva para pessoas cegas e com baixa visão, ampliaram a parceria entre as duas marcas para oferecer um assistente de inteligência artificial mais completo dentro dos óculos AirGo.",
+    "O produto, batizado de Ally Solos, tem câmera capaz de ler e traduzir textos em tempo real, descrever o ambiente, reconhecer rostos conhecidos, identificar objetos do dia a dia e fazer buscas na internet — tudo ativado apenas pela voz. O assistente Ally combina diferentes modelos de IA, incluindo Llama (Meta), ChatGPT (OpenAI), Gemini (Google) e Perplexity, escolhendo o mais adequado para cada pergunta.",
+    "O produto está em pré-venda, com entregas previstas para outubro, e preço promocional de lançamento de US$ 499 (cerca de R$ 2.700). Para pessoas com baixa visão ou cegueira total — condição que se torna mais comum depois dos 60 anos — a tecnologia pode representar uma mudança real de autonomia: ler o rótulo de um remédio, saber se o semáforo está fechado, ou identificar quem está à porta, sem depender o tempo inteiro de outra pessoa.",
+    "A tendência de óculos inteligentes com IA embutida também apareceu forte na CES 2026, em Las Vegas, onde empresas como a romena .lumen apresentaram óculos que funcionam como um \"cão-guia tecnológico\", usando vibrações para orientar o usuário pelas ruas. O custo ainda é alto para a realidade de muita gente no Brasil, mas a direção do mercado é clara: cada vez mais fabricantes investem em tecnologia assistiva ativada por voz e IA."
+  ],
+  fonte:{ nome:"TecMundo", url:"https://www.tecmundo.com.br/produto/406585-solos-lanca-oculos-inteligentes-com-ia-para-a-comunidade-cega-e-com-baixa-visao.htm" }},
+
 
 /* ---------- 31 de julho ---------- */
 { slug:"openai-anuncia-caixa-de-som-com-ia-para-a-casa",
@@ -1198,6 +1634,84 @@ const FOTO_EDITORIA = {
    do protótipo que ainda não passaram por essa curadoria (pendente). */
 const FOTO_NOTICIA = {
 
+  /* ---------- 3 de setembro ---------- */
+  "idoso-sozinho-recebe-ligacao-de-uma-ia-vale-a-pena-essa-companhia-por-telefone":
+    "https://images.pexels.com/photos/7551605/pexels-photo-7551605.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "inteligencia-artificial-ja-ajuda-a-diagnosticar-cancer-no-brasil-o-que-muda-para-o-paciente":
+    "https://images.pexels.com/photos/4226123/pexels-photo-4226123.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "seu-banco-vai-usar-mais-inteligencia-artificial-veja-o-que-muda-no-aplicativo":
+    "https://images.pexels.com/photos/7545051/pexels-photo-7545051.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "como-usar-a-inteligencia-artificial-do-google-pela-primeira-vez-passo-a-passo-do-gemini":
+    "https://images.pexels.com/photos/6831728/pexels-photo-6831728.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "golpe-com-voz-clonada-por-inteligencia-artificial-como-se-proteger":
+    "https://images.pexels.com/photos/8871519/pexels-photo-8871519.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "oculos-com-inteligencia-artificial-chegam-de-graca-a-alunos-cegos-no-parana":
+    "https://images.pexels.com/photos/6981016/pexels-photo-6981016.jpeg?auto=compress&cs=tinysrgb&w=1200",
+
+  /* ---------- 28 de agosto ---------- */
+  "inteligencia-artificial-vira-aliada-de-quem-tem-mais-de-cinquenta-contra-a-solidao":
+    "https://images.pexels.com/photos/6838544/pexels-photo-6838544.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "ministerio-da-saude-lanca-rede-de-hospitais-inteligentes-com-ia":
+    "https://images.pexels.com/photos/6291261/pexels-photo-6291261.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "pesquisa-mostra-que-noventa-e-tres-por-cento-dos-brasileiros-ja-usam-ia":
+    "https://images.pexels.com/photos/1458283/pexels-photo-1458283.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "meta-ai-chega-ao-whatsapp-instagram-e-facebook":
+    "https://images.pexels.com/photos/6458056/pexels-photo-6458056.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "golpe-do-pix-errado-fica-mais-sofisticado-com-ia-em-2026":
+    "https://images.pexels.com/photos/5239822/pexels-photo-5239822.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "oculos-da-meta-ajudam-pessoas-com-baixa-visao":
+    "https://images.pexels.com/photos/18332554/pexels-photo-18332554.jpeg?auto=compress&cs=tinysrgb&w=1200",
+
+  /* ---------- 26 de agosto (furo do meio da semana) ---------- */
+  "assistente-de-inteligencia-artificial-funciona-so-por-mensagem-de-texto-e-mira-quem-tem-65-anos-ou-mais":
+    "https://images.pexels.com/photos/5637528/pexels-photo-5637528.jpeg?auto=compress&cs=tinysrgb&w=1200",
+
+  /* ---------- 21 de agosto ---------- */
+  "ia-pode-piorar-solidao-diz-estudo-de-stanford":
+    "https://images.pexels.com/photos/6874058/pexels-photo-6874058.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "summit-em-sao-paulo-mostra-o-quarto-do-futuro-para-idosos":
+    "https://images.pexels.com/photos/4790268/pexels-photo-4790268.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "ia-invisivel-ja-influencia-rotina-de-50-milhoes-de-brasileiros":
+    "https://images.pexels.com/photos/1180032/pexels-photo-1180032.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "google-lanca-pixel-11-com-ia-que-entende-fala-natural":
+    "https://images.pexels.com/photos/9783812/pexels-photo-9783812.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "mercado-pago-transforma-assistente-de-ia-em-gerente-pessoal":
+    "https://images.pexels.com/photos/7821552/pexels-photo-7821552.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "inteligencia-artificial-ajuda-a-evitar-cegueira-em-pernambuco":
+    "https://images.pexels.com/photos/6749706/pexels-photo-6749706.jpeg?auto=compress&cs=tinysrgb&w=1200",
+
+  /* ---------- 20 de agosto (furo do meio da semana) ---------- */
+  "prova-de-vida-do-inss-fica-automatica-com-inteligencia-artificial":
+    "https://images.pexels.com/photos/20320866/pexels-photo-20320866.jpeg?auto=compress&cs=tinysrgb&w=1200",
+
+  /* ---------- 14 de agosto ---------- */
+  "china-desliga-namorados-de-ia-e-usuarios-vivem-luto-digital":
+    "https://images.pexels.com/photos/19552529/pexels-photo-19552529.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "estudantes-criam-dispositivo-de-ia-que-detecta-quedas-de-idosos":
+    "https://images.pexels.com/photos/8899536/pexels-photo-8899536.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "whatsapp-testa-alerta-de-golpe-com-inteligencia-artificial":
+    "https://images.pexels.com/photos/8530796/pexels-photo-8530796.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "google-leva-novos-recursos-de-ia-para-celulares-android":
+    "https://images.pexels.com/photos/50614/pexels-photo-50614.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "agentes-de-ia-comecam-a-fazer-compras-no-lugar-das-pessoas":
+    "https://images.pexels.com/photos/6609229/pexels-photo-6609229.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "ia-ajuda-a-diagnosticar-catarata-mais-cedo-no-agosto-cinza":
+    "https://images.pexels.com/photos/3846022/pexels-photo-3846022.jpeg?auto=compress&cs=tinysrgb&w=1200",
+
+  /* ---------- 07 de agosto ---------- */
+  "pesquisa-mostra-como-brasileiros-encaram-a-ia-na-intimidade":
+    "https://images.pexels.com/photos/5257312/pexels-photo-5257312.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "brasil-oficializa-uso-da-ia-na-medicina":
+    "https://images.pexels.com/photos/6010873/pexels-photo-6010873.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "summit-em-sp-mostra-como-ia-pode-ajudar-a-envelhecer-em-casa":
+    "https://images.pexels.com/photos/18459198/pexels-photo-18459198.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "itau-lanca-ia-i-no-aplicativo-do-banco":
+    "https://images.pexels.com/photos/6406691/pexels-photo-6406691.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "ex-executivos-do-nubank-lancam-consultoria-com-ia":
+    "https://images.pexels.com/photos/8441811/pexels-photo-8441811.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "oculos-com-ia-ganham-assistente-de-voz-para-cegos":
+    "https://images.pexels.com/photos/35147278/pexels-photo-35147278.jpeg?auto=compress&cs=tinysrgb&w=1200",
+
   "gpt-5-6-e-mais-capaz-em-biologia-e-seguranca":
     "https://images.pexels.com/photos/8442110/pexels-photo-8442110.jpeg?auto=compress&cs=tinysrgb&w=1200",
   "claude-science-conecta-pesquisadores-a-mais-de-60-bases-cientificas":
@@ -1400,7 +1914,8 @@ const ORDENADAS = NOTICIAS.map((n,i) => ({...n, ordem:i}))
 function cartao(n, i){
   const e = ED[n.cat];
   return `<div class="cartao-wrap">
-    <button class="cartao" data-slug="${n.slug}" style="animation-delay:${i*70}ms">
+    <a class="cartao${n.destaque ? ' destaque' : ''}" href="/${n.cat}/${n.slug}/" data-slug="${n.slug}" style="animation-delay:${i*70}ms">
+      ${n.destaque ? '<span class="etiqueta-destaque">🆕 Notícia do meio da semana</span>' : ''}
       <span class="foto">
         ${imagem(n,false)}
         <span class="selo" style="background:${e.cor}">${esc(e.nome)}</span>
@@ -1412,7 +1927,7 @@ function cartao(n, i){
         <p>${esc(n.resumo)}</p>
         <span class="ler" style="color:${e.cor}">Ler a notícia <span class="fl">&rarr;</span></span>
       </span>
-    </button>
+    </a>
     <button class="btn-atalho" data-atalho="1">📌 Salvar atalho do portal</button>
   </div>`;
 }
@@ -1420,14 +1935,14 @@ function cartao(n, i){
 function linha(n, i){
   const e = ED[n.cat];
   return `<li style="animation-delay:${Math.min(i,14)*45}ms">
-    <button class="linha" data-slug="${n.slug}">
+    <a class="linha" href="/${n.cat}/${n.slug}/" data-slug="${n.slug}">
       <span class="cab">
         <span class="tag" style="background:${e.cor}">${esc(e.nome)}</span>
         <span class="dt">${dataCurta(n.data)}</span>
       </span>
       <h3>${esc(n.titulo)}</h3>
       <p>${esc(n.resumo)}</p>
-    </button>
+    </a>
   </li>`;
 }
 
@@ -1467,9 +1982,9 @@ function telaAssunto(cat){
   }
 
   const aviso = itens.length < 6
-    ? `<div class="aviso-magra"><strong>Nota do protótipo:</strong> este assunto tem apenas
-       ${itens.length} ${itens.length===1?"notícia":"notícias"} nas edições usadas como exemplo.
-       Serve para você ver como fica um assunto com pouco conteúdo.</div>`
+    ? `<div class="aviso-magra">Estamos publicando as primeiras
+       ${itens.length} ${itens.length===1?"notícia":"notícias"} deste assunto —
+       toda semana entram notícias novas.</div>`
     : "";
 
   palco.innerHTML = `
@@ -1509,7 +2024,8 @@ function telaBusca(termo){
 
 function ligarCliques(){
   palco.querySelectorAll("[data-slug]").forEach(b => {
-    b.addEventListener("click", () => {
+    b.addEventListener("click", ev => {
+      ev.preventDefault();
       porClique = true;
       location.hash = "#/artigo/" + b.dataset.slug;
     });
@@ -1532,6 +2048,19 @@ let porClique = false;      // veio de um clique ou de um endereço colado?
 let baseAtual = "#/";       // tela que fica atrás da janela
 let focoAnterior = null;
 
+function relacionadas(n){
+  return NOTICIAS
+    .filter(x => x.cat === n.cat && x.slug !== n.slug)
+    .sort((a, b) => (a.data < b.data ? 1 : a.data > b.data ? -1 : 0))
+    .slice(0, 3);
+}
+function blocoLeiaTambem(n){
+  const rel = relacionadas(n);
+  if(!rel.length) return "";
+  const itens = rel.map(r => `<li><a href="/${esc(r.cat)}/${esc(r.slug)}/" data-slug="${esc(r.slug)}">${esc(r.titulo)}</a></li>`).join("");
+  return `<aside class="leia-tambem"><h3>Leia também</h3><ul>${itens}</ul></aside>`;
+}
+
 function abrirArtigo(slug){
   const n = NOTICIAS.find(x => x.slug === slug);
   if(!n){ location.hash = baseAtual; return; }
@@ -1542,7 +2071,7 @@ function abrirArtigo(slug){
     <div class="artigo">
       <div class="meta">
         <span class="tag" style="background:${e.cor}">${esc(e.nome)}</span>
-        <span class="dt" style="font-size:14px;color:var(--tinta-3)">${dataLonga(n.data)}</span>
+        <time class="dt" datetime="${esc(n.data)}" style="font-size:14px;color:var(--tinta-3)">${dataLonga(n.data)}</time>
       </div>
       <h2 id="tituloArtigo">${esc(n.titulo)}</h2>
       <div class="caixa-audio">
@@ -1553,11 +2082,11 @@ function abrirArtigo(slug){
       </div>
       <p class="linha-fina">${esc(n.resumo)}</p>
       <div class="txt">${n.corpo.map(p => `<p>${esc(p)}</p>`).join("")}</div>
+      ${blocoLeiaTambem(n)}
       ${n.fonte ? `<p class="fonte-art" style="font-size:14px;color:var(--tinta-3);margin-top:14px">Fonte: <a href="${esc(n.fonte.url)}" target="_blank" rel="noopener noreferrer">${esc(n.fonte.nome)}</a></p>` : ""}
       <button class="btn-receber" data-abrir-cadastro="${esc(n.cat)}">🔔 Quero receber mais notícias sobre ${esc(e.nome)}</button>
       <div class="rodape-art">
-        <span class="endereco"><b>Endereço definitivo desta notícia:</b><br>${esc(SITE)}/${esc(n.cat)}/${esc(n.slug)}/<br>
-          <span style="opacity:.7">No protótipo: #/artigo/${esc(n.slug)}</span></span>
+        <span class="endereco"><b>Endereço desta notícia:</b><br>${esc(SITE)}/#/artigo/${esc(n.slug)}</span>
         <button class="btn-fechar-baixo" data-fechar>Fechar e voltar</button>
       </div>
     </div>`;
@@ -1565,6 +2094,12 @@ function abrirArtigo(slug){
   alvoArt.querySelector("[data-fechar]").addEventListener("click", fecharArtigo);
   alvoArt.querySelector("[data-abrir-cadastro]").addEventListener("click", function(){
     abrirCadastro(this.dataset.abrirCadastro);
+  });
+  alvoArt.querySelectorAll(".leia-tambem [data-slug]").forEach(a => {
+    a.addEventListener("click", ev => {
+      ev.preventDefault();
+      location.hash = "#/artigo/" + a.dataset.slug;
+    });
   });
 
   focoAnterior = document.activeElement;
@@ -1604,7 +2139,7 @@ document.addEventListener("keydown", ev => {
    Front-end pronto; envia para uma planilha via Google Apps Script.
    Troque FORM_URL pela URL do Web App depois de publicar o script.
    ============================================================ */
-const FORM_URL = "COLE_AQUI_A_URL_DO_APPS_SCRIPT_DEPOIS_DE_PUBLICAR";
+const FORM_URL = "https://script.google.com/macros/s/AKfycbw-8Bw4DR2xH_3gB_E8rXWVkQ4kcaJTnNeqfhDjFad1qIqPe8SXIdYXu2_vXACEKLFC/exec";
 
 const fundoCadastro   = document.getElementById("fundoCadastro");
 const btnFecharCad    = document.getElementById("fecharCadastro");
@@ -1614,6 +2149,7 @@ const campoEmail      = document.getElementById("campoEmail");
 const campoTelegram   = document.getElementById("campoTelegram");
 const msgTelegram     = document.getElementById("msgTelegram");
 const btnEnviarCad    = document.getElementById("btnEnviarCadastro");
+const msgCadastroStatus = document.getElementById("msgCadastroStatus");
 let categoriaCadastro = null;
 let focoAntesCadastro = null;
 
@@ -1622,6 +2158,8 @@ function abrirCadastro(catId){
   const e = ED[catId];
   tituloCadastro.innerHTML = `Cadastre-se para receber notícias sobre <span style="color:${e.cor}">${esc(e.nome)}</span>`;
   focoAntesCadastro = document.activeElement;
+  msgCadastroStatus.style.display = "none";
+  msgCadastroStatus.textContent = "";
   fundoCadastro.classList.add("aberta");
   document.body.style.overflow = "hidden";
   setTimeout(() => campoZap.focus(), 60);
@@ -1656,6 +2194,8 @@ btnEnviarCad.addEventListener("click", async function(){
 
   btnEnviarCad.disabled = true;
   btnEnviarCad.textContent = "Enviando...";
+  msgCadastroStatus.style.display = "none";
+  msgCadastroStatus.textContent = "";
 
   try{
     await fetch(FORM_URL, {
@@ -1670,11 +2210,15 @@ btnEnviarCad.addEventListener("click", async function(){
         data: new Date().toISOString()
       })
     });
-    alert("✅ Cadastro realizado! Em breve você vai receber notícias sobre " + ED[categoriaCadastro].nome + ".");
+    msgCadastroStatus.textContent = "✅ Cadastro realizado! Em breve você vai receber notícias sobre " + ED[categoriaCadastro].nome + ".";
+    msgCadastroStatus.style.color = "#1c6b4a";
+    msgCadastroStatus.style.display = "block";
     campoZap.value = ""; campoEmail.value = ""; campoTelegram.value = "";
-    fecharCadastro();
+    setTimeout(fecharCadastro, 2200);
   }catch(err){
-    alert("Não deu para enviar agora. Tente de novo em alguns minutos.");
+    msgCadastroStatus.textContent = "Não deu para enviar agora. Tente de novo em alguns minutos.";
+    msgCadastroStatus.style.color = "var(--realce)";
+    msgCadastroStatus.style.display = "block";
   }
 
   btnEnviarCad.disabled = false;
@@ -1857,6 +2401,21 @@ document.getElementById("marca").addEventListener("click", () => {
 /* ============================================================
    9) LIGA TUDO
    ============================================================ */
+(function(){
+  const elData = document.getElementById("dataTopo");
+  if(elData){
+    const hoje = new Date();
+    const semana = hoje.toLocaleDateString("pt-BR", {weekday:"long"});
+    const resto  = hoje.toLocaleDateString("pt-BR", {day:"numeric", month:"long", year:"numeric"});
+    elData.innerHTML = semana.charAt(0).toUpperCase() + semana.slice(1) + ", <strong>" + resto + "</strong>";
+  }
+  const elRodape = document.getElementById("rodapeInfo");
+  if(elRodape && NOTICIAS.length){
+    const datas = NOTICIAS.map(n => n.data).slice().sort();
+    elRodape.textContent = "Conteúdo real das edições de " + dataLonga(datas[0]) + " a " + dataLonga(datas[datas.length-1]) + ".";
+  }
+})();
+
 montarMenu();
 window.addEventListener("hashchange", rotear);
 rotear();

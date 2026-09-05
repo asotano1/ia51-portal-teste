@@ -1,0 +1,33 @@
+/* artigo.css — página estática de notícia (Notícias IA 51+)
+   Compartilhado por todas as páginas geradas em /{editoria}/{slug}/ */
+:root{
+  --papel:#faf7f1; --tinta:#16110d; --tinta-2:#453a30; --tinta-3:#6b5c4d;
+  --regua:#d9cebc; --realce:#a8321e;
+  --serif:"Palatino Linotype","Book Antiqua",Palatino,"Iowan Old Style","Hoefler Text",Georgia,serif;
+  --sans:Verdana,Tahoma,"DejaVu Sans","Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--serif);line-height:1.7}
+.topo-art{padding:18px 20px;border-bottom:2px solid var(--regua)}
+.topo-art a{color:var(--realce);text-decoration:none;font-family:var(--sans);font-weight:700;font-size:15px}
+.artigo-pagina{max-width:680px;margin:0 auto;padding:28px 20px 60px}
+.capa-art{width:100%;max-height:360px;object-fit:cover;border-radius:14px;margin-bottom:22px}
+.meta{display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap;font-family:var(--sans)}
+.tag{color:#fff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:20px}
+.dt{font-size:14px;color:var(--tinta-3)}
+h1{font-size:30px;line-height:1.3;margin:0 0 14px}
+.linha-fina{font-size:19px;color:var(--tinta-2);margin:0 0 22px}
+.caixa-audio{background:#f2ece1;border-radius:12px;padding:14px 16px;margin-bottom:26px}
+.rotulo-audio{display:block;font-family:var(--sans);font-size:14px;font-weight:700;margin-bottom:8px}
+.caixa-audio audio{width:100%}
+.txt p{font-size:19px;margin:0 0 20px}
+.fonte-art{font-size:14px;color:var(--tinta-3);margin-top:14px}
+.fonte-art a{color:var(--realce)}
+.leia-tambem{margin-top:34px;padding-top:22px;border-top:2px solid var(--regua)}
+.leia-tambem h3{font-family:var(--sans);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px;color:var(--tinta-2)}
+.leia-tambem ul{margin:0;padding:0;list-style:none}
+.leia-tambem li{margin:0 0 8px}
+.leia-tambem a{font-family:var(--serif);font-size:17px;color:var(--realce);text-decoration:none}
+.leia-tambem a:hover{text-decoration:underline}
+.voltar-rodape{margin-top:34px;font-family:var(--sans)}
+.voltar-rodape a{color:var(--realce);text-decoration:none;font-weight:700}

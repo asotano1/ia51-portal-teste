@@ -1,0 +1,15 @@
+{
+  "name": "Notícias IA 51+",
+  "short_name": "IA 51+",
+  "description": "Notícias de inteligência artificial em linguagem simples, para quem tem 50 anos ou mais.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#faf7f1",
+  "theme_color": "#a8321e",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
