@@ -20,7 +20,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           local-dir: ./
-          server-dir: /domains/ia51mais.com/public_html/deploy-teste/
+          server-dir: /domains/ia51mais.com/public_html/
           dangerous-clean-slate: false
           exclude: |
             .git/**
