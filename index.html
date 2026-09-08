@@ -737,6 +737,20 @@ function dadosDaNoticia(n){
    ============================================================ */
 const NOTICIAS = [
 
+/* ---------- 8 de setembro (furo do meio da semana) ---------- */
+{ slug:"ia-ja-analisa-seus-exames-no-hospital-veja-o-que-a-lei-garante-para-voce",
+  cat:"ia-e-saude", data:"2026-09-08", destaque:true,
+  titulo:"IA já analisa seus exames no hospital? Veja o que a lei garante para você",
+  resumo:"Levantamento da pesquisa TIC Saúde (CGI.br) mostra que 18% dos hospitais brasileiros já usam inteligência artificial, chegando a 31% entre os de mais de 50 leitos; hospitais como HCFMUSP, Nove de Julho, Rede D'Or e Santa Casa de São Paulo já aplicam a tecnologia em exames, prontuários e diagnósticos, mas uma norma do Conselho Federal de Medicina exige que o paciente seja informado e que todo resultado passe por revisão médica.",
+  corpo:[
+    "Sim, é bem possível que seu hospital já use inteligência artificial em algum ponto do seu atendimento, e você nem tenha percebido. Segundo a pesquisa TIC Saúde, feita pelo Comitê Gestor da Internet no Brasil (CGI.br), 18% dos hospitais brasileiros já utilizavam algum tipo de aplicação de inteligência artificial no ano passado. Entre os hospitais maiores, com mais de 50 leitos, essa proporção sobe para 31%; em clínicas e laboratórios de diagnóstico, chega a 29%. Isso não significa que um robô vai decidir seu diagnóstico sozinho — pelo contrário. Uma norma do Conselho Federal de Medicina (CFM) exige que o paciente seja informado sempre que a inteligência artificial for usada em seu atendimento, e que todo resultado gerado por ela passe, obrigatoriamente, pela revisão de um médico antes de qualquer decisão sobre diagnóstico ou tratamento.",
+    "Os exemplos já em funcionamento em hospitais brasileiros mostram onde essa tecnologia mais aparece na prática. No Hospital Nove de Julho, em São Paulo, um sistema analisa tomografias em busca de possíveis nódulos pulmonares — os achados sempre passam por revisão médica, e a própria instituição informou que três pacientes com câncer de pulmão foram diagnosticados pelo programa só neste mês. Na Rede D'Or, a inteligência artificial ajuda a rastrear sinais de câncer de mama, próstata, tireoide e cólon em grandes volumes de exames, sinalizando casos que precisam de atenção prioritária. Já na Santa Casa de São Paulo, uma solução digital instalada na UTI Neonatal ajuda a identificar riscos ao cérebro de recém-nascidos, como crises convulsivas, permitindo que a equipe aja mais rápido.",
+    "Há também uma frente pensada para quem tem um histórico médico longo, o que é comum para quem passou dos 50 anos: no Hospital das Clínicas da USP, uma ferramenta em desenvolvimento reúne todos os documentos acumulados durante uma internação, que podem chegar a 30 por dia e estar espalhados em sistemas diferentes, e organiza as informações mais importantes num resumo de uma página só. A ideia é dar ao médico acesso mais rápido ao histórico do paciente, sem depender de garimpar prontuário por prontuário.",
+    "Nada disso está fora de regras. O Congresso discute o Projeto de Lei 2.338/2023, o marco legal da inteligência artificial no Brasil, que já passou pelo Senado e classifica o uso de IA na saúde como de \"alto risco\" — o que exige mais governança e auditoria das ferramentas. O tratamento dos seus dados também precisa seguir a Lei Geral de Proteção de Dados (LGPD), e os hospitais são obrigados a manter comissões para acompanhar o uso dessas ferramentas. Em maio deste ano, a Associação Nacional de Hospitais Privados (Anahp) chegou a criar um Escritório de IA só para apoiar essa incorporação com mais responsabilidade.",
+    "Para quem tem mais de 50 anos, ou cuida de um familiar mais velho, o recado prático é simples: não há motivo para temer a palavra \"inteligência artificial\" numa consulta ou exame, mas vale, sim, perguntar ao médico ou ao hospital se ela foi usada e como. Você tem o direito de saber, e o profissional de saúde continua sendo o responsável final pela sua decisão de tratamento."
+  ],
+  fonte:{ nome:"Jornal Pequeno", url:"https://jornalpequeno.com.br/2026/08/31/inteligencia-artificial-avanca-em-hospitais-e-muda-atendimento-medico/" }},
+
 /* ---------- 3 de setembro ---------- */
 { slug:"idoso-sozinho-recebe-ligacao-de-uma-ia-vale-a-pena-essa-companhia-por-telefone",
   cat:"ia-e-relacoes", data:"2026-09-03",
@@ -1633,6 +1647,10 @@ const FOTO_EDITORIA = {
    FOTO_EDITORIA acima é só o reserva de categoria para as notícias antigas
    do protótipo que ainda não passaram por essa curadoria (pendente). */
 const FOTO_NOTICIA = {
+
+  /* ---------- 8 de setembro (furo do meio da semana) ---------- */
+  "ia-ja-analisa-seus-exames-no-hospital-veja-o-que-a-lei-garante-para-voce":
+    "https://images.pexels.com/photos/8439072/pexels-photo-8439072.jpeg?auto=compress&cs=tinysrgb&w=1200",
 
   /* ---------- 3 de setembro ---------- */
   "idoso-sozinho-recebe-ligacao-de-uma-ia-vale-a-pena-essa-companhia-por-telefone":
