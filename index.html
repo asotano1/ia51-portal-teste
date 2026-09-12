@@ -244,6 +244,12 @@ main{padding:10px 0 90px}
   font-size:clamp(20px,3.4vw,30px);line-height:1.15;margin:0;letter-spacing:-.015em;
 }
 .cabeca-secao .conta{font-size:14px;color:var(--tinta-3);letter-spacing:.07em;text-transform:uppercase}
+.clima{display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:15px;
+  color:var(--tinta-2);text-decoration:none;line-height:1.2;white-space:nowrap}
+.clima:hover{color:var(--realce)}
+.clima .clima-ic{font-size:19px;line-height:1}
+.clima .clima-temp{font-weight:bold;color:var(--tinta)}
+.clima:hover .clima-temp{color:var(--realce)}
 
 .voltar{
   min-height:var(--toque);padding:0 22px;margin-bottom:22px;
@@ -2069,16 +2075,61 @@ function linha(n, i){
   </li>`;
 }
 
+function iconeClima(codigo){
+  if(codigo===0) return {ic:"☀️", txt:"Céu limpo"};
+  if(codigo===1||codigo===2) return {ic:"🌤️", txt:"Parcialmente nublado"};
+  if(codigo===3) return {ic:"☁️", txt:"Nublado"};
+  if(codigo===45||codigo===48) return {ic:"🌫️", txt:"Neblina"};
+  if(codigo>=51&&codigo<=57) return {ic:"🌦️", txt:"Chuvisco"};
+  if(codigo>=61&&codigo<=67) return {ic:"🌧️", txt:"Chuva"};
+  if(codigo>=80&&codigo<=82) return {ic:"🌧️", txt:"Pancadas de chuva"};
+  if(codigo>=71&&codigo<=77) return {ic:"❄️", txt:"Neve"};
+  if(codigo>=95) return {ic:"⛈️", txt:"Tempestade"};
+  return {ic:"🌡️", txt:"Tempo"};
+}
+
+async function carregarClima(){
+  const alvo = document.getElementById("clima-widget");
+  if(!alvo) return;
+  try{
+    const CACHE_MIN = 30;
+    const cache = JSON.parse(sessionStorage.getItem("clima_cache") || "null");
+    const agora = Date.now();
+    let dados;
+    if(cache && (agora - cache.hora) < CACHE_MIN*60*1000){
+      dados = cache.dados;
+    } else {
+      // Cidade padrão: São Paulo (-23.55,-46.63). Pra trocar de cidade, mude latitude/longitude aqui.
+      const r = await fetch("https://api.open-meteo.com/v1/forecast?latitude=-23.55&longitude=-46.63&current_weather=true&timezone=America%2FSao_Paulo");
+      if(!r.ok) throw new Error("falha na API de clima");
+      const j = await r.json();
+      dados = j.current_weather;
+      sessionStorage.setItem("clima_cache", JSON.stringify({hora:agora, dados}));
+    }
+    if(!alvo) return;
+    const {ic, txt} = iconeClima(dados.weathercode);
+    const temp = Math.round(dados.temperature);
+    alvo.innerHTML = `<span class="clima-ic">${ic}</span><span class="clima-txt">${txt} · <span class="clima-temp">${temp}°C</span></span>`;
+  }catch(e){
+    // Se a API falhar, o widget some sozinho em vez de mostrar algo quebrado
+    if(alvo && alvo.parentElement) alvo.parentElement.removeChild(alvo);
+  }
+}
+
 function telaInicio(){
   marcarMenu(null);
   const seis = ORDENADAS.slice(0, 6);      // só as 6 mais recentes
   palco.innerHTML = `
     <div class="cabeca-secao">
       <h2>As últimas da semana</h2>
+      <a id="clima-widget" class="clima" href="https://www.google.com/search?q=previs%C3%A3o+do+tempo+em+s%C3%A3o+paulo" target="_blank" rel="noopener" aria-label="Ver previsão completa do tempo em São Paulo">
+        <span class="clima-ic">🌤️</span><span class="clima-txt">carregando…</span>
+      </a>
       <span class="conta">6 notícias mais recentes</span>
     </div>
     <div class="grade">${seis.map(cartao).join("")}</div>`;
   ligarCliques();
+  carregarClima();
 }
 
 function telaAssunto(cat){
