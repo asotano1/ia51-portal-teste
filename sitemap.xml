@@ -2,9 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ia51mais.com/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/ia-e-relacoes/um-em-cada-dez-brasileiros-ja-usa-a-inteligencia-artificial-como-amigo-ou-conselheiro/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/ia-e-saude/medico-usando-inteligencia-artificial-para-diagnosticar-ja-sao-66-por-cento-no-brasil/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/ia-no-dia-a-dia/brasileiros-compartilham-dados-sensiveis-com-chatbots-de-inteligencia-artificial-veja-os-riscos/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/ferramentas-para-50/nova-funcao-do-android-usa-inteligencia-artificial-para-evitar-enjoo-no-celular-durante-viagens/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/ia-e-financas/bancos-alertam-para-risco-de-golpe-em-compras-feitas-por-agentes-de-inteligencia-artificial/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/auxilio-da-visao/prefeitura-de-marica-entrega-oculos-com-inteligencia-artificial-para-pessoas-com-baixa-visao/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ia51mais.com/ia-e-financas/golpe-da-prova-de-vida-do-inss-usa-inteligencia-artificial-para-roubar-seu-rosto-veja-como-se-proteger/</loc>
