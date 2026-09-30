@@ -2,9 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ia51mais.com/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/ia-no-dia-a-dia/a-inteligencia-artificial-apareceu-no-seu-whatsapp-e-voce-nao-consegue-desligar-veja-o-que-fazer/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ia51mais.com/ia-e-relacoes/um-em-cada-dez-brasileiros-ja-usa-a-inteligencia-artificial-como-amigo-ou-conselheiro/</loc>
