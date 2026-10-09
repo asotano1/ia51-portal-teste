@@ -2,9 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ia51mais.com/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/ia-e-relacoes/robo-de-estimacao-do-inventor-do-roomba-promete-combater-a-solidao/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/ia-e-saude/pacientes-com-cancer-recorrem-a-inteligencia-artificial-para-entender-exames-e-diagnostico/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/ia-no-dia-a-dia/brasileiros-usam-inteligencia-artificial-para-pesquisar-antes-de-comprar/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/ferramentas-para-50/waze-ganha-inteligencia-artificial-para-reportar-transito-por-voz/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/ia-e-financas/inteligencia-artificial-do-inss-ja-concede-metade-das-aposentadorias-automaticamente/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/auxilio-da-visao/estudantes-de-escola-publica-criam-oculos-com-inteligencia-artificial-para-pessoas-com-deficiencia-visual/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ia51mais.com/auxilio-da-visao/um-chip-no-cerebro-pode-devolver-a-visao-a-quem-nasceu-cego-veja-o-que-ja-e-real-e-o-que-ainda-falta-provar/</loc>
