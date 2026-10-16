@@ -2,9 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ia51mais.com/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/ia-e-relacoes/elliq-robo-de-companhia-promete-ajudar-idosos-que-moram-sozinhos/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/ia-e-saude/pesquisa-da-ufal-usa-inteligencia-artificial-para-encontrar-cancer-de-mama-na-mamografia/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/ia-no-dia-a-dia/brasil-e-o-segundo-pais-que-mais-confia-em-agentes-de-inteligencia-artificial-para-comprar/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/ferramentas-para-50/google-lanca-protecao-com-inteligencia-artificial-contra-golpes-no-android/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/ia-e-financas/pesquisa-mostra-que-brasileiros-confiam-mais-em-humano-que-em-ia-para-decisoes-financeiras-delicadas/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/auxilio-da-visao/empreendedor-com-deficiencia-visual-cria-aplicativo-com-inteligencia-artificial-para-ajudar-quem-nao-ve/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ia51mais.com/ia-e-saude/plano-de-saude-pode-usar-inteligencia-artificial-para-negar-seu-tratamento-veja-como-se-proteger/</loc>
