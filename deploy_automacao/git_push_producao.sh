@@ -36,6 +36,6 @@ if [ ! -f "$KEY_PATH" ]; then
 fi
 
 # Anexa a chave ao GIT_SSH_COMMAND ja existente no ambiente (nunca reescrever do zero)
-export GIT_SSH_COMMAND="$GIT_SSH_COMMAND -i \"$KEY_PATH\" -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
+export GIT_SSH_COMMAND="${GIT_SSH_COMMAND:-ssh} -i \"$KEY_PATH\" -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
 
 git -C "$REPO_ROOT" push origin main "$@"
