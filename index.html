@@ -185,7 +185,7 @@ body::before{
   min-height:var(--toque);padding:0 20px;
   display:inline-flex;align-items:center;
   background:transparent;border:2px solid transparent;border-radius:999px;
-  color:var(--tinta-2);cursor:pointer;
+  color:var(--tinta-2);cursor:pointer;text-decoration:none;
   transition:background .25s ease,color .25s ease,border-color .25s ease,transform .25s ease;
 }
 .ed:hover{background:#fff;border-color:var(--regua);transform:translateY(-2px)}
@@ -678,16 +678,36 @@ main{padding:10px 0 90px}
    3 aparecem no menu · o resto fica no botão "Mais"
    ============================================================ */
 const EDITORIAS = [
-  { id:"ia-no-dia-a-dia",     nome:"IA no Dia a Dia",      cor:"#1c4a78", cor2:"#3d7fb8" },
-  { id:"ia-e-saude",          nome:"IA e Saúde",           cor:"#8e2b45", cor2:"#c4566f" },
-  { id:"ia-e-financas",       nome:"IA e Finanças",        cor:"#1c6b4a", cor2:"#2f9d6e" },
-  { id:"ferramentas-para-50", nome:"Ferramentas para 50+", cor:"#8f4d14", cor2:"#c9822f" },
-  { id:"ia-e-relacoes",       nome:"IA e Relações",        cor:"#4a3d78", cor2:"#7d6bb0" },
-  { id:"auxilio-da-visao",    nome:"IA no Auxílio da Visão", cor:"#0e6e77", cor2:"#3aa7b0" },
-  { id:"gemini",        nome:"Gemini",        cor:"#2a6fb0", cor2:"#5a9fd8" },
-  { id:"chatgpt",       nome:"ChatGPT",       cor:"#0f8a7d", cor2:"#38b5a6" },
-  { id:"claude",        nome:"Claude",        cor:"#c2622c", cor2:"#e09158" },
-  { id:"ias-gratuitas", nome:"IAs Gratuitas", cor:"#6a3fa0", cor2:"#9a72cf" }
+  { id:"ia-no-dia-a-dia",     nome:"IA no Dia a Dia",      cor:"#1c4a78", cor2:"#3d7fb8",
+    metaDesc:"Notícias sobre inteligência artificial nos aplicativos e aparelhos do dia a dia — WhatsApp, assistentes e mais — para quem tem 50 anos ou mais.",
+    desc:"WhatsApp, YouTube, assistente de voz — a inteligência artificial já está espalhada pelos aplicativos que você usa todo dia, mesmo sem perceber. Aqui reunimos as notícias sobre essas mudanças no dia a dia: novos recursos, alertas de golpe, e histórias de como a tecnologia está sendo usada de um jeito mais humano, como o caso do chatbot que guarda a memória de um avô pros netos que nunca o conheceram. A ideia é te ajudar a entender o que está mudando ao seu redor, sem jargão técnico. Atualizamos essa página toda vez que sai uma notícia nova." },
+  { id:"ia-e-saude",          nome:"IA e Saúde",           cor:"#8e2b45", cor2:"#c4566f",
+    metaDesc:"Notícias sobre inteligência artificial aplicada à saúde — diagnóstico, prevenção e cuidado — para quem tem 50 anos ou mais.",
+    desc:"Diagnóstico mais rápido, remédio certo na hora certa, alerta de queda antes que ela aconteça — a inteligência artificial está mudando a forma como cuidamos da saúde, especialmente depois dos 50. Aqui reunimos notícias sobre uso de IA em hospitais e consultórios brasileiros, pesquisas sobre Alzheimer e outras doenças ligadas à idade, e também os riscos, como vídeos falsos de médicos usados em golpe. A ideia é te manter informado sobre o que já está disponível de verdade — sem prometer milagre e sem esconder problema. Atualizamos essa página toda vez que sai uma notícia nova." },
+  { id:"ia-e-financas",       nome:"IA e Finanças",        cor:"#1c6b4a", cor2:"#2f9d6e",
+    metaDesc:"Notícias sobre inteligência artificial no dinheiro do dia a dia — dólar, bolsa, juros e agentes financeiros — para quem tem 50 anos ou mais.",
+    desc:"Dólar, bolsa, juros, golpe no Pix — e agora também assistentes de inteligência artificial cuidando do seu dinheiro. Aqui reunimos as notícias que ajudam quem tem 50 anos ou mais a entender o que está acontecendo com as finanças no Brasil e no mundo, incluindo os novos agentes de IA que já fazem compras e pagamentos sozinhos, bancos testando essa tecnologia, e boletins simples sobre inflação, juros e o mercado. A ideia é te manter informado sem economês — informação clara pra você decidir com mais segurança. Atualizamos essa página toda vez que sai uma notícia nova." },
+  { id:"ferramentas-para-50", nome:"Ferramentas para 50+", cor:"#8f4d14", cor2:"#c9822f",
+    metaDesc:"Celulares, aplicativos e aparelhos com inteligência artificial explicados para quem tem 50 anos ou mais.",
+    desc:"Celular, aplicativo de banco, alto-falante, câmera — cada vez mais desses aparelhos do dia a dia vêm com inteligência artificial embutida, às vezes sem nem avisar. Aqui reunimos as notícias sobre esses lançamentos explicando o que muda na prática pra quem tem 50 anos ou mais: o que fica mais fácil, o que precisa de atenção, e o que realmente vale a pena aprender a usar. Da Google e da OpenAI a aplicativos brasileiros como o Neto Digital, cobrimos tanto os grandes lançamentos quanto os projetos pensados especificamente pra facilitar a vida de quem não cresceu com essas telas. Atualizamos essa página toda vez que sai uma notícia nova." },
+  { id:"ia-e-relacoes",       nome:"IA e Relações",        cor:"#4a3d78", cor2:"#7d6bb0",
+    metaDesc:"Notícias sobre inteligência artificial, companhia, solidão e família — pensadas para quem tem 50 anos ou mais.",
+    desc:"Companhia, solidão, família e até romance — a inteligência artificial já entrou nessa conversa. Aqui reunimos notícias sobre chatbots de companhia, robôs que fazem companhia a quem mora sozinho, e o debate sobre o que esse tipo de tecnologia pode ajudar — e também atrapalhar — na vida afetiva de quem tem 50 anos ou mais. De pesquisas científicas sobre solidão e IA a decisões de governos regulando esses aplicativos, cobrimos o assunto com os dois lados: o que funciona de verdade e onde a tecnologia ainda não substitui contato humano. Atualizamos essa página toda vez que sai uma notícia nova." },
+  { id:"auxilio-da-visao",    nome:"IA no Auxílio da Visão", cor:"#0e6e77", cor2:"#3aa7b0",
+    metaDesc:"Notícias sobre inteligência artificial e baixa visão ou cegueira, pensadas para quem tem 50 anos ou mais.",
+    desc:"Óculos, aplicativos e programas públicos que usam inteligência artificial para ajudar quem tem baixa visão ou é cego — é isso que cobrimos aqui. De cidades brasileiras distribuindo óculos inteligentes de graça a exames que detectam catarata mais cedo, reunimos as notícias mais relevantes sobre como a tecnologia está tornando a vida mais fácil pra quem enxerga menos ou não enxerga mais. Atualizamos essa página toda vez que sai uma notícia nova nessa categoria — sem precisar procurar espalhado pelo site." },
+  { id:"gemini",        nome:"Gemini",        cor:"#2a6fb0", cor2:"#5a9fd8",
+    metaDesc:"Notícias sobre o Gemini, a inteligência artificial do Google, explicadas em português claro para quem tem 50 anos ou mais.",
+    desc:"O Gemini é a inteligência artificial do Google — aquela que já aparece na busca, no celular Android, no Gmail e no WhatsApp. Aqui reunimos as notícias sobre cada novidade dele explicando o que muda na prática pra você: o que passa a ser de graça, o que vira cobrado, o que fica mais fácil de usar e onde é preciso ter cuidado. Sem jargão técnico e sem exagero de propaganda. Atualizamos essa página toda vez que sai uma notícia nova sobre o Gemini." },
+  { id:"chatgpt",       nome:"ChatGPT",       cor:"#0f8a7d", cor2:"#38b5a6",
+    metaDesc:"Notícias sobre o ChatGPT, da OpenAI, explicadas em português claro para quem tem 50 anos ou mais.",
+    desc:"O ChatGPT foi a inteligência artificial que popularizou tudo isso — e continua mudando de versão quase toda semana. Aqui reunimos as notícias sobre o que cada nova versão faz de diferente, o que está disponível na conta gratuita, quanto custa a paga, e os cuidados que valem a pena ter com privacidade e com respostas erradas. A ideia é te manter informado sem precisar acompanhar notícia técnica. Atualizamos essa página toda vez que sai uma notícia nova sobre o ChatGPT." },
+  { id:"claude",        nome:"Claude",        cor:"#c2622c", cor2:"#e09158",
+    metaDesc:"Notícias sobre o Claude, a inteligência artificial da Anthropic, explicadas em português claro para quem tem 50 anos ou mais.",
+    desc:"O Claude é a inteligência artificial da Anthropic, conhecida por respostas mais cuidadosas e por ser usada em trabalho, pesquisa e leitura de documentos. Aqui reunimos as notícias sobre as novidades dele explicando o que serve pro dia a dia de quem tem 50 anos ou mais — e o que é só assunto de empresa. Em português claro, sem termo técnico sem explicação. Atualizamos essa página toda vez que sai uma notícia nova sobre o Claude." },
+  { id:"ias-gratuitas", nome:"IAs Gratuitas", cor:"#6a3fa0", cor2:"#9a72cf",
+    metaDesc:"Inteligências artificiais que você pode usar de graça, explicadas em português claro para quem tem 50 anos ou mais.",
+    desc:"Dá pra usar inteligência artificial de graça — e muita coisa boa não custa nada. Aqui reunimos as notícias sobre o que está liberado sem pagar: versões gratuitas dos assistentes conhecidos, aplicativos brasileiros sem mensalidade e promoções que abrem recursos pagos por tempo limitado. Também avisamos quando o de graça vira cobrado, pra você não ser pego de surpresa. Atualizamos essa página toda vez que sai uma notícia nova." }
 ];
 const VISIVEIS = 2;
 const ED = Object.fromEntries(EDITORIAS.map(e => [e.id, e]));
@@ -2673,22 +2693,25 @@ function montarMenu(){
 
   let html = `<button class="ed" data-ir="#/" data-inicio="1">Início</button>`;
   frente.forEach(e => {
-    html += `<button class="ed" data-ir="#/assunto/${e.id}" data-cat="${e.id}">
-      <span class="ponto" style="background:${e.cor}"></span>${esc(e.nome)}</button>`;
+    html += `<a class="ed" href="/${e.id}/" data-ir="#/assunto/${e.id}" data-cat="${e.id}">
+      <span class="ponto" style="background:${e.cor}"></span>${esc(e.nome)}</a>`;
   });
 
   if(fundo.length){
     html += `<span class="gaveta-wrap" id="gavetaWrap">
       <button class="ed" id="btnMais" aria-expanded="false" aria-haspopup="true">Mais<span class="seta">&#9660;</span></button>
       <div class="gaveta" id="gaveta">` +
-      fundo.map(e => `<button class="ed" data-ir="#/assunto/${e.id}" data-cat="${e.id}">
-        <span class="ponto" style="background:${e.cor}"></span>${esc(e.nome)}</button>`).join("") +
+      fundo.map(e => `<a class="ed" href="/${e.id}/" data-ir="#/assunto/${e.id}" data-cat="${e.id}">
+        <span class="ponto" style="background:${e.cor}"></span>${esc(e.nome)}</a>`).join("") +
       `</div></span>`;
   }
   alvo.innerHTML = html;
 
   alvo.querySelectorAll("[data-ir]").forEach(b => {
-    b.addEventListener("click", () => { fecharGaveta(); location.hash = b.dataset.ir; });
+    b.addEventListener("click", ev => {
+      if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button === 1) return;
+      ev.preventDefault(); fecharGaveta(); location.hash = b.dataset.ir;
+    });
   });
 
   const btn = document.getElementById("btnMais");
