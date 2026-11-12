@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ia51mais.com/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -44,27 +44,51 @@
   </url>
   <url>
     <loc>https://ia51mais.com/gemini/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ia51mais.com/chatgpt/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ia51mais.com/claude/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ia51mais.com/ias-gratuitas/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/gemini/gemini-no-celular-escreve-o-que-voce-fala-e-resume-conversas-longas/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/chatgpt/chatgpt-agora-mostra-empresas-verificadas-como-um-buscador/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/claude/claude-ganha-dois-modelos-novos-fable-e-mythos-precisa-trocar/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ia51mais.com/ias-gratuitas/canva-craft-cria-imagem-so-descrevendo-e-aparece-no-plano-gratis/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ia51mais.com/ia-e-relacoes/restaurar-fotos-antigas-da-familia-com-inteligencia-artificial-veja-como-fazer/</loc>
