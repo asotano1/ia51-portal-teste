@@ -15,6 +15,7 @@ ROOT="$(cd "$SD/../.." && pwd)"            # pasta do projeto
 REPO="$ROOT/ia51-portal-teste"
 SITE="$ROOT/site_ia51mais"
 TS="$(date +%s)"
+GITOUT="$(mktemp 2>/dev/null || echo "$HOME/git_out_$$.txt")"   # arquivo temporario por execucao (evita colisao /tmp entre sessoes)
 
 limpar_locks() {
   # mv funciona onde rm falha. Varre todos os .lock do .git (ignora os ja renomeados).
@@ -27,12 +28,12 @@ git_retry() {   # tenta ate 4x, limpando cadeados entre as tentativas
   local n=0
   while [ $n -lt 4 ]; do
     limpar_locks
-    if git -C "$REPO" "$@" >/tmp/git_out.txt 2>&1; then cat /tmp/git_out.txt | grep -v 'unable to unlink' ; return 0; fi
+    if git -C "$REPO" "$@" >"$GITOUT" 2>&1; then cat "$GITOUT" | grep -v 'unable to unlink' ; return 0; fi
     # se foi rejeicao do remoto, nao insiste
-    if grep -qE 'rejected|fetch first|non-fast-forward' /tmp/git_out.txt; then cat /tmp/git_out.txt; return 99; fi
+    if grep -qE 'rejected|fetch first|non-fast-forward' "$GITOUT"; then cat "$GITOUT"; return 99; fi
     n=$((n+1)); sleep 1
   done
-  cat /tmp/git_out.txt | tail -5
+  cat "$GITOUT" | tail -5
   return 1
 }
 
