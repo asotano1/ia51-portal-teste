@@ -32,8 +32,9 @@ HTTPS_URL="https://github.com/asotano1/ia51-portal-teste.git"
 # 1) Preferir HTTPS com token quando existir
 if [ -s "$TOKEN_FILE" ]; then
   TOKEN="$(tr -d ' \t\r\n' < "$TOKEN_FILE")"
+  BASIC="$(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)"
   if [ -n "$TOKEN" ] && git -C "$REPO_ROOT" \
-       -c http.extraHeader="Authorization: Bearer $TOKEN" \
+       -c http.extraHeader="Authorization: Basic $BASIC" \
        push "$HTTPS_URL" HEAD:main "$@"; then
     # mantem o ref de rastreamento local em dia (push por URL nao atualiza sozinho)
     git -C "$REPO_ROOT" update-ref refs/remotes/origin/main HEAD 2>/dev/null || true
