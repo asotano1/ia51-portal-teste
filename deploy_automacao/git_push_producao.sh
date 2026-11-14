@@ -1,41 +1,51 @@
 #!/usr/bin/env bash
 # git_push_producao.sh
 #
-# Script de push manual para o repositorio ia51-portal-teste (deploy automatico
-# do site ia51mais.com via GitHub Actions -> FTP).
+# Script de push para o repositorio ia51-portal-teste (deploy automatico do
+# site ia51mais.com via GitHub Actions -> FTP).
 #
-# O que ele faz:
-#   1. Localiza a chave SSH de deploy persistida numa pasta irma do repo
-#      (../../ia51-deploy-key/id_ed25519_ia51_push a partir da localizacao
-#      deste script), para funcionar em qualquer sessao futura sem precisar
-#      regravar a chave.
-#   2. Anexa essa chave ao GIT_SSH_COMMAND ja existente no ambiente (que traz
-#      o ProxyCommand necessario para alcancar o github.com) - NUNCA reescreve
-#      essa variavel do zero.
-#   3. Roda "git push origin main" na raiz do repo, repassando quaisquer
-#      argumentos extras recebidos por este script ("$@").
+# Ordem de envio (a rota SSH da nuvem anda sendo derrubada pelo proxy em
+# 13-14/11/2026 -> por isso HTTPS primeiro):
+#   1. HTTPS com token fine-grained persistido em ../../ia51-deploy-key/gh_token.txt
+#      (so permissao Contents:write no repo). Preferido quando o arquivo existe.
+#   2. Reserva: SSH com a chave persistida ../../ia51-deploy-key/id_ed25519_ia51_push,
+#      anexada ao GIT_SSH_COMMAND ja existente (que traz o ProxyCommand) - NUNCA
+#      reescreve essa variavel do zero.
+# Nunca usa pull/merge/rebase/--force. Repassa argumentos extras ("$@").
 #
 # Uso:
 #   bash deploy_automacao/git_push_producao.sh
-#   bash deploy_automacao/git_push_producao.sh --dry-run   (por exemplo)
 
 set -euo pipefail
 
-# Diretorio onde este script esta fisicamente localizado (resolve symlinks)
+# Diretorio onde este script esta fisicamente localizado
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Raiz do repo = dois niveis acima deste script (deploy_automacao/ -> raiz do repo)
 REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)/ia51-portal-teste"
 
-# Chave persistida como pasta irma do repo: ia51-deploy-key/
+# Credenciais persistidas na pasta irma do repo: ia51-deploy-key/
 KEY_PATH="$(cd "$SCRIPT_DIR/../.." && pwd)/ia51-deploy-key/id_ed25519_ia51_push"
+TOKEN_FILE="$(cd "$SCRIPT_DIR/../.." && pwd)/ia51-deploy-key/gh_token.txt"
+HTTPS_URL="https://github.com/asotano1/ia51-portal-teste.git"
 
-if [ ! -f "$KEY_PATH" ]; then
-  echo "ERRO: chave nao encontrada em: $KEY_PATH" >&2
-  exit 1
+# 1) Preferir HTTPS com token quando existir
+if [ -s "$TOKEN_FILE" ]; then
+  TOKEN="$(tr -d ' \t\r\n' < "$TOKEN_FILE")"
+  if [ -n "$TOKEN" ] && git -C "$REPO_ROOT" \
+       -c http.extraHeader="Authorization: Bearer $TOKEN" \
+       push "$HTTPS_URL" HEAD:main "$@"; then
+    # mantem o ref de rastreamento local em dia (push por URL nao atualiza sozinho)
+    git -C "$REPO_ROOT" update-ref refs/remotes/origin/main HEAD 2>/dev/null || true
+    exit 0
+  fi
+  echo "AVISO: push por HTTPS (token) falhou; tentando SSH como reserva..." >&2
 fi
 
-# Anexa a chave ao GIT_SSH_COMMAND ja existente no ambiente (nunca reescrever do zero)
+# 2) Reserva: SSH com a chave persistida
+if [ ! -f "$KEY_PATH" ]; then
+  echo "ERRO: sem token utilizavel e chave SSH nao encontrada em: $KEY_PATH" >&2
+  exit 1
+fi
 export GIT_SSH_COMMAND="${GIT_SSH_COMMAND:-ssh} -i \"$KEY_PATH\" -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
-
 git -C "$REPO_ROOT" push origin main "$@"
